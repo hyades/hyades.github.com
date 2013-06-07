@@ -2,7 +2,7 @@
 <html class="fuelux" lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Experiments-with-dbus</title>
+    <title>Beginning-with-some-code</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -65,8 +65,8 @@
 	<script type="text/javascript">
 		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 		var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
-		var disqus_identifier = '/blog/Experiments-with-dbus';
-		var disqus_url = 'http://hyades.github.com/blog/Experiments-with-dbus';
+		var disqus_identifier = '/blog/Beginning-with-some-code';
+		var disqus_url = 'http://hyades.github.com/blog/Beginning-with-some-code';
 
 		/* * * DON'T EDIT BELOW THIS LINE * * */
 		(function () {
@@ -79,17 +79,17 @@
 	
 <div class="row">	
 	<div class="span9 column">
-		<p><h1>Experiments-with-dbus</h1></p>	
+		<p><h1>Beginning-with-some-code</h1></p>	
 	</div>
 </div>		
 <div class="row">	
 	<div class="span3 column">
-		<h5><strong>June  1, 2013 <small>.  . <a href="http://hyades.github.com/blog/Experiments-with-dbus#disqus_thread" data-disqus-identifier="/blog/Experiments-with-dbus">Comments</a></small></strong>
-		<br/><small>Tags:  <a href="/tags/dbus" title="View posts tagged with &quot;dbus&quot;"><u>dbus</u></a>     <a href="/tags/gsoc" title="View posts tagged with &quot;gsoc&quot;"><u>gsoc</u></a>     <a href="/tags/python" title="View posts tagged with &quot;python&quot;"><u>python</u></a>    </small><br/><br/>
+		<h5><strong>June  7, 2013 <small>.  . <a href="http://hyades.github.com/blog/Beginning-with-some-code#disqus_thread" data-disqus-identifier="/blog/Beginning-with-some-code">Comments</a></small></strong>
+		<br/><small>Tags:  <a href="/tags/gsoc" title="View posts tagged with &quot;gsoc&quot;"><u>gsoc</u></a>     <a href="/tags/timvideos" title="View posts tagged with &quot;timvideos&quot;"><u>timvideos</u></a>     <a href="/tags/python" title="View posts tagged with &quot;python&quot;"><u>python</u></a>    </small><br/><br/>
 		<a href="https://twitter.com/share" class="twitter-share-button" data-via="aayushahuja">Tweet</a> <g:plusone size="medium"></g:plusone></h5>
 	</div>		
 	<div class="span6 column">
-		<p class="pull-right"> <a href="/blog/hello-world" title="Previous Post: hello-world"><i class="icon-chevron-left"></i></a> 	    	<a href="/blog/Beginning-with-some-code" title="Next Post: Beginning-with-some-code"><i class="icon-chevron-right"></i></a> 	 </p>  
+		<p class="pull-right"> <a href="/blog/Experiments-with-dbus" title="Previous Post: Experiments-with-dbus"><i class="icon-chevron-left"></i></a> 	    </p>  
 	</div>	
 </div>
 <div class="row">
@@ -99,60 +99,76 @@
 </div>
 
 
-    <p>Messing around with the dbus python API. The GST-Switch controller seems to be using a non-default bus address (unix:abstract=gstswitch). Trying to connect to the given object path. I will have to find some new ways to connect to the object.</p>
+    <p>
+    Finally getting some fingers moving. I am pushing code at <a href="https://github.com/hyades/gst-switch/tree/python-api">here</a>. Worked out an initial class structure for getting the things working. I am trying to put in little bit of documentation in the function itself.
+    <br>
+    Currently there are three main classes: Server, UI and Controller.
+</p>
+
+
+<h4>
+    The Server
+</h4>
 
 
 <p>
-    Currently using code like this for testing:
+    The Server is the interaction module with gst-switch-srv. It is capable of controlling the server. The Server class has a contructor where the user can specify the video port, audio port, control port and the output record file.
     
-<div class="highlight"><pre><code class="python">       <span class="c">#!usr/bin/env python</span>
-        <span class="kn">import</span> <span class="nn">dbus</span>
-        <span class="kn">import</span> <span class="nn">dbus.mainloop.glib</span>
-        <span class="kn">import</span> <span class="nn">os</span>
-        <span class="kn">import</span> <span class="nn">time</span>
-        <span class="kn">import</span> <span class="nn">gobject</span>
-
-        <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-            <span class="n">loop</span> <span class="o">=</span> <span class="n">gobject</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
-            <span class="n">bus</span> <span class="o">=</span> <span class="n">dbus</span><span class="o">.</span><span class="n">SessionBus</span><span class="p">()</span>
-            <span class="n">obj</span> <span class="o">=</span> <span class="n">bus</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s">&quot;info.duzy.gst_switch.SwitchControllerInterface&quot;</span><span class="p">,</span><span class="s">&quot;/info/duzy/gst_switch/SwitchController&quot;</span><span class="p">)</span>
-            <span class="k">print</span> <span class="n">obj</span><span class="o">.</span><span class="n">Introspect</span><span class="p">()</span>
-            <span class="n">loop</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-
-        <span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&quot;DBUS_SESSION_BUS_ADDRESS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;unix:abstract=gstswitch&quot;</span>
-            <span class="n">dbus</span><span class="o">.</span><span class="n">mainloop</span><span class="o">.</span><span class="n">glib</span><span class="o">.</span><span class="n">DBusGMainLoop</span><span class="p">(</span><span class="n">set_as_default</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-            <span class="n">main</span><span class="p">()</span>
-    
+<div class="highlight"><pre><code class="python">       <span class="kn">from</span> <span class="nn">gstswitch</span> <span class="kn">import</span> <span class="o">*</span>      <span class="c">#importing all modules</span>
     
 </code></pre></div>
 
-
-    When I try to connect getting errors like:
     
-<div class="highlight"><pre><code class="bash">     Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-      File <span class="s2">&quot;dbusConnect.py&quot;</span>, line 18, in &lt;module&gt;
-        main<span class="o">()</span>
-      File <span class="s2">&quot;dbusConnect.py&quot;</span>, line 10, in main
-        <span class="nv">bus</span> <span class="o">=</span> dbus.SessionBus<span class="o">()</span>
-      File <span class="s2">&quot;/usr/lib/python2.7/dist-packages/dbus/_dbus.py&quot;</span>, line 211, in __new__
-        <span class="nv">mainloop</span><span class="o">=</span>mainloop<span class="o">)</span>
-      File <span class="s2">&quot;/usr/lib/python2.7/dist-packages/dbus/_dbus.py&quot;</span>, line 100, in __new__
-        <span class="nv">bus</span> <span class="o">=</span> BusConnection.__new__<span class="o">(</span>subclass, bus_type, <span class="nv">mainloop</span><span class="o">=</span>mainloop<span class="o">)</span>
-      File <span class="s2">&quot;/usr/lib/python2.7/dist-packages/dbus/bus.py&quot;</span>, line 122, in __new__
-        <span class="nv">bus</span> <span class="o">=</span> cls._new_for_bus<span class="o">(</span>address_or_type, <span class="nv">mainloop</span><span class="o">=</span>mainloop<span class="o">)</span>
-    dbus.exceptions.DBusException: org.freedesktop.DBus.Error.UnknownMethod: No such interface <span class="sb">`</span>org.freedesktop.DBus<span class="err">&#39;</span> on object at path /org/freedesktop/DBus
+<div class="highlight"><pre><code class="python">       <span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span>           <span class="c">#simple enough thing, gets the server running with default parameters.</span>
     
 </code></pre></div>
 
+    The server can be started off forking a new process and can safely be killed. Connection to the controller can be made by invoking the Controller class.
+    
+<div class="highlight"><pre><code class="python">       <span class="n">control</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">connectController</span><span class="p">()</span>
+    
+</code></pre></div>
 
-    Will have to use something more than using "dbus.SessionBus()". The dbus python documentation says they will include connection to non-default address in a later section!. Since it is supported in the latest version, trying to get a way of getting this working...
+    If a connection does not exist a new connection should be made to the Controller. Now that the server is running, there should be some input to the server! These are the videotestsrc elements of gstreamer. I have added options where the user can select what pattern, height, width etc can be specified. The width of the input stream should be 300 and height should be 200 always, else it might result in some strange unclear patterns coming up. If no pattern is specified a random one gets selected.
+    
+<div class="highlight"><pre><code class="python">       <span class="n">server</span><span class="o">.</span><span class="n">newTestVideo</span><span class="p">()</span>       <span class="c">#adds a new test source to the gst-switch</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">getAllTestVideo</span><span class="p">()</span>    <span class="c">#displays all test sources feeding in the gst-switch</span>
+    
+</code></pre></div>
+
+    The Server and the test sources can be easily killed off by invoking like this. I was earlier facing a problem where the subprocess.Popen() command was making two processes. Now, while killing only one gets killed, whereas the other one was still remaining. I was using an option shell=True as an argument to the Popen command. Changing this option to shell=False allowed me to control the server class more easily as in this case only one process gets created!
+    
+<div class="highlight"><pre><code class="python">       <span class="n">server</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>                <span class="c">#kills off the server process</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">endAllTestVideo</span><span class="p">()</span>    <span class="c">#kills off all test videos that have been defined. server.end() takes care of this</span>
+    
+</code></pre></div>
+
+    Currently the video sources are being fed by creating new processes. I will modify these using the Gstreamer 1.0 Python Bindings defined under gi.repository.Gst
 </p>
+
+
+<h4>
+    The UI
+</h4>
+
+
+<p>
+    Now the server is running and the input sources have been specified, we need to view the output that is getting generated. For this the gst-switch-ui can be invoked. Simply the UI is run using:
+    
+<div class="highlight"><pre><code class="python">       <span class="n">ui</span> <span class="o">=</span> <span class="n">UI</span><span class="p">()</span>
+    
+</code></pre></div>
+
+    The UI process is ended simply using ui.end() method.
+    Once the controller is ready, the compose port can be used to view the output of the gst-switch server directly eliminating the need of the UI.
+</p>
+
+
 
 
 <div class="row">   
     <div class="span9 column">
-            <p class="pull-right"> <a href="/blog/hello-world" title="Previous Post: hello-world"><i class="icon-chevron-left"></i></a>             <a href="/blog/Beginning-with-some-code" title="Next Post: Beginning-with-some-code"><i class="icon-chevron-right"></i></a>      </p>  
+            <p class="pull-right"> <a href="/blog/Experiments-with-dbus" title="Previous Post: Experiments-with-dbus"><i class="icon-chevron-left"></i></a>         </p>  
     </div>
 
 </div>
@@ -217,7 +233,7 @@
 	 </div>   
 	<footer class="footer">
   <div class="container">
-	<p class="pull-right"> <a href="/blog/hello-world" title="Previous Post: hello-world">&laquo; Previous Blog Post</a> 	  |  <a href="#">Back to top</a>  |   	<a href="/blog/Beginning-with-some-code" title="Next Post: Beginning-with-some-code">Next Blog Post &raquo; </a> 	 </p>        
+	<p class="pull-right"> <a href="/blog/Experiments-with-dbus" title="Previous Post: Experiments-with-dbus">&laquo; Previous Blog Post</a> 	  |  <a href="#">Back to top</a>  |   </p>        
 	<p>Page last generated on June  7, 2013</p>
 	<p>If need be, <a href="https://github.com/hyades/Feedback/issues/new" title="Leave feedback for Aayush"  target="_blank" >Give feedback here</a>.</p>	
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
