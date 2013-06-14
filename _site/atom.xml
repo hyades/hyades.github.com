@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.com/atom.xml" rel="self"></link>
  <link href="http://hyades.github.com/"></link>
- <updated>2013-06-07T21:51:33+05:30</updated>
+ <updated>2013-06-14T16:58:12+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -12,7 +12,7 @@
  
  
  <entry>
-   <title>Beginning-with-some-code</title>
+   <title>Beginning with some code</title>
    <link href="http://hyades.github.com/blog/Beginning-with-some-code"></link>
    <updated>2013-06-07T00:00:00+05:30</updated>
    <id>http://hyades.github.com/blog/Beginning-with-some-code</id>
@@ -85,7 +85,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Experiments-with-dbus&quot; title=&quot;Previous Post: Experiments-with-dbus&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Experiments-with-dbus&quot; title=&quot;Previous Post: Experiments with dbus&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
@@ -146,7 +146,7 @@
  </entry>
  
  <entry>
-   <title>Experiments-with-dbus</title>
+   <title>Experiments with dbus</title>
    <link href="http://hyades.github.com/blog/Experiments-with-dbus"></link>
    <updated>2013-06-01T00:00:00+05:30</updated>
    <id>http://hyades.github.com/blog/Experiments-with-dbus</id>
@@ -203,7 +203,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/hello-world&quot; title=&quot;Previous Post: hello-world&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Beginning-with-some-code&quot; title=&quot;Next Post: Beginning-with-some-code&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/hello-world&quot; title=&quot;Previous Post: hello-world&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Beginning-with-some-code&quot; title=&quot;Next Post: Beginning with some code&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
@@ -281,7 +281,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Gsoc-2k13&quot; title=&quot;Previous Post: Gsoc-2k13&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Experiments-with-dbus&quot; title=&quot;Next Post: Experiments-with-dbus&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Gsoc-2k13&quot; title=&quot;Previous Post: Gsoc-2k13&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Experiments-with-dbus&quot; title=&quot;Next Post: Experiments with dbus&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;

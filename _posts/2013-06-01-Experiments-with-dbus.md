@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Experiments-with-dbus
+title: Experiments with dbus
 tags: dbus gsoc python
 Year: 2013
 Month: 06

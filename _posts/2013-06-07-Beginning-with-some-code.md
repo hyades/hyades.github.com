@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Beginning-with-some-code
+title: Beginning with some code
 tags: gsoc timvideos python
 Year: 2013
 Month: 06
