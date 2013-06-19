@@ -39,43 +39,43 @@ Date: 19
 <p>
 	In another terminal I am running my other script interacting with the gst-switch-srv module over dbus. I added a few screenshots to show these:
 	<br>
-	Firstly I start off my testing script which turns on the gst-switch-srv and adds some input test sources to it. The video output of the gst-switch is shown in the gst-launch windows in the left bottom corner. In the left terminal, I am running this script. This is the default output of gst-switch
+	Firstly I start off my testing script which turns on the gst-switch-srv and adds some input test sources to it. The video output of the gst-switch is shown in the gst-launch windows in the left bottom corner. In the left terminal, I am running this script. This is the default output of gst-switch:
 </p>
 <p>
-	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:07.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:07.png"></a>
+	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:07.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:07_1.png"></a>
 </p>
 <p>
 	Now, I run my script which does the work of communicating messages over dbus. Setting Mode 0
 </p>
 <p>
-	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:23.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:23.png"></a>
+	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:23.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:23_1.png"></a>
 </p>
 <p>
 	Now, Mode 1
 </p>
 <p>
-	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:28.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:28.png"></a>
+	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:28.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:28_1.png"></a>
 	<br>
 </p>
 <p>
 	Ah, now Mode 2
 </p>
 <p>
-	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:32.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:32.png"></a>
+	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:32.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:32_1.png"></a>
 	<br>
 </p>
 <p>
 	Mode 3
 </p>
 <p>
-	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:37.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:37.png"></a>
+	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:37.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:37_1.png"></a>
 	<br>
 </p>
 <p>
 	And now back to Mode 0 :D
 </p>
 <p>
-	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:42.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:42.png"></a>
+	<a href="/img/screenshots/Screenshot from 2013-06-19 20:22:42.png"><img width="300" height="200" src="/img/screenshots/Screenshot from 2013-06-19 20:22:42_1.png"></a>
 </p>
 <h2>
 	Things left
