@@ -4,12 +4,199 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.com/atom.xml" rel="self"></link>
  <link href="http://hyades.github.com/"></link>
- <updated>2013-06-18T15:04:57+05:30</updated>
+ <updated>2013-06-19T20:56:42+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Changing PIP Modes</title>
+   <link href="http://hyades.github.com/blog/Changing-PIP-Modes"></link>
+   <updated>2013-06-19T00:00:00+05:30</updated>
+   <id>http://hyades.github.com/blog/Changing-PIP-Modes</id>
+   <content type="html">&lt;h2&gt;
+    A few changes to the executables firstly
+&lt;/h2&gt;
+
+
+&lt;p&gt;
+    I also made a few modifications to the way gst-switch is installed. The process puts a copy of gst-switch-srv and gst-switch-ui at /usr/local/bin. These are from the master branch of gst-switch. But, I needed these executables from the speaker-track branch. So I just copied these to the folder replacing the already placed ones. Thus, now I am able to shoot off gst-switch-srv (from the speaker-track branch) just by doing it in the terminal. 
+&lt;/p&gt;
+
+
+&lt;h2&gt;
+    Changing PIPs
+&lt;/h2&gt;
+
+
+&lt;p&gt;
+    I have been testing the dbus connection so that it works properly. I concertrated mostly on changing PIP modes. For testing the modules that I made earlier were a LOT of help. It surely saved me the headache of starting gst-switch-srv along with 3 to 4 more processes to feed video input as well as to view the processes. My test script looks simple enough like this
+    
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;       &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;gstswitch&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+        &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;
+        &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;subprocess&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;gst-launch-1.0 tcpclientsrc port=3001 ! gdpdepay ! autovideosink&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;proc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bufsize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_test_video&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_test_video&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clockoverlay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;raw_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;proc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+    Here I avoided attaching the gst-switch-ui and directly connected a gst-launch element to the output port.
+&lt;/p&gt;
+
+
+
+
+&lt;p&gt;
+    In another terminal I am running my other script interacting with the gst-switch-srv module over dbus. I added a few screenshots to show these:
+    &lt;br&gt;
+    Firstly I start off my testing script which turns on the gst-switch-srv and adds some input test sources to it. The video output of the gst-switch is shown in the gst-launch windows in the left bottom corner. In the left terminal, I am running this script. This is the default output of gst-switch
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    &lt;a href=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:07.png&quot;&gt;&lt;img src=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:07.png&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Now, I run my script which does the work of communicating messages over dbus. Setting Mode 0
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    &lt;a href=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:23.png&quot;&gt;&lt;img src=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:23.png&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Now, Mode 1
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    &lt;a href=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:28.png&quot;&gt;&lt;img src=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:28.png&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;&lt;/a&gt;
+    &lt;br&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Ah, now Mode 2
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    &lt;a href=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:32.png&quot;&gt;&lt;img src=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:32.png&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;&lt;/a&gt;
+    &lt;br&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Mode 3
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    &lt;a href=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:37.png&quot;&gt;&lt;img src=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:37.png&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;&lt;/a&gt;
+    &lt;br&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    And now back to Mode 0 :D
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    &lt;a href=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:42.png&quot;&gt;&lt;img src=&quot;/img/screenshots/Screenshot from 2013-06-19 20:22:42.png&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;h2&gt;
+    Things left
+&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;As you can see the sources don't look pretty. This is evident from the first screenshot. This indicates that there is some problem in the pipelines feeding into the gst-switch-srv&lt;/li&gt;
+        &lt;li&gt;Make an object structure out of this crude script which turns communicates over the dbus with the gst-switch.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/The-SoC-coding-period-starts-off&quot; title=&quot;Previous Post: The SoC Coding Period Starts Off&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>The SoC Coding Period Starts Off</title>
@@ -65,7 +252,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Beginning-with-some-code&quot; title=&quot;Previous Post: Beginning with some code&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Beginning-with-some-code&quot; title=&quot;Previous Post: Beginning with some code&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Changing-PIP-Modes&quot; title=&quot;Next Post: Changing PIP Modes&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
