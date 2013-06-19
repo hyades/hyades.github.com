@@ -29,7 +29,7 @@ f = open(filename,"w")
 
 f.write("---\n")
 f.write("layout: post\n")
-f.write("title: %s\n" %(n)
+f.write("title: %s\n" %(n))
 f.write("tags:"+tagline+'\n')
 f.write("Year: "+strftime("%Y") + '\n')
 f.write("Month: "+strftime("%m") + '\n')
