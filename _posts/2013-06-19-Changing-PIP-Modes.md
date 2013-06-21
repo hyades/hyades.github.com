@@ -23,15 +23,16 @@ Date: 19
 		from time import sleep
 		import subprocess
 
-		s = Server()
+		s = Server() #starting the server
 		sleep(0.5)
-		cmd = "gst-launch-1.0 tcpclientsrc port=3001 ! gdpdepay ! autovideosink"
-		proc = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, bufsize=-1, shell=False)
-		s.new_test_video()
-		s.new_test_video(clockoverlay=True)
-		raw_input()
-		proc.kill()
-		s.end()
+		cmd = "gst-launch-1.0 tcpclientsrc port=3001 ! gdpdepay ! autovideosink"	
+		#calling a process to view output of the gst-switch-srv without using gst-switch-ui
+		proc = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, bufsize=-1, shell=False) 
+		s.new_test_video()	#adding a test video input - random pattern
+		s.new_test_video(clockoverlay=True) #adding a test video-input - random pattern with a clock overlay
+		raw_input() #just waiting for user to kill off the server
+		proc.kill() #killing the output which is giving output
+		s.end() #killing off the server and the test video inputs
 	{% endhighlight %}
 	Here I avoided attaching the gst-switch-ui and directly connected a gst-launch element to the output port.
 </p>
@@ -82,7 +83,23 @@ Date: 19
 </h2>
 <p>
 	<ul>
-		<li>As you can see the sources don't look pretty. This is evident from the first screenshot. This indicates that there is some problem in the pipelines feeding into the gst-switch-srv</li>
+		<li>
+			<p>
+				As you can see the sources don't look pretty. This is evident from the first screenshot. This indicates that there is some problem in the pipelines feeding into the gst-switch-srv. For example videotestsrc pattern=10 looks like this:
+			</p>
+			<p>
+				<a href="/img/screenshots/Screenshot from 2013-06-21 13:56:13.jpg"><img src="/img/screenshots/Screenshot from 2013-06-21 13:56:13.jpg"></a>
+			</p>
+			<p>
+				<br>
+				But actually or ideally it should be looking like this:
+				<br>
+				<br>
+			</p>
+			<p>
+				<a href="/img/screenshots/Screenshot from 2013-06-21 13:56:46.jpg"><img src="/img/screenshots/Screenshot from 2013-06-21 13:56:46.jpg"></a>
+			</p>
+		</li>
 		<li>Make an object structure out of this crude script which turns communicates over the dbus with the gst-switch.</li>
 	</ul>
 </p>
