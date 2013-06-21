@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Aayush Ahuja</title>
- <link href="http://hyades.github.com/atom.xml" rel="self"></link>
- <link href="http://hyades.github.com/"></link>
- <updated>2013-06-21T14:05:15+05:30</updated>
+ <link href="http://hyades.github.io/atom.xml" rel="self"></link>
+ <link href="http://hyades.github.io/"></link>
+ <updated>2013-06-21T16:35:32+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -13,9 +13,9 @@
  
  <entry>
    <title>Changing PIP Modes</title>
-   <link href="http://hyades.github.com/blog/Changing-PIP-Modes"></link>
+   <link href="http://hyades.github.io/blog/Changing-PIP-Modes"></link>
    <updated>2013-06-19T00:00:00+05:30</updated>
-   <id>http://hyades.github.com/blog/Changing-PIP-Modes</id>
+   <id>http://hyades.github.io/blog/Changing-PIP-Modes</id>
    <content type="html">&lt;h2&gt;
     A few changes to the executables firstly
 &lt;/h2&gt;
@@ -217,9 +217,9 @@
  
  <entry>
    <title>The SoC Coding Period Starts Off</title>
-   <link href="http://hyades.github.com/blog/The-SoC-coding-period-starts-off"></link>
+   <link href="http://hyades.github.io/blog/The-SoC-coding-period-starts-off"></link>
    <updated>2013-06-17T00:00:00+05:30</updated>
-   <id>http://hyades.github.com/blog/The-SoC-coding-period-starts-off</id>
+   <id>http://hyades.github.io/blog/The-SoC-coding-period-starts-off</id>
    <content type="html">&lt;h2&gt;The Last Few Days&lt;/h2&gt;
 
 
@@ -331,9 +331,9 @@
  
  <entry>
    <title>Beginning with some code</title>
-   <link href="http://hyades.github.com/blog/Beginning-with-some-code"></link>
+   <link href="http://hyades.github.io/blog/Beginning-with-some-code"></link>
    <updated>2013-06-07T00:00:00+05:30</updated>
-   <id>http://hyades.github.com/blog/Beginning-with-some-code</id>
+   <id>http://hyades.github.io/blog/Beginning-with-some-code</id>
    <content type="html">&lt;p&gt;
     Finally getting some fingers moving. I am pushing code at &lt;a href=&quot;https://github.com/hyades/gst-switch/tree/python-api&quot;&gt;here&lt;/a&gt;. Worked out an initial class structure for getting the things working. I am trying to put in little bit of documentation in the function itself.
     &lt;br&gt;
@@ -465,9 +465,9 @@
  
  <entry>
    <title>Experiments with dbus</title>
-   <link href="http://hyades.github.com/blog/Experiments-with-dbus"></link>
+   <link href="http://hyades.github.io/blog/Experiments-with-dbus"></link>
    <updated>2013-06-01T00:00:00+05:30</updated>
-   <id>http://hyades.github.com/blog/Experiments-with-dbus</id>
+   <id>http://hyades.github.io/blog/Experiments-with-dbus</id>
    <content type="html">&lt;p&gt;Messing around with the dbus python API. The GST-Switch controller seems to be using a non-default bus address (unix:abstract=gstswitch). Trying to connect to the given object path. I will have to find some new ways to connect to the object.&lt;/p&gt;
 
 
@@ -583,9 +583,9 @@
  
  <entry>
    <title>hello-world</title>
-   <link href="http://hyades.github.com/blog/hello-world"></link>
+   <link href="http://hyades.github.io/blog/hello-world"></link>
    <updated>2013-05-29T00:00:00+05:30</updated>
-   <id>http://hyades.github.com/blog/hello-world</id>
+   <id>http://hyades.github.io/blog/hello-world</id>
    <content type="html">&lt;h2&gt;
     Finally A Blog!!
 &lt;/h2&gt;
@@ -661,9 +661,9 @@
  
  <entry>
    <title>Gsoc-2k13</title>
-   <link href="http://hyades.github.com/blog/Gsoc-2k13"></link>
+   <link href="http://hyades.github.io/blog/Gsoc-2k13"></link>
    <updated>2013-05-29T00:00:00+05:30</updated>
-   <id>http://hyades.github.com/blog/Gsoc-2k13</id>
+   <id>http://hyades.github.io/blog/Gsoc-2k13</id>
    <content type="html">&lt;h2&gt;Gsoc 2013&lt;/h2&gt;
 
 

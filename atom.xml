@@ -5,8 +5,8 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Aayush Ahuja</title>
- <link href="http://hyades.github.com/atom.xml" rel="self"></link>
- <link href="http://hyades.github.com/"></link>
+ <link href="http://hyades.github.io/atom.xml" rel="self"></link>
+ <link href="http://hyades.github.io/"></link>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://hyades.github.com</id>
  <author>
@@ -16,9 +16,9 @@ layout: nil
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://hyades.github.com{{ post.url }}"></link>
+   <link href="http://hyades.github.io{{ post.url }}"></link>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://hyades.github.com{{ post.id }}</id>
+   <id>http://hyades.github.io{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
