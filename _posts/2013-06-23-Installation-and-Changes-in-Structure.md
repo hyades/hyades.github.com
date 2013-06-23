@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Installation and Changes to Structure
+title: Installation and Changes in Structure
 tags: install gstreamer python
 Year: 2013
 Month: 06
