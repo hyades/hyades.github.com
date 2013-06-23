@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-06-23T13:45:58+05:30</updated>
+ <updated>2013-06-23T14:35:41+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -12,10 +12,10 @@
  
  
  <entry>
-   <title>Installation and Changes to Structure</title>
-   <link href="http://hyades.github.io/blog/Installation-and-Changes-to-Structure"></link>
+   <title>Installation and Changes in Structure</title>
+   <link href="http://hyades.github.io/blog/Installation-and-Changes-in-Structure"></link>
    <updated>2013-06-23T00:00:00+05:30</updated>
-   <id>http://hyades.github.io/blog/Installation-and-Changes-to-Structure</id>
+   <id>http://hyades.github.io/blog/Installation-and-Changes-in-Structure</id>
    <content type="html">&lt;h2&gt;
     Installation
 &lt;/h2&gt;
@@ -323,7 +323,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/The-SoC-coding-period-starts-off&quot; title=&quot;Previous Post: The SoC Coding Period Starts Off&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Installation-and-Changes-to-Structure&quot; title=&quot;Next Post: Installation and Changes to Structure&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/The-SoC-coding-period-starts-off&quot; title=&quot;Previous Post: The SoC Coding Period Starts Off&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Installation-and-Changes-in-Structure&quot; title=&quot;Next Post: Installation and Changes in Structure&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
