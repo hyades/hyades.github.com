@@ -12,36 +12,36 @@ Date: 25
 	I was earlier experiencing many problems installing the gstreamer package for running the speakertrack modules. This task was made easy by the gst-uninstalled script (<a href="http://cgit.freedesktop.org/gstreamer/gstreamer/tree/scripts/gst-uninstalled">http://cgit.freedesktop.org/gstreamer/gstreamer/tree/scripts/gst-uninstalled</a>). I downloaded the script and ran it. This script clones the gstreamer git modules (gstreamer, gst-plugins-base, gst-plugins-good, gst-plugins-bad, gst-plugins-ugly) into "~/gst/master". I replaced the gst-plugins-bad module by Duzy's one from speakertrack_new branch. The gst-uninstalled script generates a script gst-master at "~/gst". This script is useful in setting the environment variables correctly. These environment variables are needed to install gstreamer in a custom location so that the plugins know where the gstreamer package was installed.
 	Now after doing this I followed the setting up instructions. I built like this:
 	{% highlight bash %}
-	cd ~/gst/
-	./gst-master
-	# this sets up the environment and I end up in ~/gst/master/
-	cd gstreamer
-	./autogen
-	# no prefix is required
-	make
-	cd ../gst-plugins-base
-	./autogen
-	make
-	cd ../gst-plugins-good
-	./autogen
-	make
-	cd ../gst-plugins-bad
-	./autogen
-	make
+cd ~/gst/
+./gst-master
+# this sets up the environment and I end up in ~/gst/master/
+cd gstreamer
+./autogen
+# no prefix is required
+make
+cd ../gst-plugins-base
+./autogen
+make
+cd ../gst-plugins-good
+./autogen
+make
+cd ../gst-plugins-bad
+./autogen
+make
 	{% endhighlight %}
 	Doing this builds the gstreamer WITHOUT any build errors. The executables - gst-launch-1.0, gst-inpect-1.0 etc are now located at ~/gst/master/gstreamer/tools/.libs. Now, I built the gst-switch in speakertrack branch doing ./autogen and then make and copied the executables from /tools/ - gst-switch-srv, gst-switch-ui and gst-switch-cap to the previous location. Now, running gst-switch-srv and gst-switch-cap worked perfectly with the modules capable of detecting my face :)
 </p>
 <p>
 	The environment variables can also be set using a script like this:
 	{% highlight bash %}
-		#!/bin/bash
-		export PREFIX="$HOME/releases/prefix"
-		export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH"
-		export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH"
-		export PATH="$PREFIX/bin:$PATH"
-		export GST_REGISTRY="$PREFIX/gstreamer-registry.dat"
-		echo "Release environment for prefix $PREFIX set up"
-		bash
+#!/bin/bash
+export PREFIX="$HOME/releases/prefix"
+export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH"
+export PATH="$PREFIX/bin:$PATH"
+export GST_REGISTRY="$PREFIX/gstreamer-registry.dat"
+echo "Release environment for prefix $PREFIX set up"
+bash
 	{% endhighlight%}
 </p>
 <h2>
@@ -53,31 +53,31 @@ Date: 25
 		<li>The path of the executables now needs to be specified. This will be set to some default value later.</li>
 		<li>Earlier if the server was running and while testing I get a python exception. Now since server.end() call is made afterwards, the gst-switch-srv would have kept on running in the background. Running "ps -ef | grep gst-switch-srv" will confirm it. Now, there is a function which can be called like server.brute_end(). This should be added to except portion in the test script like this script:
 			{% highlight python %}
-				from gstswitch import *
-				from time import sleep
-				import subprocess
-				import os
+from gstswitch import *
+from time import sleep
+import subprocess
+import os
 
-				# all executables (gst-launch-1.0, gst-switch-srv, gst-switch-ui, gst-switch-cap) at this path
-				path = '/home/hyades/gst/master/gstreamer/tools/.libs/' 
-				os.chdir(path)
-				s = Server()
-				s.run()	# launches the server default parameters
-				try:
-					sleep(0.5)
-					cmd = path
-					# connects a gstreamer module to view the output of the gst-switch-srv
-					cmd += "gst-launch-1.0 tcpclientsrc port=3001 ! gdpdepay ! autovideosink"
-					proc = subprocess.Popen(cmd.split(),  bufsize=-1, shell=False)
-					# adding two test video sources
-					s.new_test_video()
-					s.new_test_video(clockoverlay=True)
-					# waiting till user ends the server
-					raw_input()
-					s.end()
-				except:
-					# to kill off all processes that are created by the program
-					s.brute_end()
+# all executables (gst-launch-1.0, gst-switch-srv, gst-switch-ui, gst-switch-cap) at this path
+path = '/home/hyades/gst/master/gstreamer/tools/.libs/' 
+os.chdir(path)
+s = Server()
+s.run()	# launches the server default parameters
+try:
+	sleep(0.5)
+	cmd = path
+	# connects a gstreamer module to view the output of the gst-switch-srv
+	cmd += "gst-launch-1.0 tcpclientsrc port=3001 ! gdpdepay ! autovideosink"
+	proc = subprocess.Popen(cmd.split(),  bufsize=-1, shell=False)
+	# adding two test video sources
+	s.new_test_video()
+	s.new_test_video(clockoverlay=True)
+	# waiting till user ends the server
+	raw_input()
+	s.end()
+except:
+	# to kill off all processes that are created by the program
+	s.brute_end()
 
 			{% endhighlight %}
 		</li>
