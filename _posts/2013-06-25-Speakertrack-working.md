@@ -27,7 +27,7 @@ cd ../gst-plugins-good
 make
 cd ../gst-plugins-bad
 ./autogen
-make
+makeid
 	{% endhighlight %}
 	Doing this builds the gstreamer WITHOUT any build errors. The executables - gst-launch-1.0, gst-inpect-1.0 etc are now located at ~/gst/master/gstreamer/tools/.libs. Now, I built the gst-switch in speakertrack branch doing ./autogen and then make and copied the executables from /tools/ - gst-switch-srv, gst-switch-ui and gst-switch-cap to the previous location. Now, running gst-switch-srv and gst-switch-cap worked perfectly with the modules capable of detecting my face :)
 </p>

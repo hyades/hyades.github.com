@@ -4,12 +4,138 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-06-25T15:03:43+05:30</updated>
+ <updated>2013-06-28T16:57:44+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Few Changes</title>
+   <link href="http://hyades.github.io/blog/Few-Changes"></link>
+   <updated>2013-06-28T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Few-Changes</id>
+   <content type="html">&lt;p&gt;
+    The entire code is now PEP8 compliant maing it a lot easier to view. I found out a plugin for my text editor and all my future code will surely be the same.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Earlier i wrote about how I was not getting output correctly. The video was not &quot;pretty&quot; and clear. I had given a screenshot for comparison. This was due to a typo in the caps. Now, the video is perfect.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    You can have a look &lt;a href=&quot;/video/record 2013-06-27 201241.data&quot;&gt;here&lt;/a&gt;. This file opens fine with vlc for me.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    I have also made some changes in the code so that the major variables are distinguished from the unimportant ones. This will be helpful especially when debugging code.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Also as mithro pointed out, the path of executables is now passed as parameter to the Server. This path can also be made an optional argument in case all the executables are in some default location after build and install.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Also now with everything installed correctly in place, I get warnings both in the gst-switch-srv and gst-switch-ui like:
+    
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;gst-switch-ui:11231&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: GStreamer-WARNING **: gstpad.c:3677:gst_pad_chain_data_unchecked:&amp;lt;overlay:sink&amp;gt; Got data flow before stream-start event
+ 
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;gst-switch-ui:11231&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: GStreamer-WARNING **: gstpad.c:3908:gst_pad_push_data:&amp;lt;overlay:src&amp;gt; Got data flow before stream-start event
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Audio is another problem. I ran gst-switch-srv followed by gst-switch-ui. I then added a audio test source on port 4000. This resulted in crashing the gst-switch-ui. The log looks something like this. 
+    &lt;script src=&quot;https://gist.github.com/hyades/5884014.js&quot;&gt;&lt;/script&gt;
+    It seems that an element &lt;b&gt;monoscope&lt;/b&gt; is missing. However according to &lt;a href=&quot;http://gstreamer.freedesktop.org/documentation/plugins.html&quot;&gt;http://gstreamer.freedesktop.org/documentation/plugins.html&lt;/a&gt; monoscope is a part of gst-plugins-good which is already installed.
+&lt;/p&gt;
+
+
+&lt;br&gt;
+
+
+&lt;h5&gt;
+    Some things to do:
+&lt;/h5&gt;
+
+
+&lt;p&gt;
+    There is a need for a error reporting mechanism. This will be utilizing python's Exception class. Presently, I have little knowledge of using this. I am learning how to make use of this Exception class. I have a file &lt;a href=&quot;https://github.com/hyades/gst-switch/blob/python-api/python-api/gstswitch/exception.py&quot;&gt;exception.py&lt;/a&gt; where I will be defining some common exceptions. These will be raised at appropriate places. Work needs to be done here.
+&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Speakertrack-working&quot; title=&quot;Previous Post: Speakertrack working&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Speakertrack working</title>
@@ -38,7 +164,7 @@ make
 make
 &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ../gst-plugins-bad
 ./autogen
-make
+makeid
     
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -112,7 +238,7 @@ bash
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Installation-and-Changes-to-Structure&quot; title=&quot;Previous Post: Installation and Changes in Structure&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Installation-and-Changes-to-Structure&quot; title=&quot;Previous Post: Installation and Changes in Structure&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Few-Changes&quot; title=&quot;Next Post: Few Changes&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
