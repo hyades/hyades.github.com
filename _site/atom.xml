@@ -4,12 +4,125 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-10T00:50:12+05:30</updated>
+ <updated>2013-07-13T15:48:43+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>testing testing testing</title>
+   <link href="http://hyades.github.io/blog/testing-testing-testing"></link>
+   <updated>2013-07-13T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/testing-testing-testing</id>
+   <content type="html">&lt;h3&gt;What I achieved&lt;/h3&gt;
+
+
+&lt;p&gt;
+    The commits are:
+    &lt;ul&gt;
+        &lt;li&gt;Removed unncessary files:&lt;a href=&quot;https://github.com/hyades/gst-switch/commit/d0e2cf4e001b9da785071448d56bb2a4399b1218&quot;&gt;d0e2cf4e00&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Created separate helpers class. Removed logging:&lt;a href=&quot;https://github.com/hyades/gst-switch/commit/9a9f2412522f711cbe648faafcb77ecdd468b020&quot;&gt;9a9f241252&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;small change:&lt;a href=&quot;https://github.com/hyades/gst-switch/commit/14e871ad40d929c43cfcf61d2f90256c6cddc677&quot;&gt; 14e871ad40&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;removed unneccesarry commented code:&lt;a href=&quot;https://github.com/hyades/gst-switch/commit/aa50ca622e407df6213d8deb3b77de9d63842d8b&quot;&gt;aa50ca622e&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;DBus methods getting data working:&lt;a href=&quot;https://github.com/hyades/gst-switch/commit/804436e8effaed7a402cf7363972825722b4be06&quot;&gt;804436e8ef&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Fixed typos, modified tests:&lt;a href=&quot;https://github.com/hyades/gst-switch/commit/df00cd368aadf544055ea675d9e2503d163d579e&quot;&gt;df00cd368a&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    For testing the methods, I had to create a new test.py file. After these tests, all the methods which &quot;get&quot; information from the gst-switch-srv are working. Also the method set_compose_mode is working.
+&lt;/p&gt;
+
+
+&lt;h3&gt;
+    What problems I'm currently having.
+&lt;/h3&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;The method set_encode_mode is not working. Looking at how its implemented in the code of gst-switch, I found that its not implemented at all. &lt;a href=&quot;https://github.com/timvideos/gst-switch/blob/master/tools/gstswitchcontroller.c#L69&quot;&gt;https://github.com/timvideos/gst-switch/blob/master/tools/gstswitchcontroller.c#L69&lt;/a&gt; The method table has no mention of this method &lt;a href=&quot;https://github.com/timvideos/gst-switch/blob/master/tools/gstswitchcontroller.c#L969&quot;&gt;https://github.com/timvideos/gst-switch/blob/master/tools/gstswitchcontroller.c#L969&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;h3&gt;
+    What I am planning to do
+&lt;/h3&gt;
+
+
+&lt;p&gt;
+    Mithro had correctly pointed out that I will need a fully automatic test suite for testing the python api as well as the gst-switch. I am reading about how to use these. I have gone through py.test documentation. I will be using it for creating this test suite after I am done with very basic tests. Added to the to-do list :)
+&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Working-on-previews-and-plans-ahead&quot; title=&quot;Previous Post: Working on previews and plans ahead&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Working on previews and plans ahead</title>
@@ -48,7 +161,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Connections-and-calling-methods&quot; title=&quot;Previous Post: Connections and calling methods&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Connections-and-calling-methods&quot; title=&quot;Previous Post: Connections and calling methods&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/testing-testing-testing&quot; title=&quot;Next Post: testing testing testing&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
