@@ -16,11 +16,11 @@ Date: 15
 	<br>
 	The commits made are:
 	<ul>
-		<li>test for set_compose_mode;set_encode_mode doesn't work<a href="https://github.com/hyades/gst-switch/commit/5311985a8872aeb215aebbfa89182e8cf2b6848b">5311985a88</a></li>
-		<li>Added sphinx compatible documentation - controller.py<a href="https://github.com/hyades/gst-switch/commit/10c1e4b43402d2da5f999c9cea4605ba9cef2c1f">10c1e4b434</a></li>
-		<li>Documentation - connection.py<a href="https://github.com/hyades/gst-switch/commit/a6fafa1b71a9fd35335a0a177fd66aa595a0d13c">a6fafa1b71</a></li>
-		<li>Documentation-dbus.py<a href="https://github.com/hyades/gst-switch/commit/38c6166674af56706b7718c106fbfe26e842f27a">38c6166674</a></li>
-		<li>Documentation server.py<a href="https://github.com/hyades/gst-switch/commit/f78f8d1aa35e58996a01fceb2c26d10fc8d76c42">f78f8d1aa3</a></li>
+		<li>test for set_compose_mode;set_encode_mode doesn't work:<a href="https://github.com/hyades/gst-switch/commit/5311985a8872aeb215aebbfa89182e8cf2b6848b">5311985a88</a></li>
+		<li>Added sphinx compatible documentation - controller.py:<a href="https://github.com/hyades/gst-switch/commit/10c1e4b43402d2da5f999c9cea4605ba9cef2c1f">10c1e4b434</a></li>
+		<li>Documentation - connection.py:<a href="https://github.com/hyades/gst-switch/commit/a6fafa1b71a9fd35335a0a177fd66aa595a0d13c">a6fafa1b71</a></li>
+		<li>Documentation-dbus.py:<a href="https://github.com/hyades/gst-switch/commit/38c6166674af56706b7718c106fbfe26e842f27a">38c6166674</a></li>
+		<li>Documentation server.py:<a href="https://github.com/hyades/gst-switch/commit/f78f8d1aa35e58996a01fceb2c26d10fc8d76c42">f78f8d1aa3</a></li>
 	</ul>
 </p>
 <p>
