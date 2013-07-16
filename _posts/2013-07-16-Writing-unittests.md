@@ -47,8 +47,9 @@ Date: 16
 <p>
 	I will be continuing with writing unittests for each function of the code :)
 </p>
+<br>
 <p>
-	An off-topic thing. Getting all commits I had made in the last days was such a headache. I have made this small little script for getting these commits and generating html code out of it <a href="https://github.com/hyades/hyades.github.com/blob/master/commits.py">https://github.com/hyades/hyades.github.com/blob/master/commits.py</a>
+	An off-topic thing. Getting all commits I had made in the last days on the blog page was such a headache. I have made this small little script for getting these commits and generating html code out of it <a href="https://github.com/hyades/hyades.github.com/blob/master/commits.py">https://github.com/hyades/hyades.github.com/blob/master/commits.py</a>
 </p>
 
 <div class="row">	

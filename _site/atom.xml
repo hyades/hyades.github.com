@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-17T01:31:00+05:30</updated>
+ <updated>2013-07-17T01:33:22+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -72,8 +72,11 @@
 &lt;/p&gt;
 
 
+&lt;br&gt;
+
+
 &lt;p&gt;
-    An off-topic thing. Getting all commits I had made in the last days was such a headache. I have made this small little script for getting these commits and generating html code out of it &lt;a href=&quot;https://github.com/hyades/hyades.github.com/blob/master/commits.py&quot;&gt;https://github.com/hyades/hyades.github.com/blob/master/commits.py&lt;/a&gt;
+    An off-topic thing. Getting all commits I had made in the last days on the blog page was such a headache. I have made this small little script for getting these commits and generating html code out of it &lt;a href=&quot;https://github.com/hyades/hyades.github.com/blob/master/commits.py&quot;&gt;https://github.com/hyades/hyades.github.com/blob/master/commits.py&lt;/a&gt;
 &lt;/p&gt;
 
 
