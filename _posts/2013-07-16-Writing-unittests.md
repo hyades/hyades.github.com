@@ -29,7 +29,16 @@ Date: 16
 <p>
 	The commits made are
 	<ul>
-		<li>Added unittest for BaseServer.set_video_port: <a href="https://github.com/hyades/gst-switch/commit/6963aa5bbbddbe8d25e776ca4727a509132485e5">6963aa5bb</a></li>
+		<li>Added unittest for BaseServer.set_video_port: <a href="https://github.com/hyades/gst-switch/commit/6963aa5bbbddbe8d25e776ca4727a509132485e5">6963aa5bbbddbe8d25e776ca4727a509132485e5</a></li>
+		<li>Added unittest for BaseServer.set_audio_port: <a href="https://github.com/hyades/gst-switch/commit/761fd99c5519da82c79ee5e31f77cf07769a0b65">761fd99c5519da82c79ee5e31f77cf07769a0b65</a></li>
+		<li>Added unittest for BaseServer.set_control_port: <a href="https://github.com/hyades/gst-switch/commit/761fd99c5519da82c79ee5e31f77cf07769a0b65">761fd99c5519da82c79ee5e31f77cf07769a0b65</a></li>
+		<li>Added unittest for BaseServer.set_control_port: <a href="https://github.com/hyades/gst-switch/commit/b4584d1c9214a555af052b7542adfa707acc9a1b">b4584d1c9214a555af052b7542adfa707acc9a1b</a></li>
+		<li>Added unittest for BaseServer.set_record_file: <a href="https://github.com/hyades/gst-switch/commit/ab2743e221b45c980a75a9e9464f6ea61f6748a0">ab2743e221b45c980a75a9e9464f6ea61f6748a0</a></li>
+		<li>Added unittest for BaseServer.get_video_port: <a href="https://github.com/hyades/gst-switch/commit/a403b96a3baaab320578530b2ebfc502cf1973b3">a403b96a3baaab320578530b2ebfc502cf1973b3</a></li>
+		<li>Added unittest for BaseServer.get_audio_port: <a href="https://github.com/hyades/gst-switch/commit/933598967c845f394d2744322b1063b583bb53a9">933598967c845f394d2744322b1063b583bb53a9</a></li>
+		<li>Added unittest for BaseServer.get_audio_port: <a href="https://github.com/hyades/gst-switch/commit/c8f2ccdf9675dd4ce3b146e35feda6289cce307a">c8f2ccdf9675dd4ce3b146e35feda6289cce307a</a></li>
+		<li>Added unittest for BaseServer.get_control_port: <a href="https://github.com/hyades/gst-switch/commit/f4ce165cb8f5d6b54c1ae3836025f1e0600ade6d">f4ce165cb8f5d6b54c1ae3836025f1e0600ade6d</a></li>
+		<li>Added unittest for BaseServer.get_record_file: <a href="https://github.com/hyades/gst-switch/commit/b5e4a4002c33d9f9a2c97184e6d9eacbeaad06a3">b5e4a4002c33d9f9a2c97184e6d9eacbeaad06a3</a></li>
 	</ul>
 </p>
 <h3>

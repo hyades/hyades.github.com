@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-16T20:31:45+05:30</updated>
+ <updated>2013-07-16T23:50:17+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -48,7 +48,16 @@
 &lt;p&gt;
     The commits made are
     &lt;ul&gt;
-        &lt;li&gt;Added unittest for BaseServer.set_video_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/6963aa5bbbddbe8d25e776ca4727a509132485e5&quot;&gt;6963aa5bb&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.set_video_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/6963aa5bbbddbe8d25e776ca4727a509132485e5&quot;&gt;6963aa5bbbddbe8d25e776ca4727a509132485e5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.set_audio_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/761fd99c5519da82c79ee5e31f77cf07769a0b65&quot;&gt;761fd99c5519da82c79ee5e31f77cf07769a0b65&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.set_control_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/761fd99c5519da82c79ee5e31f77cf07769a0b65&quot;&gt;761fd99c5519da82c79ee5e31f77cf07769a0b65&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.set_control_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b4584d1c9214a555af052b7542adfa707acc9a1b&quot;&gt;b4584d1c9214a555af052b7542adfa707acc9a1b&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.set_record_file: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ab2743e221b45c980a75a9e9464f6ea61f6748a0&quot;&gt;ab2743e221b45c980a75a9e9464f6ea61f6748a0&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.get_video_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/a403b96a3baaab320578530b2ebfc502cf1973b3&quot;&gt;a403b96a3baaab320578530b2ebfc502cf1973b3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.get_audio_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/933598967c845f394d2744322b1063b583bb53a9&quot;&gt;933598967c845f394d2744322b1063b583bb53a9&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.get_audio_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/c8f2ccdf9675dd4ce3b146e35feda6289cce307a&quot;&gt;c8f2ccdf9675dd4ce3b146e35feda6289cce307a&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.get_control_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/f4ce165cb8f5d6b54c1ae3836025f1e0600ade6d&quot;&gt;f4ce165cb8f5d6b54c1ae3836025f1e0600ade6d&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittest for BaseServer.get_record_file: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b5e4a4002c33d9f9a2c97184e6d9eacbeaad06a3&quot;&gt;b5e4a4002c33d9f9a2c97184e6d9eacbeaad06a3&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/p&gt;
 
