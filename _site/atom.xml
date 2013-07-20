@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-20T10:38:43+05:30</updated>
+ <updated>2013-07-20T18:32:15+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -12,19 +12,135 @@
  
  
  <entry>
+   <title>Exception Handling and Unittests</title>
+   <link href="http://hyades.github.io/blog/Exception-Handling-and-Unittests"></link>
+   <updated>2013-07-20T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Exception-Handling-and-Unittests</id>
+   <content type="html">&lt;h2&gt;
+    Commits:
+&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Added unittests for server.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/e93df29e12b92c87cfbdf2878682920fb0513437&quot;&gt;e93df29e12b92c87cfbdf2878682920fb0513437&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added properties for server.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b1fb7f1bd5226f666c47555b360a97c208951499&quot;&gt;b1fb7f1bd5226f666c47555b360a97c208951499&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Documentation: server.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/be12843f29839b6f9875b71c59c386e044256170&quot;&gt;be12843f29839b6f9875b71c59c386e044256170&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;h3&gt;
+    What I Did Today..
+&lt;/h3&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;I modified &lt;a href=&quot;https://github.com/hyades/gst-switch/blob/python-api/python-api/gstswitch/server.py&quot;&gt;server.py&lt;/a&gt;. I finally learnt what the decorator operator in Python does. I added properties for path, video_port, audio_port, control_port and record_file. This allowed me to add exception handlers. Also detection of errors and raising is possible.&lt;/li&gt;
+        &lt;li&gt;I wrote unittests &lt;a href=&quot;https://github.com/hyades/gst-switch/blob/python-api/python-api/gstswitch/test_server.py&quot;&gt;test_server.py&lt;/a&gt;&lt;/li&gt;. These cover almost all errors that may come up in server.py
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;h3&gt;Problems I Faced..&lt;/h3&gt;
+
+
+&lt;ul&gt;
+    &lt;li&gt;
+        Using properties: Very nicely explained at:
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/6618002/python-property-versus-getters-and-setters#answer-6618176&quot;&gt;http://stackoverflow.com/questions/6618002/python-property-versus-getters-and-setters#answer-6618176&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/6304040/real-world-example-about-how-to-use-property-feature-in-python&quot;&gt;http://stackoverflow.com/questions/6304040/real-world-example-about-how-to-use-property-feature-in-python&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Next What..&lt;/h3&gt;
+
+
+&lt;p&gt;
+    Do the same for all other files (Write properties wherever required and unittests)
+&lt;/p&gt;
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Correcting-lots-of-stuff&quot; title=&quot;Previous Post: Correcting lots of stuff&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>Correcting lots of stuff</title>
    <link href="http://hyades.github.io/blog/Correcting-lots-of-stuff"></link>
    <updated>2013-07-20T00:00:00+05:30</updated>
    <id>http://hyades.github.io/blog/Correcting-lots-of-stuff</id>
    <content type="html">&lt;h2&gt;
-    What was wrong
+    What was Wrong
 &lt;/h2&gt;
 
 
 &lt;p&gt;
     While writing unittests I went off-track. Thankfully, mithro guided me at correct time. Two major wrong things I was doing were:
     &lt;ol&gt;
-        &lt;li&gt;For testing purposes, to each and every function in my code I was adding input validation statements, so that I did not get any TypeError or ValueError while running it. Instead of doing this, I should have made exceptiion handlers. So my last few commits were not useful at all and I had to remove them.&lt;/li&gt;
+        &lt;li&gt;For testing purposes, to each and every function in my code I was adding input validation statements, so that I did not get any TypeError or ValueError while running it. Instead of doing this, I should have made exception handlers. So my last few commits were not useful at all and I had to remove them.&lt;/li&gt;
         &lt;li&gt;I was using setters and getters in my code. I had added them to give extra abstraction to the user. However, I learnt that in python these are seldom used. So, I had to remove these lines from the code.&lt;/li&gt;
     &lt;/ol&gt;
     These things were the reason I delayed writing this blog post.
@@ -64,7 +180,7 @@
 
 
 &lt;p&gt;
-    From above experience I learnt that I had to put exception handlers in my code. I had very little knowledge of excption handlers and absolutely no experience.
+    From above experience I learnt that I had to put exception handlers in my code. I had very little knowledge of exception handlers and absolutely no experience.
 &lt;/p&gt;
 
 
@@ -96,7 +212,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Writing-unittests&quot; title=&quot;Previous Post: Writing unittests&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Writing-unittests&quot; title=&quot;Previous Post: Writing unittests&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Exception-Handling-and-Unittests&quot; title=&quot;Next Post: Exception Handling and Unittests&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
