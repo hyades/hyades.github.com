@@ -8,12 +8,12 @@ Date: 20
 ---
 
 <h2>
-	What was wrong
+	What was Wrong
 </h2>
 <p>
 	While writing unittests I went off-track. Thankfully, mithro guided me at correct time. Two major wrong things I was doing were:
 	<ol>
-		<li>For testing purposes, to each and every function in my code I was adding input validation statements, so that I did not get any TypeError or ValueError while running it. Instead of doing this, I should have made exceptiion handlers. So my last few commits were not useful at all and I had to remove them.</li>
+		<li>For testing purposes, to each and every function in my code I was adding input validation statements, so that I did not get any TypeError or ValueError while running it. Instead of doing this, I should have made exception handlers. So my last few commits were not useful at all and I had to remove them.</li>
 		<li>I was using setters and getters in my code. I had added them to give extra abstraction to the user. However, I learnt that in python these are seldom used. So, I had to remove these lines from the code.</li>
 	</ol>
 	These things were the reason I delayed writing this blog post.
@@ -44,7 +44,7 @@ Date: 20
 	Exception Handling
 </h2>
 <p>
-	From above experience I learnt that I had to put exception handlers in my code. I had very little knowledge of excption handlers and absolutely no experience.
+	From above experience I learnt that I had to put exception handlers in my code. I had very little knowledge of exception handlers and absolutely no experience.
 </p>
 <p>
 	Some good links that I found were very useful in the field of exception handling and testing:
