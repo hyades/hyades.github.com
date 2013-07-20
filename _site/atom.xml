@@ -4,12 +4,157 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-17T01:33:22+05:30</updated>
+ <updated>2013-07-20T10:38:43+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Correcting lots of stuff</title>
+   <link href="http://hyades.github.io/blog/Correcting-lots-of-stuff"></link>
+   <updated>2013-07-20T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Correcting-lots-of-stuff</id>
+   <content type="html">&lt;h2&gt;
+    What was wrong
+&lt;/h2&gt;
+
+
+&lt;p&gt;
+    While writing unittests I went off-track. Thankfully, mithro guided me at correct time. Two major wrong things I was doing were:
+    &lt;ol&gt;
+        &lt;li&gt;For testing purposes, to each and every function in my code I was adding input validation statements, so that I did not get any TypeError or ValueError while running it. Instead of doing this, I should have made exceptiion handlers. So my last few commits were not useful at all and I had to remove them.&lt;/li&gt;
+        &lt;li&gt;I was using setters and getters in my code. I had added them to give extra abstraction to the user. However, I learnt that in python these are seldom used. So, I had to remove these lines from the code.&lt;/li&gt;
+    &lt;/ol&gt;
+    These things were the reason I delayed writing this blog post.
+&lt;/p&gt;
+
+
+&lt;h2&gt;
+    Commits:
+&lt;/h2&gt;
+
+
+&lt;p&gt;
+    A rather long list of commits:
+    &lt;ul&gt;
+        &lt;li&gt;exceptions for run, terminate and kill: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/af1bd7c8645b82fd2a725655fd6905709d6d8d45&quot;&gt;af1bd7c8645b82fd2a725655fd6905709d6d8d45&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;exceptions for run, terminate and kill: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/51dada1c0b16e8e3fd90eb7a967fb583b87d76f8&quot;&gt;51dada1c0b16e8e3fd90eb7a967fb583b87d76f8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Exception handling for Server.run and py.tests: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/8807d07c2d98d5d39b8a0c22eabfc77b619369e1&quot;&gt;8807d07c2d98d5d39b8a0c22eabfc77b619369e1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;exception handling for server process creation: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/832e0cb1948c601faa20292b6883a4d4d12bb1dc&quot;&gt;832e0cb1948c601faa20292b6883a4d4d12bb1dc&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;added exception for subprocess: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/8ef1346d40822b47e3cba16fd42848843a265783&quot;&gt;8ef1346d40822b47e3cba16fd42848843a265783&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;gst-option added and updated connection.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/9f8434cb9f06a25d6f9e3fec22a04289d2ba458e&quot;&gt;9f8434cb9f06a25d6f9e3fec22a04289d2ba458e&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Removed wrong unittests: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/269d307d5edd1b6d621457038b9148152bf14e12&quot;&gt;269d307d5edd1b6d621457038b9148152bf14e12&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Made helpers.py and testsource.py pythonic: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/18608b8702826279711ed9d749f435b4340607ee&quot;&gt;18608b8702826279711ed9d749f435b4340607ee&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Made server.py pythonic: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/abecf31fb2d429a84288026008e44feae3e8640c&quot;&gt;abecf31fb2d429a84288026008e44feae3e8640c&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Made connection.py pythonic and removed dbus.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/2c7c7c03b527885c6bc0043dd73a0aeb7d29444d&quot;&gt;2c7c7c03b527885c6bc0043dd73a0aeb7d29444d&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Made connection.py pythonic and removed dbus.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/82cd61beadbd499f9424409c218bcae5b4840217&quot;&gt;82cd61beadbd499f9424409c218bcae5b4840217&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;fixed typo: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/e11aaea2b080d63f55a95b682593d4e6c50c1606&quot;&gt;e11aaea2b080d63f55a95b682593d4e6c50c1606&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Fixed problems: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/48e1742478627741b7c6def34ab2c2f972609b82&quot;&gt;48e1742478627741b7c6def34ab2c2f972609b82&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;
+    Exception Handling
+&lt;/h2&gt;
+
+
+&lt;p&gt;
+    From above experience I learnt that I had to put exception handlers in my code. I had very little knowledge of excption handlers and absolutely no experience.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Some good links that I found were very useful in the field of exception handling and testing:
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;http://pythontesting.net/framework/pytest/pytest-introduction/&quot;&gt;http://pythontesting.net/framework/pytest/pytest-introduction&lt;/a&gt; : This page nicely explains how to use py.test.&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://www.itmaybeahack.com/book/python-2.6/html/p02/p02c07_exceptions.html&quot;&gt;http://www.itmaybeahack.com/book/python-2.6/html/p02/p02c07_exceptions.html&lt;/a&gt;: A very long and very good page which explains exception handling to its core.&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/6180185/custom-python-exceptions-with-error-codes-and-error-messages&quot;&gt;http://stackoverflow.com/questions/6180185/custom-python-exceptions-with-error-codes-and-error-messages&lt;/a&gt;: Nicely explains how to create custom exception classes&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://blog.ianbicking.org/2007/09/12/re-raising-exceptions/&quot;&gt;http://blog.ianbicking.org/2007/09/12/re-raising-exceptions/&lt;/a&gt;: Nicely explains how to raise and re-raise exceptions in python&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    After spending lots of time on reading exception handling in python, I made a few changes to the code, where I defined some custom Exceptions like PathError: Raised when a wrong path is specified to the run the gst-switch-srv process. Another one is ServerProcessError: Raised when something wrong happens with the process running like a OSError indicating some internal fault.
+&lt;/p&gt;
+
+
+&lt;h2&gt;Things to do..&lt;/h2&gt;
+
+
+&lt;p&gt;
+    Add exception handling for all modules and write py.test testing modules for testing them
+&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Writing-unittests&quot; title=&quot;Previous Post: Writing unittests&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Writing unittests</title>
@@ -84,7 +229,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Sphinx-Documentation&quot; title=&quot;Previous Post: Sphinx Documentation&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Sphinx-Documentation&quot; title=&quot;Previous Post: Sphinx Documentation&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Correcting-lots-of-stuff&quot; title=&quot;Next Post: Correcting lots of stuff&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
