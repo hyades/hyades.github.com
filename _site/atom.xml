@@ -4,12 +4,148 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-20T18:32:15+05:30</updated>
+ <updated>2013-07-22T01:08:24+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Exception Handling - connection.py</title>
+   <link href="http://hyades.github.io/blog/Exception-Handling---connection.py"></link>
+   <updated>2013-07-22T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Exception-Handling---connection.py</id>
+   <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Added unittests for bus: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/7c6f1ea8ed5e5f68aaa1d55fd1641a0e7a997190&quot;&gt;7c6f1ea8ed5e5f68aaa1d55fd1641a0e7a997190&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Changed naming in test_server.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/a3d31f10be8696d9f1ea0203bf5c53b0387a4e9a&quot;&gt;a3d31f10be8696d9f1ea0203bf5c53b0387a4e9a&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittests connection.py - address: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/8c8663100f09b968c8ce678fe87e2315916abfdd&quot;&gt;8c8663100f09b968c8ce678fe87e2315916abfdd&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added properties and exception - connection.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/76ce5337daebeefd62c9194f96abad8f7fc1054a&quot;&gt;76ce5337daebeefd62c9194f96abad8f7fc1054a&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;GError Exception Handling connection.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/f1506f87654dda984772b5c9ad493a5b8414d56a&quot;&gt;f1506f87654dda984772b5c9ad493a5b8414d56a&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;h2&gt;Things I did&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;b&gt;Added exceptions in connection.py&lt;/b&gt;
+            &lt;br&gt;
+            The functions in connection.py interact with the low level GDbus API. It is the API at gi.repository.Gio. Using this API, I am making new connection over dbus and invoking remote methods. Exception handling is done using 'GError'. This exception which occurred is sys.exc_info()[1]. lets say :
+            
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exc_info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+            Then the error message is contained in error.message and the domain in error.domain.
+            
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;domain&lt;/span&gt;
+            
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+        &lt;/li&gt;
+        &lt;li&gt;&lt;b&gt;Added properties in connection.py&lt;/b&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;b&gt;Added unittests&lt;/b&gt; based on py.test modules in connection.py. I covered a small chunk of it. Address and bus_name are done.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;h2&gt;Problems I faced&lt;/h2&gt;
+
+
+&lt;p&gt;
+    The Exception of DBus (GError) are located at the file /usr/lib/python2.7/dist-packages/gi/_glib/option.py and /usr/lib/python2.7/dist-packages/gi/_glib/__init__.py. However, including in my PYTHON_PATH was a problem. Somehow doing this worked
+    
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;gi.repository.GLib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GError&lt;/span&gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    Some good links I found are:
+    &lt;br&gt;
+    &lt;a href=&quot;https://developer.gnome.org/glib/2.34/glib-Error-Reporting.html&quot;&gt;https://developer.gnome.org/glib/2.34/glib-Error-Reporting.html&lt;/a&gt;: Explains the error reporting procedure in C.
+&lt;/p&gt;
+
+
+&lt;h2&gt;What Next..&lt;/h2&gt;
+
+
+&lt;p&gt;Writing unittests for connection.py. At present it covers only 5-10% of connection.py&lt;/p&gt;
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Exception-Handling-and-Unittests&quot; title=&quot;Previous Post: Exception Handling and Unittests&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Exception Handling and Unittests</title>
@@ -67,7 +203,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Correcting-lots-of-stuff&quot; title=&quot;Previous Post: Correcting lots of stuff&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Correcting-lots-of-stuff&quot; title=&quot;Previous Post: Correcting lots of stuff&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Exception-Handling---connection.py&quot; title=&quot;Next Post: Exception Handling - connection.py&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
