@@ -4,12 +4,154 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-22T01:08:24+05:30</updated>
+ <updated>2013-07-24T03:43:15+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Unittests Mocking and Coverage</title>
+   <link href="http://hyades.github.io/blog/Unittests-Mocking-and-Coverage"></link>
+   <updated>2013-07-24T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Unittests-Mocking-and-Coverage</id>
+   <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Added properties - controller.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/0c75a0590a0e683bfbaaba55488fb780e33579b5&quot;&gt;0c75a0590a0e683bfbaaba55488fb780e33579b5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Unittests for connection.py - 100%coverage: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/2a5086326b8a72ed406b6a61ccf33b09d02345a5&quot;&gt;2a5086326b8a72ed406b6a61ccf33b09d02345a5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Changes in connection.py. Added unittests for connection.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/9ad1ed7e21dcec56b54e4a53e32d075db9c2dcf3&quot;&gt;9ad1ed7e21dcec56b54e4a53e32d075db9c2dcf3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Added unittests server.py - 100% coverage: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/9c74a37a24e7704973427cd939111b740a492fc8&quot;&gt;9c74a37a24e7704973427cd939111b740a492fc8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;test for OSError in terminate: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/fab6c53deafb1bc5b5005a9fdccacd763972e51f&quot;&gt;fab6c53deafb1bc5b5005a9fdccacd763972e51f&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;remove unnecessarry: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/e8c38b7a7e6a82e3d1d235214b0255642aa3256a&quot;&gt;e8c38b7a7e6a82e3d1d235214b0255642aa3256a&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;modify gitignore: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/7a4db71936352e6e51a9f27f38ca22f70abb608b&quot;&gt;7a4db71936352e6e51a9f27f38ca22f70abb608b&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;modify gitignore: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b7d83a907598b77df7ee1927907c814e615ede63&quot;&gt;b7d83a907598b77df7ee1927907c814e615ede63&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Removed os.devnull exception: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/bafe6905dfceed7870087bd95152ae0f2e89f7de&quot;&gt;bafe6905dfceed7870087bd95152ae0f2e89f7de&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Removed os.devnull exception: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/eb0895dbb0625b9b58d01bcd815607b0abc1aacf&quot;&gt;eb0895dbb0625b9b58d01bcd815607b0abc1aacf&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Removed os.devnull exception: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/03895c871a61f5c0ed4a930d7a69802a5d927a3c&quot;&gt;03895c871a61f5c0ed4a930d7a69802a5d927a3c&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Removed os.devnull exception: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/d74829c50a8aa1f3e61f1d6211ee20ac2f619fe5&quot;&gt;d74829c50a8aa1f3e61f1d6211ee20ac2f619fe5&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+&lt;/p&gt;
+
+
+&lt;h2&gt;Things done&lt;/h2&gt;
+
+
+&lt;p&gt;
+    Last two days were almost devoted to unittests. I learnt how to use pytest-cov. The command issued by me is
+    
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;py.test --cov-report html --cov &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file/files to be checked&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file having unittests&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+py.test --cov-report html --cov server.py test_server.py
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    I also learnt how to make mock classes and functions. I also learnt about monkeypatch techniques. Some links about these are:
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;http://holgerkrekel.net/2009/03/03/monkeypatching-in-unit-tests-done-right/
+&quot;&gt;http://holgerkrekel.net/2009/03/03/monkeypatching-in-unit-tests-done-right/
+&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://pytest.org/latest/monkeypatch.html#_pytest.monkeypatch.monkeypatch.setattr
+&quot;&gt;http://pytest.org/latest/monkeypatch.html#_pytest.monkeypatch.monkeypatch.setattr
+&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/6018040/py-test-use-monkeypatch-in-custom-funcargs&quot;&gt;http://stackoverflow.com/questions/6018040/py-test-use-monkeypatch-in-custom-funcargs&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    I have achieved 100% coverage for server.py and connection
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Next..&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Write Makefile for pylint and pep8&lt;/li&gt;
+        &lt;li&gt;100% coverage for rest files&lt;/li&gt;
+        &lt;li&gt;Integration tests&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Exception-Handling---connection.py&quot; title=&quot;Previous Post: Exception Handling - connection.py&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Exception Handling - connection.py</title>
@@ -87,7 +229,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Exception-Handling-and-Unittests&quot; title=&quot;Previous Post: Exception Handling and Unittests&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Exception-Handling-and-Unittests&quot; title=&quot;Previous Post: Exception Handling and Unittests&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Unittests-Mocking-and-Coverage&quot; title=&quot;Next Post: Unittests Mocking and Coverage&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
