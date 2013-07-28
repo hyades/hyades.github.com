@@ -4,12 +4,175 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-24T03:43:15+05:30</updated>
+ <updated>2013-07-28T17:19:51+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Makefile & Unittests & Lint</title>
+   <link href="http://hyades.github.io/blog/Makefile-%26-Unittests-%26-Lint"></link>
+   <updated>2013-07-27T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Makefile-&-Unittests-&-Lint</id>
+   <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
+
+
+&lt;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Coverage and unittests - test_controller.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/28a2e3b72629870e2ff43d59205d992168a5ecb5&quot;&gt;28a2e3b72629870e2ff43d59205d992168a5ecb5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pylint-testsource.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/c62fd9be3e276497125f44fe92b492c96b5aec86&quot;&gt;c62fd9be3e276497125f44fe92b492c96b5aec86&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Modified Makefile: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/836e41f953fe99419f0e913d6ba5cdf19d043a69&quot;&gt;836e41f953fe99419f0e913d6ba5cdf19d043a69&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pylint helpers: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/1761c8006e4c2a06b820c9f6f3a40cc82911b1f8&quot;&gt;1761c8006e4c2a06b820c9f6f3a40cc82911b1f8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pylint controller.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/8094c21e4a578559e2bdcc1dc4960314393ad63d&quot;&gt;8094c21e4a578559e2bdcc1dc4960314393ad63d&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pylint connection.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/df03803b679192a3535cc798332ce4080e6790b6&quot;&gt;df03803b679192a3535cc798332ce4080e6790b6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified .gitignore: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/e4c0e9d9f990f7469375ae4050e190481858d911&quot;&gt;e4c0e9d9f990f7469375ae4050e190481858d911&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Added Makefile - pylint: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/f3f119ed86ed8dc19a3d40978f31e19c3e73f599&quot;&gt;f3f119ed86ed8dc19a3d40978f31e19c3e73f599&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;improved syntax - pylint: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/828d5b06566e27043b0cfe3a2f679fed9b7e718a&quot;&gt;828d5b06566e27043b0cfe3a2f679fed9b7e718a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;pylint: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/deea82673be84ce1db99add6a9fc507ec1201b70&quot;&gt;deea82673be84ce1db99add6a9fc507ec1201b70&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A bit of pylint - -server.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/c3b73951b0e0795b1ae860442f08877a21af4330&quot;&gt;c3b73951b0e0795b1ae860442f08877a21af4330&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Added __init__.py. Added __all__ to all files. Added a test.py file: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/7dc299753b194a8ea5e78a1c40f0c35354174fe7&quot;&gt;7dc299753b194a8ea5e78a1c40f0c35354174fe7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;meaningful names to call_sync parameters: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ef2b4a490f1dc6a3b46fe1a1d5cb60902521d824&quot;&gt;ef2b4a490f1dc6a3b46fe1a1d5cb60902521d824&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Modified MockConnection() and its usage: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/53c9a0c5cb420749be6c87feeab4e0c145bc62ed&quot;&gt;53c9a0c5cb420749be6c87feeab4e0c145bc62ed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;properties and doc string in place: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/07c3348c13a2025a5373e4cd7a5f7c9a2b1cc8ec&quot;&gt;07c3348c13a2025a5373e4cd7a5f7c9a2b1cc8ec&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Makefile&lt;/h2&gt;
+
+
+&lt;p&gt;
+I made a makefile to automate running py.test, coverage and pylint on the code. This is first time I am writing one :) The one i wrote assumes that py.test (with coverage.py plugin) and pylint is installed on your system. 
+&lt;/p&gt;
+
+
+&lt;p&gt;For running py.test along with coverage:
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;make coverage
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/p&gt;
+
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;
+    For running pylint over the code:
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;make lint
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/p&gt;
+
+
+&lt;p&gt;The result is generated as html files in a folder &lt;b&gt;reports&lt;/b&gt; in the present working directory.&lt;/p&gt;
+
+
+&lt;h2&gt;Linting the code&lt;/h2&gt;
+
+
+&lt;p&gt;I ran pylint on my code. Ofc it gave a very huge list of warning/errors! Slowly, they were solved. I tried my best to remove those, but some of those just cannot be removed :) Running pylint using Makefile gives a better estimate of the situation.&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Exceptions and Unittests&lt;/h2&gt;
+
+
+&lt;p&gt;I also added exceptions and unittests for helper.py and testsource.py. Now the unittests part is almost complete with 100% coverage.&lt;/p&gt;
+
+
+&lt;h2&gt;Others..&lt;/h2&gt;
+
+
+&lt;p&gt;Some small changes were also made which are reflected from the git commit message history.&lt;/p&gt;
+
+
+&lt;h2&gt;TODO:&lt;/h2&gt;
+
+
+&lt;ul&gt;
+    &lt;li&gt;Integration tests&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Unittests-Mocking-and-Coverage&quot; title=&quot;Previous Post: Unittests Mocking and Coverage&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Unittests Mocking and Coverage</title>
@@ -93,7 +256,7 @@ py.test --cov-report html --cov server.py test_server.py
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Exception-Handling---connection.py&quot; title=&quot;Previous Post: Exception Handling - connection.py&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Exception-Handling---connection.py&quot; title=&quot;Previous Post: Exception Handling - connection.py&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Makefile-%26-Unittests-%26-Lint&quot; title=&quot;Next Post: Makefile &amp; Unittests &amp; Lint&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
