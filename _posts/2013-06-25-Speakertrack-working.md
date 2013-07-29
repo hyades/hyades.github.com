@@ -9,27 +9,12 @@ Date: 25
 
 <h2>Gstreamer Uninstalled Script</h2>
 <p>
-	I was earlier experiencing many problems installing the gstreamer package for running the speakertrack modules. This task was made easy by the gst-uninstalled script (<a href="http://cgit.freedesktop.org/gstreamer/gstreamer/tree/scripts/gst-uninstalled">http://cgit.freedesktop.org/gstreamer/gstreamer/tree/scripts/gst-uninstalled</a>). I downloaded the script and ran it. This script clones the gstreamer git modules (gstreamer, gst-plugins-base, gst-plugins-good, gst-plugins-bad, gst-plugins-ugly) into "~/gst/master". I replaced the gst-plugins-bad module by Duzy's one from speakertrack_new branch. The gst-uninstalled script generates a script gst-master at "~/gst". This script is useful in setting the environment variables correctly. These environment variables are needed to install gstreamer in a custom location so that the plugins know where the gstreamer package was installed.
+	I was earlier experiencing many problems installing the gstreamer package for running the speakertrack modules. This task was made easy by the gst-uninstalled script (<a href="http://cgit.freedesktop.org/gstreamer/gstreamer/plain/scripts/create-uninstalled-setup.sh">http://cgit.freedesktop.org/gstreamer/gstreamer/plain/scripts/create-uninstalled-setup.sh</a>). I downloaded the script and ran it. This script clones the gstreamer git modules (gstreamer, gst-plugins-base, gst-plugins-good, gst-plugins-bad, gst-plugins-ugly) into "~/gst/master". I replaced the gst-plugins-bad module by <a href="https://github.com/duzy/gst-plugins-bad.git">Duzy's</a> one from speakertrack_new branch. The gst-uninstalled script generates a script gst-master at "~/gst". This script is useful in setting the environment variables correctly. These environment variables are needed to install gstreamer in a custom location so that the plugins know where the gstreamer package was installed.
 	Now after doing this I followed the setting up instructions. I built like this:
-	{% highlight bash %}
-cd ~/gst/
-./gst-master
-# this sets up the environment and I end up in ~/gst/master/
-cd gstreamer
-./autogen
-# no prefix is required
-make
-cd ../gst-plugins-base
-./autogen
-make
-cd ../gst-plugins-good
-./autogen
-make
-cd ../gst-plugins-bad
-./autogen
-makeid
-	{% endhighlight %}
-	Doing this builds the gstreamer WITHOUT any build errors. The executables - gst-launch-1.0, gst-inpect-1.0 etc are now located at ~/gst/master/gstreamer/tools/.libs. Now, I built the gst-switch in speakertrack branch doing ./autogen and then make and copied the executables from /tools/ - gst-switch-srv, gst-switch-ui and gst-switch-cap to the previous location. Now, running gst-switch-srv and gst-switch-cap worked perfectly with the modules capable of detecting my face :)
+</p>
+<p><script src="https://gist.github.com/hyades/6107999.js"></script></p>
+<p>
+	Doing this builds the gstreamer WITHOUT any build errors. The executables - gst-launch-1.0, gst-inpect-1.0 etc are now located at ~/gst/master/gstreamer/tools/.libs/ or ~/gst/master/gstreamer/tools/ Now, I built the gst-switch in speakertrack branch doing ./autogen and then make and copied the executables from /tools/ - gst-switch-srv, gst-switch-ui and gst-switch-cap to the previous location. Now, running gst-switch-srv and gst-switch-cap worked perfectly with the modules capable of detecting my face :)
 </p>
 <p>
 	The environment variables can also be set using a script like this:
