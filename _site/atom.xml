@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-30T03:00:15+05:30</updated>
+ <updated>2013-07-30T19:46:40+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -22,7 +22,7 @@
 
 
 &lt;p&gt;
-    &lt;a href=&quot;https://github.com/hyades/gst-switch&quot;&gt;Gst-switch&lt;/a&gt; is a replacement of &lt;a href=&quot;http://dvswitch.alioth.debian.org/wiki/&quot;&gt;DVswitch&lt;/a&gt;. Gst-switch has a huge advantage that it is capable of using gstreamer elements and pipelines. A python api is needed not only to control the gst-switch, but to also allow extensive testing of gst-switch components.
+    &lt;a href=&quot;https://github.com/hyades/gst-switch&quot;&gt;Gst-switch&lt;/a&gt; is a replacement of &lt;a href=&quot;http://dvswitch.alioth.debian.org/wiki/&quot;&gt;DVswitch&lt;/a&gt;. Gst-switch has a huge advantage that it is capable of using gstreamer elements and pipelines. A Python API is needed not only to control the gst-switch, but to also allow extensive testing of gst-switch components.
 &lt;/p&gt;
 
 
@@ -83,7 +83,7 @@
 
 &lt;p&gt;.&lt;/p&gt;
 
-&lt;p&gt;I followed installation instructions which I have posted at &lt;a href=&quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;&gt;&lt;/a&gt;. I use gstreamer's uninstalled script for this.
+&lt;p&gt;I followed installation instructions which I have posted at &lt;a href=&quot;http://hyades.github.io/blog/Speakertrack-working&quot;&gt;http://hyades.github.io/blog/Speakertrack-working&lt;/a&gt;. I use gstreamer's uninstalled script for this.
 &lt;/p&gt;
 
 
@@ -139,7 +139,7 @@
 
 
 &lt;p&gt;
-     Since it has low level interactions, most of the usage and documentation for this is available in C &lt;a href=&quot;https://developer.gnome.org/glibmm/stable/group__DBus.html&quot;&gt;here&lt;/a&gt;. Similar thing for python is also available. It can be accessed using &lt;i&gt;from gi.repository import Gio&lt;/i&gt;. The only problem here was the lack of any proper documentation or examples. The only page regarding this is &lt;a href=&quot;http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html&quot;&gt;http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html&lt;/a&gt;. The python api for Gio is merly a wrapper over the C code. Thus almost all functions perform the same task. For example
+     Since it has low level interactions, most of the usage and documentation for this is available in C &lt;a href=&quot;https://developer.gnome.org/glibmm/stable/group__DBus.html&quot;&gt;here&lt;/a&gt;. Similar thing for python is also available. It can be accessed using &lt;i&gt;from gi.repository import Gio&lt;/i&gt;. The only problem here was the lack of any proper documentation or examples. The only page regarding this is &lt;a href=&quot;http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html&quot;&gt;http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html&lt;/a&gt;. The Python API for Gio is merly a wrapper over the C code. Thus almost all functions perform the same task. For example
 &lt;/p&gt;
 
 
