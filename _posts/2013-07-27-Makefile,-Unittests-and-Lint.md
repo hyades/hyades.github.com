@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Makefile & Unittests & Lint
+title: Makefile, Unittests and Lint
 tags: makefile gsoc unittests
 Year: 2013
 Month: 07
