@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-07-30T19:46:40+05:30</updated>
+ <updated>2013-08-01T03:13:30+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -211,7 +211,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Makefile-%26-Unittests-%26-Lint&quot; title=&quot;Previous Post: Makefile &amp; Unittests &amp; Lint&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Makefile%2C-Unittests-and-Lint&quot; title=&quot;Previous Post: Makefile, Unittests and Lint&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
@@ -272,10 +272,10 @@
  </entry>
  
  <entry>
-   <title>Makefile & Unittests & Lint</title>
-   <link href="http://hyades.github.io/blog/Makefile-%26-Unittests-%26-Lint"></link>
+   <title>Makefile, Unittests and Lint</title>
+   <link href="http://hyades.github.io/blog/Makefile%2C-Unittests-and-Lint"></link>
    <updated>2013-07-27T00:00:00+05:30</updated>
-   <id>http://hyades.github.io/blog/Makefile-&-Unittests-&-Lint</id>
+   <id>http://hyades.github.io/blog/Makefile,-Unittests-and-Lint</id>
    <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
 
 
@@ -516,7 +516,7 @@ py.test --cov-report html --cov server.py test_server.py
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Exception-Handling---connection.py&quot; title=&quot;Previous Post: Exception Handling - connection.py&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Makefile-%26-Unittests-%26-Lint&quot; title=&quot;Next Post: Makefile &amp; Unittests &amp; Lint&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Exception-Handling---connection.py&quot; title=&quot;Previous Post: Exception Handling - connection.py&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Makefile%2C-Unittests-and-Lint&quot; title=&quot;Next Post: Makefile, Unittests and Lint&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
