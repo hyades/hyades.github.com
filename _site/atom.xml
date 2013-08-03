@@ -4,12 +4,147 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-01T03:17:29+05:30</updated>
+ <updated>2013-08-03T16:45:04+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Installing Gst-Switch</title>
+   <link href="http://hyades.github.io/blog/Installing-Gst-Switch"></link>
+   <updated>2013-08-03T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Installing-Gst-Switch</id>
+   <content type="html">&lt;p&gt;This method has been used by me to succesfully install gst-switch.&lt;/p&gt;
+
+
+&lt;h2&gt;Dependencies&lt;/h2&gt;
+
+
+&lt;p&gt;The later parts of this post will take care of most of the dependencies. However, one has to be still fixed.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/hyades/6146073.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Clone Repositories&lt;/h2&gt;
+
+
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/hyades/6146097.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Setup Config Paths&lt;/h2&gt;
+
+
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/hyades/6146078.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Build gst-switch&lt;/h2&gt;
+
+
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/hyades/6146103.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Checking if it built correctly&lt;/h2&gt;
+
+
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/hyades/6146110.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Python API&lt;/h2&gt;
+
+
+&lt;p&gt;Since some recent changes were made into the gst-switch speaker-tracking branch, my repository is not currently updated with it. As of now the API will work even if gst-switch is installed. The path to the gst-switch installation has to be provided while starting the server. The path is given as an argument to the Server.&lt;/p&gt;
+
+
+&lt;p&gt;For getting the Python-API code you can do this in any directory of your system (Not in ~/gst/)&lt;/p&gt;
+
+
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/hyades/6146121.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+
+&lt;br&gt;
+
+
+
+
+&lt;p&gt;Now we are ready. Hope this works :)&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/SoC-Midterm-Evaluations&quot; title=&quot;Previous Post: SoC Midterm Evaluations&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>SoC Midterm Evaluations</title>
@@ -211,7 +346,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Makefile%2C-Unittests-and-Lint&quot; title=&quot;Previous Post: Makefile, Unittests and Lint&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Makefile%2C-Unittests-and-Lint&quot; title=&quot;Previous Post: Makefile, Unittests and Lint&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Installing-Gst-Switch&quot; title=&quot;Next Post: Installing Gst-Switch&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
