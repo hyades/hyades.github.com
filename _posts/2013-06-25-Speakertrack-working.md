@@ -18,16 +18,7 @@ Date: 25
 </p>
 <p>
 	The environment variables can also be set using a script like this:
-	{% highlight bash %}
-#!/bin/bash
-export PREFIX="$HOME/releases/prefix"
-export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH"
-export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH"
-export PATH="$PREFIX/bin:$PATH"
-export GST_REGISTRY="$PREFIX/gstreamer-registry.dat"
-echo "Release environment for prefix $PREFIX set up"
-bash
-	{% endhighlight%}
+	{% gist 6176137 %}
 </p>
 <h2>
 	The Code
@@ -37,34 +28,7 @@ bash
 	<ol>
 		<li>The path of the executables now needs to be specified. This will be set to some default value later.</li>
 		<li>Earlier if the server was running and while testing I get a python exception. Now since server.end() call is made afterwards, the gst-switch-srv would have kept on running in the background. Running "ps -ef | grep gst-switch-srv" will confirm it. Now, there is a function which can be called like server.brute_end(). This should be added to except portion in the test script like this script:
-			{% highlight python %}
-from gstswitch import *
-from time import sleep
-import subprocess
-import os
-
-# all executables (gst-launch-1.0, gst-switch-srv, gst-switch-ui, gst-switch-cap) at this path
-path = '/home/hyades/gst/master/gstreamer/tools/.libs/' 
-os.chdir(path)
-s = Server()
-s.run()	# launches the server default parameters
-try:
-	sleep(0.5)
-	cmd = path
-	# connects a gstreamer module to view the output of the gst-switch-srv
-	cmd += "gst-launch-1.0 tcpclientsrc port=3001 ! gdpdepay ! autovideosink"
-	proc = subprocess.Popen(cmd.split(),  bufsize=-1, shell=False)
-	# adding two test video sources
-	s.new_test_video()
-	s.new_test_video(clockoverlay=True)
-	# waiting till user ends the server
-	raw_input()
-	s.end()
-except:
-	# to kill off all processes that are created by the program
-	s.brute_end()
-
-			{% endhighlight %}
+			{% gist 6176144 %}
 		</li>
 	</ol>
 </p>

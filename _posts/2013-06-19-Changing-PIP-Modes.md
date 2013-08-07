@@ -18,22 +18,7 @@ Date: 19
 </h2>
 <p>
 	I have been testing the dbus connection so that it works properly. I concertrated mostly on changing PIP modes. For testing the modules that I made earlier were a LOT of help. It surely saved me the headache of starting gst-switch-srv along with 3 to 4 more processes to feed video input as well as to view the processes. My test script looks simple enough like this
-	{% highlight python %}
-		from gstswitch import *
-		from time import sleep
-		import subprocess
-
-		s = Server() #starting the server
-		sleep(0.5)
-		cmd = "gst-launch-1.0 tcpclientsrc port=3001 ! gdpdepay ! autovideosink"	
-		#calling a process to view output of the gst-switch-srv without using gst-switch-ui
-		proc = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, bufsize=-1, shell=False) 
-		s.new_test_video()	#adding a test video input - random pattern
-		s.new_test_video(clockoverlay=True) #adding a test video-input - random pattern with a clock overlay
-		raw_input() #just waiting for user to kill off the server
-		proc.kill() #killing the output which is giving output
-		s.end() #killing off the server and the test video inputs
-	{% endhighlight %}
+	{% gist 6176103 %}
 	Here I avoided attaching the gst-switch-ui and directly connected a gst-launch element to the output port.
 </p>
 
