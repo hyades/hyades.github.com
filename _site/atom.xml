@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-07T20:36:41+05:30</updated>
+ <updated>2013-08-07T20:48:24+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -16,7 +16,7 @@
    <link href="http://hyades.github.io/blog/Installing-Gst-Switch"></link>
    <updated>2013-08-03T00:00:00+05:30</updated>
    <id>http://hyades.github.io/blog/Installing-Gst-Switch</id>
-   <content type="html">&lt;p&gt;Using this method I was able to correctly install gst-switch (builds as of now)&lt;/p&gt;
+   <content type="html">&lt;p&gt;Using this method I was able to correctly install gst-switch (builds as of now) &lt;/p&gt;
 
 
 &lt;h2&gt;Dependencies&lt;/h2&gt;
