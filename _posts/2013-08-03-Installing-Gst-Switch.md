@@ -7,7 +7,7 @@ Month: 08
 Date: 03
 ---
 
-<p>Using this method I was able to correctly install gst-switch (builds as of now)</p>
+<p>Using this method I was able to correctly install gst-switch (builds as of now) </p>
 <h2>Dependencies</h2>
 <p>The later parts of this post will take care of most of the dependencies. However, one has to be still fixed.</p>
 <p><script src="https://gist.github.com/hyades/6146073.js"></script></p>
