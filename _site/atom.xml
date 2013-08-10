@@ -4,12 +4,163 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-07T22:42:13+05:30</updated>
+ <updated>2013-08-10T17:44:31+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Things I am currently doing</title>
+   <link href="http://hyades.github.io/blog/Things-I-am-currently-doing"></link>
+   <updated>2013-08-10T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Things-I-am-currently-doing</id>
+   <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
+
+
+&lt;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Removed arguments of make: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/f3b8765038dac6db2807f0b20f83e87942ce8592&quot;&gt;f3b8765038dac6db2807f0b20f83e87942ce8592&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Changed structure of files, added pytest option to makefile: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/bcf5ead7317538be6e97d3f3d043c48bbe474a8a&quot;&gt;bcf5ead7317538be6e97d3f3d043c48bbe474a8a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Removed ui.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/7a0b8d0b8be9fe7ae281dc964572725f7a9695d5&quot;&gt;7a0b8d0b8be9fe7ae281dc964572725f7a9695d5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;unittests previews - helpers.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/65e32243919150ea073f709fabd55a93e7f9e660&quot;&gt;65e32243919150ea073f709fabd55a93e7f9e660&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;property - preview_port in helpers.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/7268d9dd9bb14ad243940eb79e9c0da7fd9423c1&quot;&gt;7268d9dd9bb14ad243940eb79e9c0da7fd9423c1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Unittests and exceptions terminate - helpers.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/d2f82fd82d817a367aca88a9b93a15a1e31968f1&quot;&gt;d2f82fd82d817a367aca88a9b93a15a1e31968f1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Unittests and exceptions terminate_index - helpers.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/0245e944d049dd4160f5c4b2181a9f2c161e57b9&quot;&gt;0245e944d049dd4160f5c4b2181a9f2c161e57b9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;changed testsources.VideoSrc and unittests: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/88f500836bc38cc13d7bd25d67491892aad97621&quot;&gt;88f500836bc38cc13d7bd25d67491892aad97621&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;video_port unittests in helper.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/3ca96edaf1f6b2b88b84f39eab5b9dfc740b9222&quot;&gt;3ca96edaf1f6b2b88b84f39eab5b9dfc740b9222&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;unittests videopipeline: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/919b18632e7f8e64158aa1353a88f963aa1a2b4c&quot;&gt;919b18632e7f8e64158aa1353a88f963aa1a2b4c&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Addeed unittests for Preview: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/2b48d8a49e5a011d834a612cd7a1a67ff93123d1&quot;&gt;2b48d8a49e5a011d834a612cd7a1a67ff93123d1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chnaged structure of testsource: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/d4636091827f3178f2b7f336792d1ba1ddac4f8b&quot;&gt;d4636091827f3178f2b7f336792d1ba1ddac4f8b&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chnaged structure of testsource: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/768a2e6bd62e99127c09aa63518aa81f6de3db7d&quot;&gt;768a2e6bd62e99127c09aa63518aa81f6de3db7d&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;unittests for timeoverlay and clockoverlay: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/c64a7686cb17fa1e7da82c2f76130a8959e71b4a&quot;&gt;c64a7686cb17fa1e7da82c2f76130a8959e71b4a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Unittests and exceptions VideoSrc: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/06fc6bea2092fe34493a1bd802a7556e847b85b0&quot;&gt;06fc6bea2092fe34493a1bd802a7556e847b85b0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Added properties for testsource.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/bcd05a27bb27750fdaf9beaad601ed4c2a7e8ee7&quot;&gt;bcd05a27bb27750fdaf9beaad601ed4c2a7e8ee7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Unittest and exceptions controller.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/0a0b282928f6f1deb5d427f57cfc914949c2c4ea&quot;&gt;0a0b282928f6f1deb5d427f57cfc914949c2c4ea&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fixed video size related issues: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/191b0801071e7a2976e9fda43f07106698c25bdc&quot;&gt;191b0801071e7a2976e9fda43f07106698c25bdc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Unittest - controller.py - set_composite_mode: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b3181a267ec1a461c4da2ec61360ded119bfa096&quot;&gt;b3181a267ec1a461c4da2ec61360ded119bfa096&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Unittest - controller.py - get_preview_ports: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/13455e4757a0f192642120a612f29b44568784dc&quot;&gt;13455e4757a0f192642120a612f29b44568784dc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fixed server.py unittests: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/5cd28491526c4d48c4d6318c3a5922d95dd4d459&quot;&gt;5cd28491526c4d48c4d6318c3a5922d95dd4d459&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Committing changes: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/565364e816bf67c872245ecd551c621f495e1935&quot;&gt;565364e816bf67c872245ecd551c621f495e1935&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/p&gt;
+
+
+&lt;h2&gt;Things done.&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+    &lt;li&gt;
+        Unittests are complete - 100% coverage &lt;a href=&quot;http://hyades.github.io/gst-switch/reports/coverage/&quot;&gt;&lt;/a&gt;. Can also be achieved by running &quot;make coverage&quot;.
+    &lt;/li&gt;
+    &lt;li&gt;
+        Exception handling - completed for all the code I had written. &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        Fixed issues with previous unittests. Some were using some external modules. They have been corrected and Mock objects and methods were appropriately added.
+    &lt;/li&gt;
+    &lt;li&gt;
+        Structural changes and Makefile modifications.
+    &lt;/li&gt;
+    &lt;li&gt;
+        Trying out building and installation of gst-switch.
+    &lt;/li&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;Currently, I have started working on &lt;b&gt;integration tests&lt;/b&gt;. I am trying to figure what tools are available to assist me and how to make use of them.&lt;/p&gt;
+
+
+&lt;h2&gt;Problems I am facing..&lt;/h2&gt;
+
+
+&lt;p&gt;
+    A reliable procedure to build gst-switch. One method which works sometimes is to first install gstreamer (without plugins) by running the gst-uninstalled script. Here after cloning gstreamer, I do ./autogen followed by make and make install.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    After this, I follow the procedure I have put in my last &lt;a href=&quot;http://hyades.github.io/blog/Installing-Gst-Switch/&quot;&gt;last blog&lt;/a&gt;. 
+&lt;/p&gt;
+
+
+&lt;h2&gt;Things to do..&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Get proper building and installing intructions ready asap.&lt;/li&gt;
+        &lt;li&gt;Integration test: This is will be the time, when actual bugs might pop up. These bugs can be present in both the gst-switch or the API. For example, from some testing, I have found that changing PIP Modes at a rate faster than a certain rate, causes problems in the gst-switch-srv and leads to a segmentation faults. More tests like these will be needed.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Installing-Gst-Switch&quot; title=&quot;Previous Post: Installing Gst-Switch&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Installing Gst-Switch</title>
@@ -83,7 +234,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/SoC-Midterm-Evaluations&quot; title=&quot;Previous Post: SoC Midterm Evaluations&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/SoC-Midterm-Evaluations&quot; title=&quot;Previous Post: SoC Midterm Evaluations&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Things-I-am-currently-doing&quot; title=&quot;Next Post: Things I am currently doing&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;

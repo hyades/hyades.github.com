@@ -1,3 +1,14 @@
+---
+layout: post
+title: Things I am currently doing
+tags: test unittests gsoc
+Year: 2013
+Month: 08
+Date: 10
+---
+
+<h2>Commits</h2>
+<p>
 <ul>
 <li>Removed arguments of make: <a href="https://github.com/hyades/gst-switch/commit/f3b8765038dac6db2807f0b20f83e87942ce8592">f3b8765038dac6db2807f0b20f83e87942ce8592</a></li>
 <li>Changed structure of files, added pytest option to makefile: <a href="https://github.com/hyades/gst-switch/commit/bcf5ead7317538be6e97d3f3d043c48bbe474a8a">bcf5ead7317538be6e97d3f3d043c48bbe474a8a</a></li>
@@ -22,3 +33,82 @@
 <li>Fixed server.py unittests: <a href="https://github.com/hyades/gst-switch/commit/5cd28491526c4d48c4d6318c3a5922d95dd4d459">5cd28491526c4d48c4d6318c3a5922d95dd4d459</a></li>
 <li>Committing changes: <a href="https://github.com/hyades/gst-switch/commit/565364e816bf67c872245ecd551c621f495e1935">565364e816bf67c872245ecd551c621f495e1935</a></li>
 </ul>
+
+</p>
+<h2>Things done.</h2>
+<p>
+	<ul>
+	<li>
+		Unittests are complete - 100% coverage <a href="http://hyades.github.io/gst-switch/reports/coverage/"></a>. Can also be achieved by running "make coverage".
+	</li>
+	<li>
+		Exception handling - completed for all the code I had written. </ul>
+	</li>
+	<li>
+		Fixed issues with previous unittests. Some were using some external modules. They have been corrected and Mock objects and methods were appropriately added.
+	</li>
+	<li>
+		Structural changes and Makefile modifications.
+	</li>
+	<li>
+		Trying out building and installation of gst-switch.
+	</li>
+</p>
+<p>Currently, I have started working on <b>integration tests</b>. I am trying to figure what tools are available to assist me and how to make use of them.</p>
+<h2>Problems I am facing..</h2>
+<p>
+	A reliable procedure to build gst-switch. One method which works sometimes is to first install gstreamer (without plugins) by running the gst-uninstalled script. Here after cloning gstreamer, I do ./autogen followed by make and make install.
+</p>
+<p>
+	After this, I follow the procedure I have put in my last <a href="http://hyades.github.io/blog/Installing-Gst-Switch/">last blog</a>. 
+</p>
+<h2>Things to do..</h2>
+<p>
+	<ul>
+		<li>Get proper building and installing intructions ready asap.</li>
+		<li>Integration test: This is will be the time, when actual bugs might pop up. These bugs can be present in both the gst-switch or the API. For example, from some testing, I have found that changing PIP Modes at a rate faster than a certain rate, causes problems in the gst-switch-srv and leads to a segmentation faults. More tests like these will be needed.</li>
+	</ul>
+</p>
+
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right">{% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}"><i class="icon-chevron-left"></i></a> 	{% endif %}   {% if page.next.url %} 	<a href="{{page.next.url}}" title="Next Post: {{page.next.title}}"><i class="icon-chevron-right"></i></a> 	{% endif %} </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- Written by hyades -->
+
