@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-16T02:01:32+05:30</updated>
+ <updated>2013-08-16T02:06:52+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -50,7 +50,7 @@
                 &lt;li&gt;
                     &lt;b&gt;Input Sources:&lt;/b&gt; Adding input video and audio sources to the server using the API. I tried adding huge number of video sources. I also connected a preview to view the output. On my machine, on adding more than 50 sources, it seemed that the output was hanging up a bit due to slight stops in the video output. These hangs become much more severe as the number of sources are increased. Around 100 the video was almost frozen. Audio sources were also added.
                 &lt;/li&gt;
-                &lt;li&gt;&lt;b&gt;Controller: &lt;/b&gt; I am currently implementing this part. Till now I was checking if the establish_connection method, which makes a DBus connection to the server is working. Refering to code at &lt;a href=&quot;https://github.com/hyades/gst-switch/blob/python-api/python-api/tests/integrationtests/test_controller.py#L14&quot;&gt;https://github.com/hyades/gst-switch/blob/python-api/python-api/tests/integrationtests/test_controller.py#L14&lt;/a&gt; - I tried starting the server once, and then repeatedly trying to establish a new connection. I have set the NUM value to 3. This was the maximum value possible without any exceptions coming in the code. With NUM=4, the exception is like this: &lt;script src=&quot;https://gist.github.com/6244425.js&quot;&gt; &lt;/script&gt; &lt;/li&gt;
+                &lt;li&gt;&lt;b&gt;Controller: &lt;/b&gt; I am currently implementing this part. Till now I was checking if the establish_connection method, which makes a DBus connection to the server is working. Refering to code at &lt;a href=&quot;https://github.com/hyades/gst-switch/blob/python-api/python-api/tests/integrationtests/test_controller.py#L14&quot;&gt;https://github.com/hyades/gst-switch/blob/python-api/python-api/tests/integrationtests/test_controller.py#L14&lt;/a&gt; - I tried starting the server once, and then repeatedly trying to establish a new connection. I have set the NUM value to 3. This was the maximum value possible without any exceptions coming in the code. With NUM=4, the exception is like this: &lt;code&gt;ConnectionError: unix:abstract=gstswitch (Error receiving data: Connection reset by peer)&lt;/code&gt; &lt;/li&gt;
             &lt;/ul&gt;
         &lt;/li&gt;
     &lt;/ul&gt;
