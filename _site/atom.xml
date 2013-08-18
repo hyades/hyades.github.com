@@ -4,12 +4,137 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-17T04:15:36+05:30</updated>
+ <updated>2013-08-19T02:12:23+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Integration Tests - 3</title>
+   <link href="http://hyades.github.io/blog/Integration-Tests---3"></link>
+   <updated>2013-08-19T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Integration-Tests---3</id>
+   <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
+
+
+&lt;p&gt;
+&lt;ul&gt;
+&lt;li&gt;integration tests - get_preview_ports: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/c259a2512fa04d74f92ee3046f3c08655d522598&quot;&gt;c259a2512fa04d74f92ee3046f3c08655d522598&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;integration tests get_audio_port - 2: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/cf8c501e714cff468142b33343ed93a370492aaf&quot;&gt;cf8c501e714cff468142b33343ed93a370492aaf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;integration tests get_audio_port: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ceb322d2129ec1345a4e066c325b01d83eeaeb6c&quot;&gt;ceb322d2129ec1345a4e066c325b01d83eeaeb6c&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Merge remote-tracking branch 'upstream/speaker-tracking' into python-api
+
+merge upstream: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b52978dfe479ddaa1c0808a21614a67f1c6d20bc&quot;&gt;b52978dfe479ddaa1c0808a21614a67f1c6d20bc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Things completed&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Integration tests. This turned out to be a bit tricky. The &lt;code&gt;get_audio_port()&lt;/code&gt; function returns the first preview audio port. The default ports assigned according to these rules:
+            &lt;ul&gt;
+                &lt;li&gt;&lt;i&gt;Compose Port:&lt;/i&gt; video_port + 1&lt;/li&gt;
+                &lt;li&gt;&lt;i&gt;Encode Port:&lt;/i&gt; video_port + 2&lt;/li&gt;
+                &lt;li&gt;&lt;i&gt;Audio Port:&lt;/i&gt; Depends on which position the first audio stream is input to the gst-switch-srv. The first one will be at port 3003. So if the first stream to enter is an audio stream &lt;code&gt;get_audio_port()&lt;/code&gt; will return 3003. If a video stream is added before the audio one, the &lt;code&gt;get_audio_port&lt;/code&gt; will return 3004.&lt;/li&gt;
+                &lt;li&gt;&lt;i&gt;Preview Ports&lt;/i&gt;: It returns a list of all the preview ports who are streaming into the gst-switch-srv - audio and video. &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Integration tests for get_audio_port&lt;/li&gt;
+        &lt;li&gt;Integration tests for get_preview_ports&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;h2&gt;How to run these tests&lt;/h2&gt;
+
+
+&lt;p&gt;Issue py.test command like &lt;code&gt;py.test test_controller.h&lt;/code&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Or you can also use the Makefile &lt;code&gt;make integration&lt;/code&gt;&lt;/p&gt;
+
+
+&lt;h2&gt;Under progress..&lt;/h2&gt;
+
+
+&lt;p&gt;I am working out a reliable way to compare the outputs of two runs of the program. Problem seems that sometimes an extra black frame may be captured (it is captured as a key-frame). This causes some problems in the comparison process, since the zero-norm of the comparison states that the two frames are absolutely dissimilar.&lt;/p&gt;
+
+
+&lt;p&gt;The current set of tests shows &lt;b&gt;PASSED&lt;/b&gt; 19 out of 20 times. However almost once it fails, the reason is mostly a &lt;i&gt;Connection Closed&lt;/i&gt; or &lt;i&gt;Connection Reset&lt;/i&gt; message from the DBus. This indicates that something went wrong in the server side.&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Tests---2&quot; title=&quot;Previous Post: Integration Tests - 2&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Integration Tests - 2</title>
@@ -57,7 +182,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Testing&quot; title=&quot;Previous Post: Integration Testing&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Testing&quot; title=&quot;Previous Post: Integration Testing&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Integration-Tests---3&quot; title=&quot;Next Post: Integration Tests - 3&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
