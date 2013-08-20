@@ -4,12 +4,137 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-19T02:12:23+05:30</updated>
+ <updated>2013-08-21T00:45:49+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Integration Testing and Comparing Videos</title>
+   <link href="http://hyades.github.io/blog/Integration-Testing-and-Comparing-Videos"></link>
+   <updated>2013-08-21T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Integration-Testing-and-Comparing-Videos</id>
+   <content type="html">&lt;h2&gt;Commits:&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+&lt;li&gt;Video comparison module added: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/68b9f299377af86acdf00b2f2ef38bfea53127bb&quot;&gt;68b9f299377af86acdf00b2f2ef38bfea53127bb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Added a file sink element and frame comparison: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/aa91fe142b5970997db86ee542524b7414da0b7b&quot;&gt;aa91fe142b5970997db86ee542524b7414da0b7b&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;video comparison on key frames: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/eddb97074cf113ae040e6f10a5bdec269a416f6e&quot;&gt;eddb97074cf113ae040e6f10a5bdec269a416f6e&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fixed test.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/a9c7e39fbcb01e95ce68fcc68b1465526fa21a3e&quot;&gt;a9c7e39fbcb01e95ce68fcc68b1465526fa21a3e&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;integration tests - set_compose_mode - passing: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/f019ff38e9e3b752e0ed99e774db21277f32a518&quot;&gt;f019ff38e9e3b752e0ed99e774db21277f32a518&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;integration tests - set_compose_mode - failing: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/7bdeefc5b2fffb98be9331d9660ab9d7545d31c8&quot;&gt;7bdeefc5b2fffb98be9331d9660ab9d7545d31c8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Reduced intensity of tests and removed sleeps: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b935c2bd55e5c15a80b6fa1e5a9bf9a41dbed49a&quot;&gt;b935c2bd55e5c15a80b6fa1e5a9bf9a41dbed49a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Reduced intensity of tests and removed sleeps: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/a588256f5cb2ab385bef27bea570fdbfe0232d95&quot;&gt;a588256f5cb2ab385bef27bea570fdbfe0232d95&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Makefile: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/8ad4ffbad029db57d8157d0cfa2ec87bd88237bb&quot;&gt;8ad4ffbad029db57d8157d0cfa2ec87bd88237bb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Integration Tests:&lt;/h2&gt;
+
+
+&lt;p&gt;
+    I added an extra module which tests the &lt;code&gt;set_compose_mode&lt;/code&gt;. This is the first one in the series of tests in which the output video has to be compared to ensure that everything goes as it is expected. i.e. If a PIP mode change has to occur, the test should ensure that it occurs. 
+&lt;/p&gt;
+
+
+&lt;h2&gt;Comparing the Output Video&lt;/h2&gt;
+
+
+&lt;p&gt;
+    For each test I do the following:
+    &lt;ul&gt;
+        &lt;li&gt;I compare key frames of a video to pre-stored frames. eg. If I am testing for changing PIP mode, I will have a two frames - one before the change and one after it. Now if the code which generates these frames from the video is run over the test video, it should generate same frames.&lt;/li&gt;
+        &lt;li&gt;For generating key frames, I use ffmpeg. Using ffmpeg's inbuilt key frame selector produces black frames in between which makes comparison difficult. So I conduct the test for 6 seconds. First 3 seconds original video is present. At 3 second exact time from start, the change is made. So the next 3 seconds have the modified output refecting the change. So I take frames at 1.5 and 4.5 second marks. Doing this ensures that I get only those which are indeed needed. &lt;/li&gt;
+        &lt;li&gt;After I have both the frames, I use scipy to calculate the zero norm of the two images. Zero norm is difference of the number of zeroes in the images. If the images are identical, the difference of will be exactly 0. Zero norm can take values between 0.0 and 1.0, with 1.0 being the case where the images are not at all similar.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;h2&gt;Things to do-&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Integrate this video comparison into the integration tests&lt;/li&gt;
+        &lt;li&gt;Complete tests for all other methods.&lt;/li&gt;
+        &lt;li&gt;Add running tests through &lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Coverage with &lt;a href=&quot;https://coveralls.io/&quot;&gt;coveralls&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Documentation with &lt;a href=&quot;https://readthedocs.org/&quot;&gt;readthedocs&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Tests---3&quot; title=&quot;Previous Post: Integration Tests - 3&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Integration Tests - 3</title>
@@ -76,7 +201,7 @@ merge upstream: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b52
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Tests---2&quot; title=&quot;Previous Post: Integration Tests - 2&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Tests---2&quot; title=&quot;Previous Post: Integration Tests - 2&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Integration-Testing-and-Comparing-Videos&quot; title=&quot;Next Post: Integration Testing and Comparing Videos&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
