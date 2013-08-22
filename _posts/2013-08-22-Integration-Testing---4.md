@@ -36,6 +36,16 @@ Date: 22
 </p>
 <p>Currently got no idea about the return value of this method. Also I always get a black screen output.</p>
 
+<h2>Edit:</h2>
+<p>
+	The adjust_pip method works with giving dw, dh as zero. If I give (50, 75, 0, 0) , the PIP is modified just as expected :)
+	Check out this video - 
+</p>
+<p>
+	<iframe width="420" height="315" src="//www.youtube.com/embed/2cBX5N1L_iQ" frameborder="0" allowfullscreen></iframe>
+</p>
+<p>But still the black output if dw or dh are set :(</p>
+
 
 <div class="row">	
 	<div class="span9 column">

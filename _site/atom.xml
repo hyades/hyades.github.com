@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-22T21:42:27+05:30</updated>
+ <updated>2013-08-22T23:27:22+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -57,6 +57,25 @@
 
 
 &lt;p&gt;Currently got no idea about the return value of this method. Also I always get a black screen output.&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Edit:&lt;/h2&gt;
+
+
+&lt;p&gt;
+    The adjust_pip method works with giving dw, dh as zero. If I give (50, 75, 0, 0) , the PIP is modified just as expected :)
+    Check out this video - 
+&lt;/p&gt;
+
+
+&lt;p&gt;
+    &lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/2cBX5N1L_iQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;But still the black output if dw or dh are set :(&lt;/p&gt;
 
 
 
