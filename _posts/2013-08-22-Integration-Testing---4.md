@@ -27,7 +27,7 @@ Date: 22
 	<li>Added integration tests for <code>new_record</code>. Calling this remote method results in creation of a new record file. Verification of the file was done through comparing if a file with the expected filename was found in the current working directory.</li>
 </ul>
 <h2>Working on:</h2>
-<p>I am currently doing integration tests for <code>adjust_pip</code> remote method. This method takes 4 paramaters - dx, dy, dw, dh. This method also returns an integer. I found a brief description in the c code regarding this method - <a href="https://github.com/hyades/gst-switch/blob/python-api/tools/gstswitchclient.c#L410">here</a>. But I got a problem. I wave tried passing some combinations of these four arguments. The results of some of these combinations (dx, dy, dw, dh) are:
+<p>I am currently doing integration tests for <code>adjust_pip</code> remote method. This method takes 4 paramaters - dx, dy, dw, dh. This method also returns an integer. I found a brief description in the c code regarding this method - <a href="https://github.com/hyades/gst-switch/blob/python-api/tools/gstswitchclient.c#L410">here</a>. But I got a problem. I have tried passing some combinations of these four arguments. The results of some of these combinations (dx, dy, dw, dh) are:
 	<ol>
 		<li>(1, 1, 1, 1) - A black screen output and return value of 15</li>
 		<li>(0, 0, 0, 0) - Screen output not visibly changed, returns 1</li>

@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-22T21:40:37+05:30</updated>
+ <updated>2013-08-22T21:42:27+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -47,7 +47,7 @@
 &lt;h2&gt;Working on:&lt;/h2&gt;
 
 
-&lt;p&gt;I am currently doing integration tests for &lt;code&gt;adjust_pip&lt;/code&gt; remote method. This method takes 4 paramaters - dx, dy, dw, dh. This method also returns an integer. I found a brief description in the c code regarding this method - &lt;a href=&quot;https://github.com/hyades/gst-switch/blob/python-api/tools/gstswitchclient.c#L410&quot;&gt;here&lt;/a&gt;. But I got a problem. I wave tried passing some combinations of these four arguments. The results of some of these combinations (dx, dy, dw, dh) are:
+&lt;p&gt;I am currently doing integration tests for &lt;code&gt;adjust_pip&lt;/code&gt; remote method. This method takes 4 paramaters - dx, dy, dw, dh. This method also returns an integer. I found a brief description in the c code regarding this method - &lt;a href=&quot;https://github.com/hyades/gst-switch/blob/python-api/tools/gstswitchclient.c#L410&quot;&gt;here&lt;/a&gt;. But I got a problem. I have tried passing some combinations of these four arguments. The results of some of these combinations (dx, dy, dw, dh) are:
     &lt;ol&gt;
         &lt;li&gt;(1, 1, 1, 1) - A black screen output and return value of 15&lt;/li&gt;
         &lt;li&gt;(0, 0, 0, 0) - Screen output not visibly changed, returns 1&lt;/li&gt;
