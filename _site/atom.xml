@@ -4,12 +4,124 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-21T00:45:49+05:30</updated>
+ <updated>2013-08-22T21:40:37+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Integration Testing - 4</title>
+   <link href="http://hyades.github.io/blog/Integration-Testing---4"></link>
+   <updated>2013-08-22T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Integration-Testing---4</id>
+   <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+&lt;li&gt;Checking if the record file is properly created: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/05b12933d1793f4ba9bbd016b7cba5e4a895ff8b&quot;&gt;05b12933d1793f4ba9bbd016b7cba5e4a895ff8b&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;new_record integration test - basic: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/61f1c6b2eb4a85d4f85a7aca10fbbc10eddfa52a&quot;&gt;61f1c6b2eb4a85d4f85a7aca10fbbc10eddfa52a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Modified Class Structure, moved test_dir to temp folder: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/4324dcc2b640f0a8588eea90d7abecc8f08aad5f&quot;&gt;4324dcc2b640f0a8588eea90d7abecc8f08aad5f&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Modified contants. Supports running the tests now: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/cd66fe45bacb47696edf8f23e66a19981290eeb6&quot;&gt;cd66fe45bacb47696edf8f23e66a19981290eeb6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Adding reference frames: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/c0de564f642e3ec64237a3f38906c5f49286fc55&quot;&gt;c0de564f642e3ec64237a3f38906c5f49286fc55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Adding reference frames: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/2b746b6e5a6c19fa3a3dd04ba8028133727f0ca4&quot;&gt;2b746b6e5a6c19fa3a3dd04ba8028133727f0ca4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Adding reference frames: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/36019fc24706e01e030c7fcc0095ceef006ae0e0&quot;&gt;36019fc24706e01e030c7fcc0095ceef006ae0e0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Things done&lt;/h2&gt;
+
+
+&lt;ul&gt;
+    &lt;li&gt;Modified the code in compare.py: Earlier, the same class was being used to both generate the reference frames as well as for comparing an input video with these reference frames. Now these are separate classes which are inherited from a base class containing the methods common to them. &lt;code&gt;GenerateReferenceFrames&lt;/code&gt; generates the frames, whereas &lt;code&gt;CompareVideo&lt;/code&gt; compares a video to these reference frames. The video frames of the test video are created in the /tmp/ directory.&lt;/li&gt;
+    &lt;li&gt;Added integration tests for &lt;code&gt;new_record&lt;/code&gt;. Calling this remote method results in creation of a new record file. Verification of the file was done through comparing if a file with the expected filename was found in the current working directory.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Working on:&lt;/h2&gt;
+
+
+&lt;p&gt;I am currently doing integration tests for &lt;code&gt;adjust_pip&lt;/code&gt; remote method. This method takes 4 paramaters - dx, dy, dw, dh. This method also returns an integer. I found a brief description in the c code regarding this method - &lt;a href=&quot;https://github.com/hyades/gst-switch/blob/python-api/tools/gstswitchclient.c#L410&quot;&gt;here&lt;/a&gt;. But I got a problem. I wave tried passing some combinations of these four arguments. The results of some of these combinations (dx, dy, dw, dh) are:
+    &lt;ol&gt;
+        &lt;li&gt;(1, 1, 1, 1) - A black screen output and return value of 15&lt;/li&gt;
+        &lt;li&gt;(0, 0, 0, 0) - Screen output not visibly changed, returns 1&lt;/li&gt;
+        &lt;li&gt;(1, 0, 1, 0) - A black screen output and return value of 5&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;Currently got no idea about the return value of this method. Also I always get a black screen output.&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Testing-and-Comparing-Videos&quot; title=&quot;Previous Post: Integration Testing and Comparing Videos&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Integration Testing and Comparing Videos</title>
@@ -76,7 +188,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Tests---3&quot; title=&quot;Previous Post: Integration Tests - 3&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Tests---3&quot; title=&quot;Previous Post: Integration Tests - 3&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Integration-Testing---4&quot; title=&quot;Next Post: Integration Testing - 4&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
