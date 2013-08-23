@@ -4,12 +4,142 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-23T02:59:18+05:30</updated>
+ <updated>2013-08-23T23:59:36+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Travis CI and Coveralls</title>
+   <link href="http://hyades.github.io/blog/Travis-CI-and-Coveralls"></link>
+   <updated>2013-08-23T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Travis-CI-and-Coveralls</id>
+   <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+&lt;li&gt;modified README: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/04920218485e5c134bb9a1acf58778c11a2220da&quot;&gt;04920218485e5c134bb9a1acf58778c11a2220da&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Added python-gi packages: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ea2eafb8879e33476c1b815838b7c4d3cf730fea&quot;&gt;ea2eafb8879e33476c1b815838b7c4d3cf730fea&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;update: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b2c8e3fca27af41672c5d0ac75b70c04a3e33ecf&quot;&gt;b2c8e3fca27af41672c5d0ac75b70c04a3e33ecf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;added paths to conf.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/504511d21c42f61832d4efb93ffc1bd5a6123327&quot;&gt;504511d21c42f61832d4efb93ffc1bd5a6123327&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;conf.py for sphinx docs: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ba24d0604763471b58a0c23b5fead8ab5dcf5fee&quot;&gt;ba24d0604763471b58a0c23b5fead8ab5dcf5fee&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified requirements.txt: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/fc7143c65ba82ac07cd9dfb571e2804162cde2ea&quot;&gt;fc7143c65ba82ac07cd9dfb571e2804162cde2ea&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified requirements.txt: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/941d36147cd7a05e24af10255b94ecac73d2ddc4&quot;&gt;941d36147cd7a05e24af10255b94ecac73d2ddc4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified requirements.txt: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ecf56c9e9e7e7454961eb3bc4c6a78346fbad4ce&quot;&gt;ecf56c9e9e7e7454961eb3bc4c6a78346fbad4ce&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;added requirements.txt: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/37f64cfd99598b2b454544c3e3896fb7fd080310&quot;&gt;37f64cfd99598b2b454544c3e3896fb7fd080310&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified travis and makefile: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/4ba5d82a639403cf7a85b33d3cf4cb019ee32146&quot;&gt;4ba5d82a639403cf7a85b33d3cf4cb019ee32146&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;added missing unittests for Audio: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/3f3714bb89351e31641e84c7b3977ddbc1e990d2&quot;&gt;3f3714bb89351e31641e84c7b3977ddbc1e990d2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;added missing unittests for Audio: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/811502e58cee70e7e32132ac0c3ce5bef6770879&quot;&gt;811502e58cee70e7e32132ac0c3ce5bef6770879&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Added PKG_CONFIG_PATH: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/47cec77f3749f69ebc880da9f85ccebaf712e957&quot;&gt;47cec77f3749f69ebc880da9f85ccebaf712e957&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Travis file back to normal: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/9d43a0920f1924bd02b6fcc124b0a6e0854ea3e1&quot;&gt;9d43a0920f1924bd02b6fcc124b0a6e0854ea3e1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;playing around with travis.yml: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/20bca943d519cc2044c54ea341f71b1b1152cb7f&quot;&gt;20bca943d519cc2044c54ea341f71b1b1152cb7f&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;switch integration tests - initial switching done: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/1913c6e9bc46cc7ebcde0e25593af80544b5534a&quot;&gt;1913c6e9bc46cc7ebcde0e25593af80544b5534a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;switch integration tests - initial switching done: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/d74577dd121f426a7bc90c5a1d31a4afda713f68&quot;&gt;d74577dd121f426a7bc90c5a1d31a4afda713f68&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;reference frame comparison for adjust_pip: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/2a32fce193b503d4a8d822992b629b01d3f4a3f6&quot;&gt;2a32fce193b503d4a8d822992b629b01d3f4a3f6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;adjust_pip integration test: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/e128b0051747f772b1ee5cceb2537f8fdd9668b0&quot;&gt;e128b0051747f772b1ee5cceb2537f8fdd9668b0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Integration Tests&lt;/h2&gt;
+
+
+&lt;p&gt;Some of the things mentioned in the edit section of my last post are some of the commits mentioned above. I was able to achieve moving around the PIP in the x and y direction successfully.&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Travis CI&lt;/h2&gt;
+
+
+&lt;p&gt;I made a few edits to the .travis.yml. The travis page is at &lt;a href=&quot;https://travis-ci.org/hyades/gst-switch&quot;&gt;https://travis-ci.org/hyades/gst-switch&lt;/a&gt;. Indeed travis-ci is the best thing ever :)  &lt;/p&gt;
+
+
+&lt;p&gt;The PKG_CONFIG_PATH was set to point to the correct location.&lt;/p&gt;
+
+
+&lt;p&gt;Note: Even though the build is successfully, I currently have no tests to check if the build was indeed successful. So cannot say if the build was indeed successful. Only thing which is sure is that there process completed without any errors.&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Coveralls&lt;/h2&gt;
+
+
+
+
+&lt;p&gt;I configured python-coveralls to run py.test along with coverage on the code. I use my existing Makefile to conduct these tests. Unittests are currently conducted. I was able to get 100% coverage. The results can been seen on my repos' page &lt;a href=&quot;https://github.com/hyades/gst-switch&quot;&gt;https://github.com/hyades/gst-switch&lt;/a&gt;. The full coverage is at &lt;a href=&quot;https://coveralls.io/r/hyades/gst-switch?branch=python-api&quot;&gt;https://coveralls.io/r/hyades/gst-switch?branch=python-api&lt;/a&gt;. The unittests coverage is at 100%. &lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Testing---4&quot; title=&quot;Previous Post: Integration Testing - 4&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Integration Testing - 4</title>
@@ -82,7 +212,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Testing-and-Comparing-Videos&quot; title=&quot;Previous Post: Integration Testing and Comparing Videos&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-Testing-and-Comparing-Videos&quot; title=&quot;Previous Post: Integration Testing and Comparing Videos&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Travis-CI-and-Coveralls&quot; title=&quot;Next Post: Travis CI and Coveralls&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
