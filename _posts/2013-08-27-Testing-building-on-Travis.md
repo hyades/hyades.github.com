@@ -1,4 +1,15 @@
-<ul>
+---
+layout: post
+title: Testing building on Travis
+tags: travis testing gsoc
+Year: 2013
+Month: 08
+Date: 27
+---
+
+<h2>Commits</h2>
+<p>
+	<ul>
 <li>trying out building - modified travis: <a href="https://github.com/hyades/gst-switch/commit/24bfc3e21eb10c3f97c489a82605d0201b1216e3">24bfc3e21eb10c3f97c489a82605d0201b1216e3</a></li>
 <li>travis modified: <a href="https://github.com/hyades/gst-switch/commit/03b91899403a309e00dc02a53381139cbf748674">03b91899403a309e00dc02a53381139cbf748674</a></li>
 <li>travis modified: <a href="https://github.com/hyades/gst-switch/commit/b402047630e00d81c50a24944828bb15dd2d78ae">b402047630e00d81c50a24944828bb15dd2d78ae</a></li>
@@ -32,3 +43,56 @@ This reverts commit 4e30b6a21d3d813e1c558b36a1fa4b864b2ab9fc.: <a href="https://
 <li>testing fault in gst-switch-srv: <a href="https://github.com/hyades/gst-switch/commit/938c17b6dc0baab04a42a49a2c923b7ff9f9bc68">938c17b6dc0baab04a42a49a2c923b7ff9f9bc68</a></li>
 <li>testing fault in gst-switch-srv: <a href="https://github.com/hyades/gst-switch/commit/7cc21d365070df1a2644b14434bc343af210dae3">7cc21d365070df1a2644b14434bc343af210dae3</a></li>
 </ul>
+
+</p>
+
+<h2>What I am doing</h2>
+<p>
+	I am trying out building gst-switch over travis. Its been multiple failures and no success till now. Still working over this. Earlier there was a merge conflict due to which a commit's changes were not considered. Currently, I am working out a way to get python-gi installed on the travis machine.
+</p>
+<h2>Todo</h2>
+<p>Coverage for c code over coveralls.</p>
+
+
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right">{% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}"><i class="icon-chevron-left"></i></a> 	{% endif %}   {% if page.next.url %} 	<a href="{{page.next.url}}" title="Next Post: {{page.next.title}}"><i class="icon-chevron-right"></i></a> 	{% endif %} </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- Written by hyades -->
+
