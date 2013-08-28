@@ -53,7 +53,7 @@ This reverts commit a13fa2f62df6db82bbda1a6e95212acc7f46a0bc.: <a href="https://
 		<li>I could not find a way to use the typelibs file generated in the build process. So I am installing gir packages directly for gstreamer1.0</li>
 		<li>When running the server - <code>libdc1394 error: Failed to initialize libdc1394<code></li>
 		<li>
-			<pre><code>
+<pre><code>
 ./tools/gstswitchserver.c:125:info: gst_switch_server init 0x1971000
 ./tools/gstswitchserver.c:1518:info: Compose sink to 1001, 1002
 ./tools/gstcomposite.c:88:info: gst_composite init 0x1974800
@@ -64,13 +64,14 @@ This reverts commit a13fa2f62df6db82bbda1a6e95212acc7f46a0bc.: <a href="https://
 ./tools/gstswitchcontroller.c:484:info: Controller is listening at: unix:abstract=gstswitch
 ./tools/gstworker.c:477:error: output: (RESOURCE: 5) Could not open resource for reading.
 ./tools/gstworker.c:477:error: recorder: (RESOURCE: 5) Could not open resource for reading.
-			</code></pre>
+</code></pre>
 
 			This indicates something went wrong. Error binding to address: Permission denied. I am trying out different ports for the video_port , audio_port. Very much possible that the one under test is not open (probably port 1000). Also one interesting thing is that in this case compose ports are set as 1001 and 1002. Till now in numerous tests, I have seen that these are always 3001 and 3002 respectively.
+
 		</li>
 		<li>
 			This one seems a big problem. This is a log portion:
-			<pre><code>
+<pre><code>
 args = (<DBusConnection object at 0x2e16b40 (GDBusConnection at 0x2ea72f0)>, None, '/info/duzy/gst/switch/SwitchController', 'info.duzy.gst.switch.SwitchControllerInterface', 'get_audio_port', None, ...)
 kwargs = {}
 
@@ -79,7 +80,7 @@ kwargs = {}
 [1m[31mE       TypeError: Argument 1 does not allow None as a value[0m
 
 /usr/lib/python2.7/dist-packages/gi/types.py:43: TypeError
-			</code></pre>
+</code></pre>
 
 			I have tested this code in quantal, and such an issue never came up. This error seems to be due to some missing elements in the Gio modules. The Gio reference I was using is <a href="http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html">http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html</a>. Now this one is for 12.10. This can be due to some missing packages in gi, though not sure.
 		</li>
