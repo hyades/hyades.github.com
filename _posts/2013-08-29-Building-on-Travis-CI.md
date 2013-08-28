@@ -51,7 +51,7 @@ This reverts commit a13fa2f62df6db82bbda1a6e95212acc7f46a0bc.: <a href="https://
 		<li>Now after evevery failure, the entire log of the server is also displayed. All errors and warning are included in  this log</li>
 		<li>All unittests pass. This indicates that atleast everything was built properly</li>
 		<li>I could not find a way to use the typelibs file generated in the build process. So I am installing gir packages directly for gstreamer1.0</li>
-		<li>When running the server - <code>libdc1394 error: Failed to initialize libdc1394<code></li>
+		<li>When running the server - <code>libdc1394 error: Failed to initialize libdc1394</code></li>
 		<li>
 <pre><code>
 ./tools/gstswitchserver.c:125:info: gst_switch_server init 0x1971000
