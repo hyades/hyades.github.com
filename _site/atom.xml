@@ -4,7 +4,7 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-29T02:32:24+05:30</updated>
+ <updated>2013-08-29T02:51:46+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
@@ -88,7 +88,35 @@ This reverts commit a13fa2f62df6db82bbda1a6e95212acc7f46a0bc.: &lt;a href=&quot;
         &lt;li&gt;
             This one seems a big problem. This is a log portion:
 &lt;pre&gt;&lt;code&gt;
-args = (&lt;DBusConnection object at 0x2e16b40 (GDBusConnection at 0x2ea72f0)&gt;, None, '/info/duzy/gst/switch/SwitchController', 'info.duzy.gst.switch.SwitchControllerInterface', 'get_audio_port', None, ...)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;gstswitch.connection.Connection object at 0x2ccd790&gt;
+
+[1m    def get_encode_port(self):[0m
+[1m        &quot;&quot;&quot;get_encode_port(out i port);[0m
+[1m            Calls get_encode_port remotely[0m
+[1m    [0m
+[1m            :param: None[0m
+[1m            :returns: tuple with first element encode port number[0m
+[1m            &quot;&quot;&quot;[0m
+[1m        try:[0m
+[1m            args = None[0m
+[1m            connection = self.connection[0m
+[1m            port = connection.call_sync([0m
+[1m                self.bus_name,[0m
+[1m                self.object_path,[0m
+[1m                self.default_interface,[0m
+[1m                'get_encode_port',[0m
+[1m                args,[0m
+[1m                GLib.VariantType.new(&quot;(i)&quot;),[0m
+[1m                Gio.DBusCallFlags.NONE,[0m
+[1m                -1,[0m
+[1m&gt;               None)[0m
+
+gstswitch/connection.py:181: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (&lt;DBusConnection object at 0x2cd1870 (GDBusConnection at 0x2ea7200)&gt;, None, '/info/duzy/gst/switch/SwitchController', 'info.duzy.gst.switch.SwitchControllerInterface', 'get_encode_port', None, ...)
 kwargs = {}
 
 [1m    def function(*args, **kwargs):[0m
@@ -96,6 +124,8 @@ kwargs = {}
 [1m[31mE       TypeError: Argument 1 does not allow None as a value[0m
 
 /usr/lib/python2.7/dist-packages/gi/types.py:43: TypeError
+_________________ TestGetAudioPortVideoFirst.test_audio_ports __________________
+
 &lt;/code&gt;&lt;/pre&gt;
 
             I have tested this code in quantal, and such an issue never came up. This error seems to be due to some missing elements in the Gio modules. The Gio reference I was using is &lt;a href=&quot;http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html&quot;&gt;http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html&lt;/a&gt;. Now this one is for 12.10. This can be due to some missing packages in gi, though not sure.
