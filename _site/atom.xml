@@ -4,12 +4,176 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-27T23:41:58+05:30</updated>
+ <updated>2013-08-29T02:06:41+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Building on Travis-CI</title>
+   <link href="http://hyades.github.io/blog/Building-on-Travis-CI"></link>
+   <updated>2013-08-29T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Building-on-Travis-CI</id>
+   <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+&lt;li&gt;Added libglib to travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/d906e4b99b72c8ff8a522f3bef1520b2976159d6&quot;&gt;d906e4b99b72c8ff8a522f3bef1520b2976159d6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;travis modfied: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/0c96d57cd3206423c32a3a77fc90d36e6b67fd4a&quot;&gt;0c96d57cd3206423c32a3a77fc90d36e6b67fd4a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Reverting back: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/473daed4e9c533ce7d44c5ce02f725ae7cd10338&quot;&gt;473daed4e9c533ce7d44c5ce02f725ae7cd10338&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Revert &quot;trying out building - modified travis&quot;
+
+This reverts commit a823ec90679a4a91e5f0e3b01d3ce5e381581ca5.: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/41b105dc260b0fe6389e1bfd46e096731125601d&quot;&gt;41b105dc260b0fe6389e1bfd46e096731125601d&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Revert &quot;modified travis&quot;
+
+This reverts commit a13fa2f62df6db82bbda1a6e95212acc7f46a0bc.: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b8afe1e49b229855ca97ff76ee48b3f30153c0ff&quot;&gt;b8afe1e49b229855ca97ff76ee48b3f30153c0ff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/a13fa2f62df6db82bbda1a6e95212acc7f46a0bc&quot;&gt;a13fa2f62df6db82bbda1a6e95212acc7f46a0bc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/0259fe625feb6abbc2959614c5732a24665b8fa5&quot;&gt;0259fe625feb6abbc2959614c5732a24665b8fa5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/00b67a65f6fc1919615a7cfe9e1fbfdac836cd51&quot;&gt;00b67a65f6fc1919615a7cfe9e1fbfdac836cd51&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;removed libtoolize from dependency: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/812adbbdb7c7d59ed5247e1a9ac6b8c5da723272&quot;&gt;812adbbdb7c7d59ed5247e1a9ac6b8c5da723272&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;added more dependencies: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/5580ae1e7c57c600674baeb6cdb177d6cc9a2405&quot;&gt;5580ae1e7c57c600674baeb6cdb177d6cc9a2405&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified config paths: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/7c19abae2951e764dbe861cb6b179f9338512d07&quot;&gt;7c19abae2951e764dbe861cb6b179f9338512d07&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;yml format fixed: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/74e5c6eb8703c078443bbf241f0c078699ec6743&quot;&gt;74e5c6eb8703c078443bbf241f0c078699ec6743&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;yml changes: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b7dff8b79a4e851dbe3800d6cea09585c0a2f8cc&quot;&gt;b7dff8b79a4e851dbe3800d6cea09585c0a2f8cc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Server log displayed in case of failure of test: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/54d0e0414d5e017fb2b8eec7c9491a66de37afe4&quot;&gt;54d0e0414d5e017fb2b8eec7c9491a66de37afe4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;typo fixed: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/c6db27f45487f407ca21d2982583052656e7ecdd&quot;&gt;c6db27f45487f407ca21d2982583052656e7ecdd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;testing travis build - not using stage script: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/eefa9bc6b79b490b3973f338983418151c964835&quot;&gt;eefa9bc6b79b490b3973f338983418151c964835&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;pygobject modules: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/26da4213f841570137152176d17e129bab7e4b3f&quot;&gt;26da4213f841570137152176d17e129bab7e4b3f&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Restart build: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/772b8a5bae2dadf7510b9dee9e5059fcbc90d5b7&quot;&gt;772b8a5bae2dadf7510b9dee9e5059fcbc90d5b7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;girepository related changes to travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ff9f3b71d5ca770f0547283b6992278d2dfd2b36&quot;&gt;ff9f3b71d5ca770f0547283b6992278d2dfd2b36&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;travis PyGst: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/1513e90fb25b0f6e72e311ab349c7877c1e5d560&quot;&gt;1513e90fb25b0f6e72e311ab349c7877c1e5d560&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;travis PyGst: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/772e6b0da36260bc466f942e8ed514a808923129&quot;&gt;772e6b0da36260bc466f942e8ed514a808923129&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/f933749646e0a01a600f724c686ce5a559a15bc5&quot;&gt;f933749646e0a01a600f724c686ce5a559a15bc5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;trying out building - modified travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/a823ec90679a4a91e5f0e3b01d3ce5e381581ca5&quot;&gt;a823ec90679a4a91e5f0e3b01d3ce5e381581ca5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;
+    Whats going on..
+&lt;/h2&gt;
+
+
+&lt;p&gt;
+    I am refering to the latest build on travis-ci. Following things from the logs - &lt;a href=&quot;https://s3.amazonaws.com/archive.travis-ci.org/jobs/10719866/log.txt&quot;&gt;https://s3.amazonaws.com/archive.travis-ci.org/jobs/10719866/log.txt&lt;/a&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;Now after evevery failure, the entire log of the server is also displayed. All errors and warning are included in  this log&lt;/li&gt;
+        &lt;li&gt;All unittests pass. This indicates that atleast everything was built properly&lt;/li&gt;
+        &lt;li&gt;I could not find a way to use the typelibs file generated in the build process. So I am installing gir packages directly for gstreamer1.0&lt;/li&gt;
+        &lt;li&gt;When running the server - &lt;code&gt;libdc1394 error: Failed to initialize libdc1394&lt;code&gt;&lt;/li&gt;
+        &lt;li&gt;
+        &lt;div&gt;
+            &lt;pre&gt;&lt;code&gt;
+./tools/gstswitchserver.c:125:info: gst_switch_server init 0x1971000
+./tools/gstswitchserver.c:1518:info: Compose sink to 1001, 1002
+./tools/gstcomposite.c:88:info: gst_composite init 0x1974800
+./tools/gstcomposite.c:155:warning: ignore changing mode in transition
+./tools/gstswitchserver.c:707:info: Listening on localhost (::1:4000)
+./tools/gstswitchserver.c:707:info: Listening on localhost (::1:5000)
+./tools/gstswitchserver.c:736:error: bind socket: Error binding to address: Permission denied
+./tools/gstswitchcontroller.c:484:info: Controller is listening at: unix:abstract=gstswitch
+./tools/gstworker.c:477:error: output: (RESOURCE: 5) Could not open resource for reading.
+./tools/gstworker.c:477:error: recorder: (RESOURCE: 5) Could not open resource for reading.
+            &lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+            This indicates something went wrong. Error binding to address: Permission denied. I am trying out different ports for the video_port , audio_port. Very much possible that the one under test is not open (probably port 1000). Also one interesting thing is that in this case compose ports are set as 1001 and 1002. Till now in numerous tests, I have seen that these are always 3001 and 3002 respectively.
+        &lt;/li&gt;
+        &lt;li&gt;
+            This one seems a big problem. This is a log portion:
+            &lt;pre&gt;&lt;code&gt;
+args = (&lt;DBusConnection object at 0x2e16b40 (GDBusConnection at 0x2ea72f0)&gt;, None, '/info/duzy/gst/switch/SwitchController', 'info.duzy.gst.switch.SwitchControllerInterface', 'get_audio_port', None, ...)
+kwargs = {}
+
+[1m    def function(*args, **kwargs):[0m
+[1m&gt;       return info.invoke(*args, **kwargs)[0m
+[1m[31mE       TypeError: Argument 1 does not allow None as a value[0m
+
+/usr/lib/python2.7/dist-packages/gi/types.py:43: TypeError
+            &lt;/code&gt;&lt;/pre&gt;
+
+            I have tested this code in quantal, and such an issue never came up. This error seems to be due to some missing elements in the Gio modules. The Gio reference I was using is &lt;a href=&quot;http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html&quot;&gt;http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html&lt;/a&gt;. Now this one is for 12.10. This can be due to some missing packages in gi, though not sure.
+        &lt;/li&gt;
+        &lt;li&gt;At certain times in the day, like around 1 am IST, the travis server is busy. Since the building process requires large amounts of downloading and bandwidth is limited, there is a huge chance for the build to timeout at 50 mins. &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;h2&gt;C Coverage&lt;/h2&gt;
+
+
+&lt;p&gt;With the existing gst-switch installed in &lt;code&gt;~/gst/stage/bin&lt;/code&gt;, I took another copy. Now I built this using &lt;code&gt;./autogen &amp;&amp; make&lt;/code&gt;. The executable gst-switch-srv is produced in tools/ directory. Now doing &lt;code&gt;make coverage&lt;/code&gt; shows the coverage. Hopefully this can be used. But this cannot be used with the executable gst-switch-srv present at &lt;code&gt;~/gst/stage/bin&lt;/code&gt;, since the gcov function requires &lt;i&gt;.o&lt;/i&gt; files which will be present only in the tools folder.&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Testing-building-on-Travis&quot; title=&quot;Previous Post: Testing building on Travis&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Testing building on Travis</title>
@@ -78,7 +242,7 @@ This reverts commit 4e30b6a21d3d813e1c558b36a1fa4b864b2ab9fc.: &lt;a href=&quot;
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-tests-and-Travis-modifications&quot; title=&quot;Previous Post: Integration tests and Travis modifications&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Integration-tests-and-Travis-modifications&quot; title=&quot;Previous Post: Integration tests and Travis modifications&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/Building-on-Travis-CI&quot; title=&quot;Next Post: Building on Travis-CI&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;    &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
