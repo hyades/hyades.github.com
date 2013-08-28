@@ -108,7 +108,7 @@ kwargs = {}
 [1m[31mE       TypeError: Argument 1 does not allow None as a value[0m
 
 /usr/lib/python2.7/dist-packages/gi/types.py:43: TypeError
-_________________ TestGetAudioPortVideoFirst.test_audio_ports __________________
+
 
 </code></pre>
 
