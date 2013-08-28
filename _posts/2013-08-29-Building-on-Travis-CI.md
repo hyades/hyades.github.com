@@ -72,7 +72,35 @@ This reverts commit a13fa2f62df6db82bbda1a6e95212acc7f46a0bc.: <a href="https://
 		<li>
 			This one seems a big problem. This is a log portion:
 <pre><code>
-args = (<DBusConnection object at 0x2e16b40 (GDBusConnection at 0x2ea72f0)>, None, '/info/duzy/gst/switch/SwitchController', 'info.duzy.gst.switch.SwitchControllerInterface', 'get_audio_port', None, ...)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <gstswitch.connection.Connection object at 0x2ccd790>
+
+[1m    def get_encode_port(self):[0m
+[1m        """get_encode_port(out i port);[0m
+[1m            Calls get_encode_port remotely[0m
+[1m    [0m
+[1m            :param: None[0m
+[1m            :returns: tuple with first element encode port number[0m
+[1m            """[0m
+[1m        try:[0m
+[1m            args = None[0m
+[1m            connection = self.connection[0m
+[1m            port = connection.call_sync([0m
+[1m                self.bus_name,[0m
+[1m                self.object_path,[0m
+[1m                self.default_interface,[0m
+[1m                'get_encode_port',[0m
+[1m                args,[0m
+[1m                GLib.VariantType.new("(i)"),[0m
+[1m                Gio.DBusCallFlags.NONE,[0m
+[1m                -1,[0m
+[1m>               None)[0m
+
+gstswitch/connection.py:181: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<DBusConnection object at 0x2cd1870 (GDBusConnection at 0x2ea7200)>, None, '/info/duzy/gst/switch/SwitchController', 'info.duzy.gst.switch.SwitchControllerInterface', 'get_encode_port', None, ...)
 kwargs = {}
 
 [1m    def function(*args, **kwargs):[0m
@@ -80,6 +108,8 @@ kwargs = {}
 [1m[31mE       TypeError: Argument 1 does not allow None as a value[0m
 
 /usr/lib/python2.7/dist-packages/gi/types.py:43: TypeError
+_________________ TestGetAudioPortVideoFirst.test_audio_ports __________________
+
 </code></pre>
 
 			I have tested this code in quantal, and such an issue never came up. This error seems to be due to some missing elements in the Gio modules. The Gio reference I was using is <a href="http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html">http://developer.ubuntu.com/api/ubuntu-12.10/python/Gio-2.0.html</a>. Now this one is for 12.10. This can be due to some missing packages in gi, though not sure.
