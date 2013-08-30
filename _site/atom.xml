@@ -4,12 +4,127 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-30T02:42:48+05:30</updated>
+ <updated>2013-08-31T00:27:24+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>Travis modifications and gcov coverage</title>
+   <link href="http://hyades.github.io/blog/Travis-modifications-and-gcov-coverage"></link>
+   <updated>2013-08-30T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/Travis-modifications-and-gcov-coverage</id>
+   <content type="html">&lt;h2&gt;Commits:&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+&lt;li&gt;printing types.py file: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/0c0179b462067356add82d49c98ba76d199f3a8f&quot;&gt;0c0179b462067356add82d49c98ba76d199f3a8f&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;changed port due to conflict: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/8c302512b527efd926e31c3f20a2cdb6ff7331a4&quot;&gt;8c302512b527efd926e31c3f20a2cdb6ff7331a4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;removed ports close to 1000 from tests: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/9c0c2aebcc73bfd3fd79472f959ddb176ef26c03&quot;&gt;9c0c2aebcc73bfd3fd79472f959ddb176ef26c03&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Reducing intensity: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/35c03739bdb7e1fc2b27f3bcc105cfd79ddea5f9&quot;&gt;35c03739bdb7e1fc2b27f3bcc105cfd79ddea5f9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fixed paths: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/04465753485829f462e02d8a144618b0ead7adce&quot;&gt;04465753485829f462e02d8a144618b0ead7adce&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Added libvpx to travis build: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/31fa4c9577b06b04113a0903e6ec2e8a844d6b1f&quot;&gt;31fa4c9577b06b04113a0903e6ec2e8a844d6b1f&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Travis Build&lt;/h2&gt;
+
+
+&lt;p&gt;The TypeError has not been solved. The same code runs fine on my quantal machine as well as VM. I suspect two things that might be causing it:
+    &lt;ul&gt;
+        &lt;li&gt;Some package is missing. The package is related to &lt;/li&gt;
+        &lt;li&gt;There is some incomplete or difference in the Gio modules of Quantal and Precise( travis servers ) which causes the problem.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+&lt;h2&gt;C Coverage&lt;/h2&gt;
+
+
+&lt;p&gt;C coverage can be done using &lt;a href=&quot;http://gcc.gnu.org/onlinedocs/gcc/Gcov.html&quot;&gt;gcov&lt;/a&gt;. &lt;i&gt;gcov&lt;/i&gt; helps in collecting coverage information from the programs. For &lt;i&gt;gcov&lt;/i&gt; to work the c code should be compiled with the options &lt;code&gt;-fprofile-arcs -ftest-coverage&lt;/code&gt;. This will create &lt;i&gt;.gcno&lt;/i&gt; file, which contains information to reconstruct the basic block graphs and assign source line numbers to blocks. When the program is run, a separate &lt;i&gt;.gcda&lt;/i&gt; file is created for each object file compiled with this option. It contains arc transition counts, value profile counts, and some summary information. The &lt;i&gt;gcov&lt;/i&gt; can now be run on the original object files, which uses these &lt;i&gt;.gcno&lt;/i&gt; and &lt;i&gt;.gcda&lt;/i&gt; files to generate &lt;i&gt;.c.gcov&lt;/i&gt; files. The .gcov files contain the ‘:’ separated fields along with program source code. The format is &lt;code&gt;execution_count:line_number:source line text&lt;/code&gt;&lt;/p&gt;
+
+
+
+
+&lt;p&gt;However, gcov only produces the &lt;i&gt;.gcda&lt;/i&gt; files when the process terminates through the &lt;code&gt;exit()&lt;/code&gt; defined in the c code. Else, no &lt;i&gt;.gcda&lt;/i&gt; file is produced. &lt;i&gt;gst-switch-srv&lt;/i&gt; runs more like a infinite process which is mostly ended by &lt;i&gt;Control+A&lt;/i&gt; or terminating the process by SIGKILL etc. Currently the &lt;i&gt;gst-switch-srv&lt;/i&gt; supports gcov, however it has no support for handling the infinite process part.&lt;/p&gt;
+
+
+&lt;p&gt;A good solution to this problem can be found at &lt;a href=&quot;https://www.osadl.org/Dumping-gcov-data-at-runtime-simple-ex.online-coverage-analysis.0.html&quot;&gt;https://www.osadl.org/Dumping-gcov-data-at-runtime-simple-ex.online-coverage-analysis.0.html&lt;/a&gt;. The &lt;code&gt;__gcov_flush();&lt;/code&gt; method can be used to conditionally provide coverage in between program run. As described in the article, the C code is modified and a signal handler is added. Here they use SIGUSR1. Therefore, whenever SIGUSR1 is caught by the program, it calls back the __gcov_flush(); method, generating &lt;i&gt;.gcda&lt;/i&gt; files. &lt;/p&gt;
+
+
+&lt;p&gt;So the necessary files have to be modified with the signal handlers. Also the python-api has to be modified such that it sends a SIGUSR1 signal while ending a &lt;i&gt;gst-switch-srv&lt;/i&gt; process.&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Travis-Build-Changed&quot; title=&quot;Previous Post: Travis Build Changed&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Travis Build Changed</title>
@@ -59,14 +174,14 @@ gst-switch-srv: /usr/local/bin/gst-switch-srv&lt;/code&gt;
 &lt;/h2&gt;
 
 
-&lt;p&gt;The path of the server have to be modified from $HOME/gst/stage/bin to /usr/local/bin in the files. A better way to asssign these paths according to the prefix passed can be thought of.&lt;/p&gt;
+&lt;p&gt;The path of the server have to be modified from $HOME/gst/stage/bin to /usr/local/bin in the files. A better way to assign these paths according to the prefix passed can be thought of.&lt;/p&gt;
 
 
 
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Building-on-Travis-CI&quot; title=&quot;Previous Post: Building on Travis-CI&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;         &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Building-on-Travis-CI&quot; title=&quot;Previous Post: Building on Travis-CI&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;             &lt;a href=&quot;/blog/Travis-modifications-and-gcov-coverage&quot; title=&quot;Next Post: Travis modifications and gcov coverage&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
