@@ -4,12 +4,173 @@
  <title>Aayush Ahuja</title>
  <link href="http://hyades.github.io/atom.xml" rel="self"></link>
  <link href="http://hyades.github.io/"></link>
- <updated>2013-08-31T00:27:24+05:30</updated>
+ <updated>2013-09-04T20:44:20+05:30</updated>
  <id>http://hyades.github.com</id>
  <author>
    <name>Aayush Ahuja</name>
  </author>
  
+ 
+ <entry>
+   <title>C Coverage, Travis Builds</title>
+   <link href="http://hyades.github.io/blog/C-Coverage%2C-Travis-Builds"></link>
+   <updated>2013-09-04T00:00:00+05:30</updated>
+   <id>http://hyades.github.io/blog/C-Coverage,-Travis-Builds</id>
+   <content type="html">&lt;h2&gt;Commits&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+&lt;li&gt;relaxing image comparison factor, modified build process: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/cebbb8accbfc821e4d156bfbc4185f873e8969ab&quot;&gt;cebbb8accbfc821e4d156bfbc4185f873e8969ab&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;printing ffmpeg output: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/18ba4174afb68f00906d2eb0c431e17bf85cc4a3&quot;&gt;18ba4174afb68f00906d2eb0c431e17bf85cc4a3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fixed reference frame path: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/37dc95893949b021c3e8d1cce15baa4e522ca87d&quot;&gt;37dc95893949b021c3e8d1cce15baa4e522ca87d&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pushing - doing linting: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ec5705bfe40ad1136faaa714653d43cc43737465&quot;&gt;ec5705bfe40ad1136faaa714653d43cc43737465&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;add ffmpeg to dependencies, lint and docs for server.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/c6c05391136d1282d0342df196aa77d149e389cd&quot;&gt;c6c05391136d1282d0342df196aa77d149e389cd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;lint and docs for helpers.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ae6a2b2cc3e87b57ba81dadc383d003b3d3265bc&quot;&gt;ae6a2b2cc3e87b57ba81dadc383d003b3d3265bc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;provided bus_name for precise GDbus: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/1ad1c6b93381443987f6d16fa6305b5e7d1b5c80&quot;&gt;1ad1c6b93381443987f6d16fa6305b5e7d1b5c80&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;lint corrected: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/562daf9fb7494f20f6116df4f32b76e620ef8a9e&quot;&gt;562daf9fb7494f20f6116df4f32b76e620ef8a9e&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;updated gitignore: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ab946ebc307e888ae61b1605760dfb3be4e4c588&quot;&gt;ab946ebc307e888ae61b1605760dfb3be4e4c588&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;lint and docs for connection.py, modified travis scripts: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/f22fcbbb1f13810a692790f3ac44badb3973c2e8&quot;&gt;f22fcbbb1f13810a692790f3ac44badb3973c2e8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;lint and docs - controller.py: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/808797d2ae8a5373a3d81cf4c5f4f6fbc1b926b0&quot;&gt;808797d2ae8a5373a3d81cf4c5f4f6fbc1b926b0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Renamed unittest files, include tests in linting: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b5fc7ef741ff700bae4aa8e639d80ea11f22b999&quot;&gt;b5fc7ef741ff700bae4aa8e639d80ea11f22b999&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;unittests for make coverage: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/653e3c4d370475fb9d8f22c209929be91c31507e&quot;&gt;653e3c4d370475fb9d8f22c209929be91c31507e&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;running coveralls only in root dir: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/1f3a4b465b221310ec092e8644e600f8202116eb&quot;&gt;1f3a4b465b221310ec092e8644e600f8202116eb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;pushing output to pastebin: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/218e07ed47d390a986f72c042de3fe21f68d54d7&quot;&gt;218e07ed47d390a986f72c042de3fe21f68d54d7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;corrected setup of coveralls: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/7616b5597c30e044478e257407ee89e20a3878a4&quot;&gt;7616b5597c30e044478e257407ee89e20a3878a4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;correcting excludes: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b0d6f72e4733bb8eb9f3a167c78290d88a941b41&quot;&gt;b0d6f72e4733bb8eb9f3a167c78290d88a941b41&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;printing repr coverage: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b38ef9f54981a63005558fc469f537326e53a1f2&quot;&gt;b38ef9f54981a63005558fc469f537326e53a1f2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;excluding libs from gcov: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/a453f875c4a5aa0be6d0977d609b493b15926418&quot;&gt;a453f875c4a5aa0be6d0977d609b493b15926418&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;checking encoding of files: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/b6230be1fade5174ba9e336a58168579d8d263f4&quot;&gt;b6230be1fade5174ba9e336a58168579d8d263f4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified conf.py for sphinx: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/669c9c72ff65a98b51469b11f59bf93d3c432ba2&quot;&gt;669c9c72ff65a98b51469b11f59bf93d3c432ba2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;modified conf.py for sphinx: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/9fa90a562360fcd8e3b42280af7df77a089670f4&quot;&gt;9fa90a562360fcd8e3b42280af7df77a089670f4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fixed cd problem: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/77667143e9f3f6eef73c8413ef29926ef5caf989&quot;&gt;77667143e9f3f6eef73c8413ef29926ef5caf989&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;mock objects for docs: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/ea7746c869fd124962f31239ceb67a1a5bb21c15&quot;&gt;ea7746c869fd124962f31239ceb67a1a5bb21c15&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;made a fakelib: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/78446ea712cdfe88bd62b61b216012a35ec228a3&quot;&gt;78446ea712cdfe88bd62b61b216012a35ec228a3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;testing new travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/603d5427d8d0cc4541f5d03276f901b336736fc6&quot;&gt;603d5427d8d0cc4541f5d03276f901b336736fc6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;testing new travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/e5adc59c8ca3bc714d50b97c4f8151bac88506fd&quot;&gt;e5adc59c8ca3bc714d50b97c4f8151bac88506fd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;testing new travis: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/687baa3270ac31f7538eb39f5bafe87520906f78&quot;&gt;687baa3270ac31f7538eb39f5bafe87520906f78&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;gcov now generated in .gcov files in tools directory: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/2ae929f719e0a26baa9644a0b28594b3c05c838b&quot;&gt;2ae929f719e0a26baa9644a0b28594b3c05c838b&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;flushing when killing: &lt;a href=&quot;https://github.com/hyades/gst-switch/commit/cc7013028e698d6c1b6f71c5297860d428c00690&quot;&gt;cc7013028e698d6c1b6f71c5297860d428c00690&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Thinsg done:&lt;/h2&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;b&gt;Coverage of c files: &lt;/b&gt;The &lt;code&gt;terminate()&lt;/code&gt; and &lt;code&gt;kill()&lt;/code&gt; methods to the server now have a parameter &lt;i&gt;cov&lt;/i&gt;. Setting its value as True, leads to dumping of coverage data in the tools directory (alternatively environment variable GCOV_PREFIX can be set to dump it elsewhere). Internally the gst-switch-srv calls &lt;code&gt;__gcov_flush()&lt;/code&gt; when it receives the signal SIGUSR1. This signal can also be sent like &lt;code&gt;killall -USR1 gst-switch-srv&lt;/code&gt;. Note that sending SIGUSR1 does not kill the server. Everytime the coverage data is dumped in the form of .gcda files, &lt;code&gt;make coverage&lt;/code&gt; is run. This turns it into .gcov files. The gcov files can be appended together unlike gcda files. Thus results of multiple runs of gcov can be seen by running &lt;code&gt;make coverage&lt;/code&gt; after each run.
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;b&gt;Enabled documentation at readthedocs: &lt;/b&gt; &lt;a href=&quot;http://gst-switch.readthedocs.org/en/latest/&quot;&gt;http://gst-switch.readthedocs.org/en/latest/&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;b&gt;Setup coveralls for C code: &lt;/b&gt; Coverage of C code over coveralls is done through &lt;a href=&quot;https://github.com/eddyxu/cpp-coveralls&quot;&gt;cpp-coveralls&lt;/a&gt;. However, just running the command &lt;code&gt;coveralls&lt;/code&gt; was a problem. Running it caused it to search for all .o files including the ones generated by gstreamer and gst-plugins which were installed earlier. These files had some strange characters like /0xe9 which gave a &lt;code&gt;UnicodeDecodeError&lt;/code&gt; internally. The problem was solved by specifying the exact root directory where to find the coverage data (i.e tools directory) using the -r option. The overall coverage is at &lt;a href=&quot;https://coveralls.io/r/hyades/gst-switch&quot;&gt;https://coveralls.io/r/hyades/gst-switch&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;b&gt;Precise builds: &lt;/b&gt;Precise has Gio modules different from Quantal. My machine is quantal, thus running it in precise gave &lt;code&gt;TypeError&lt;/code&gt;. In my &lt;code&gt;call_sync&lt;/code&gt; function, I was giving &lt;code&gt;bus_name&lt;/code&gt; a &lt;code&gt;None&lt;/code&gt; value. This had a problem in Precise since it does not allow None values. Providing this value solved the issue.
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;b&gt;Liniting the code&lt;/b&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+
+
+&lt;h2&gt;Current Issues&lt;/h2&gt;
+
+
+&lt;p&gt;Even though the build runs on travis, some parts need attention.&lt;/p&gt;
+
+
+&lt;p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Unittests had 100% coverage&lt;/li&gt;
+        &lt;li&gt;6 out of 13 integration tests Failed&lt;/li&gt;
+        &lt;li&gt;
+            Running gst-switch-srv gave an error
+&lt;pre&gt;
+&lt;code&gt;
+./tools/gstworker.c:270:error: missing: faac
+./tools/gstworker.c:784:error: recorder: failed to create new pipeline
+&lt;/code&gt;
+&lt;/pre&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Seems an issue with the libvpx installation.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 column&quot;&gt;
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Travis-modifications-and-gcov-coverage&quot; title=&quot;Previous Post: Travis modifications and gcov coverage&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;row&quot;&gt;   
+    &lt;div class=&quot;span9 columns&quot;&gt;    
+        &lt;h2&gt;Comments Section&lt;/h2&gt;
+        &lt;p&gt;Feel free to comment on the post but keep it clean and on topic.&lt;/p&gt; 
+        &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        &lt;/script&gt;
+        &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+        &lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;blog comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!-- Twitter --&gt;
+
+
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;//platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+
+
+
+&lt;!-- Google + --&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+
+
+&lt;!-- Written by hyades --&gt;
+
+
+
+</content>
+ </entry>
  
  <entry>
    <title>Travis modifications and gcov coverage</title>
@@ -66,7 +227,7 @@
 
 &lt;div class=&quot;row&quot;&gt;   
     &lt;div class=&quot;span9 column&quot;&gt;
-            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Travis-Build-Changed&quot; title=&quot;Previous Post: Travis Build Changed&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;       &lt;/p&gt;  
+            &lt;p class=&quot;pull-right&quot;&gt; &lt;a href=&quot;/blog/Travis-Build-Changed&quot; title=&quot;Previous Post: Travis Build Changed&quot;&gt;&lt;i class=&quot;icon-chevron-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;           &lt;a href=&quot;/blog/C-Coverage%2C-Travis-Builds&quot; title=&quot;Next Post: C Coverage, Travis Builds&quot;&gt;&lt;i class=&quot;icon-chevron-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;      &lt;/p&gt;  
     &lt;/div&gt;
 
 &lt;/div&gt;
