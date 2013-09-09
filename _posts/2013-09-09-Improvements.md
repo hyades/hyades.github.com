@@ -1,4 +1,15 @@
-<ul>
+---
+layout: post
+title: Improvements
+tags: lint pep8 performance testing gsoc
+Year: 2013
+Month: 09
+Date: 09
+---
+
+<h2>Commits</h2>
+<p>
+	<ul>
 <li>Performance Tests for changing composite mode: <a href="https://github.com/hyades/gst-switch/commit/f51bed9981b0a527ee15cb3cd597c58fe4063a15">f51bed9981b0a527ee15cb3cd597c58fe4063a15</a></li>
 <li>removed html output pylintrc files: <a href="https://github.com/hyades/gst-switch/commit/8ffb62ad58a40c3052c2e539b0ae91b7ce0c838b">8ffb62ad58a40c3052c2e539b0ae91b7ce0c838b</a></li>
 <li>performance tests for get_preview_ports: <a href="https://github.com/hyades/gst-switch/commit/9038c5d0b26682526c93a5877a1e691530a49311">9038c5d0b26682526c93a5877a1e691530a49311</a></li>
@@ -30,3 +41,85 @@
 <li>removing gcov files before test: <a href="https://github.com/hyades/gst-switch/commit/9ee5db3159d4af5b00c26df0dd009eec5eccd329">9ee5db3159d4af5b00c26df0dd009eec5eccd329</a></li>
 <li>removing gcov files before test: <a href="https://github.com/hyades/gst-switch/commit/c6b9d492b4433db7da9e92d606d4257dfa621b52">c6b9d492b4433db7da9e92d606d4257dfa621b52</a></li>
 </ul>
+Others couldn't come here because of Github API :)
+</p>
+
+
+<h2>
+	Things done in past few days:
+</h2>
+
+
+<p>
+	<ul>
+
+		<li>
+			Integration tests for <code>mark_tracking</code>
+		</li>
+		<li>
+			<b>Sphinx Docs:</b> A lot of modules had errors. The most common problem is <code>ImportError</code> because sphinx is unable to find the modules in PYTHONPATH. Thus, these modules need to be mocked. I have a directory <a href="https://github.com/hyades/gst-switch/tree/master/docs/fake-lib">fake-lib</a> which has all these mocked modules. This fake-lib has to be added to the PYTHONPATH in the <a href="https://github.com/hyades/gst-switch/blob/master/docs/conf.py">conf.py</a> file. The docs are at <a href="http://gst-switch.readthedocs.org/en/latest/">http://gst-switch.readthedocs.org/en/latest/</a>
+		</li>
+		<li>
+			<b>Imgur Frame Upload:</b> For testing in travis, I am uploading the key frames that are generated to imgur. For example in <a href="https://api.travis-ci.org/jobs/11142262/log.txt?deansi=true">this</a> build the output key frames are: <a href="http://i.imgur.com/GBZMLZ0.png">img1</a>(before PIP change) and <a href="http://i.imgur.com/Beoj5Lo.png">img2</a>(after PIP change). 
+			So there are two main problems with the build process - 
+			<ol>
+				<li>An unknown dependency</li>
+				<li>Gstreamer's python binding dont produce a <code>videotestsrc</code> output. Maybe a problem with the typelibs.</li>
+			</ol>
+		</li>
+		<li><b>Modified the controller tests: </b> The controller tests were too heavy causing them to be unreliable at times. Now they are perfectly reliable.</li>
+		<li><b>Docs: </b> Added docs for all modules and classes.</li>
+		<li><b>Linting:</b> All code is pylint clean. The corrosponding pylintrc files are present. These files contain the excluded warnings and errors. Can be done by <code>make lint</code></li>
+		<li><b>pep8:</b> All code is pep8 clean. Can be done by <code>make pep8</code></li>
+		<li><b>pre-commit hooks:</b> Added pre-commit hooks which will run lint on C code and pylint and pep8 on python code. It will not commit unless these tests pass.</li>
+		<li><b>Build failures:</b> If any of the tests (lint, pep8, unittests) fail, the build fails and the repository is flagged red.</li>
+		<li><b>Performance Tests: </b> These are extreme torture tests. I run it on my system alone and not on travis. All of these tests are not meant to pass, some failures are expected. Currently the tests include things test cases where I call the <code>get_compose_port</code> method <i>N</i> number of times, where i vary <i>N</i> in [100, 200, 300, 400, 500]. The test mostly fails at the 500 mark. One test case tests changing the PIP mode after some delay. I vary this delay like [1, 0.6, 0.5, 0.2] in seconds. On my system, below 0.6, i.e for test cases 0.5 and 0.2 the test fails.</li>
+
+	</ul>
+</p>
+
+
+
+
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right">{% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}"><i class="icon-chevron-left"></i></a> 	{% endif %}   {% if page.next.url %} 	<a href="{{page.next.url}}" title="Next Post: {{page.next.title}}"><i class="icon-chevron-right"></i></a> 	{% endif %} </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- Written by hyades -->
+
