@@ -1,5 +1,5 @@
 markdown: rdiscount
-pygments: true
+highlighter: true
 permalink: /blog/:title
 post:
   template: _post.txt

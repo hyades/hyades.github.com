@@ -116,34 +116,24 @@
 <p>
     The Server is the interaction module with gst-switch-srv. It is capable of controlling the server. The Server class has a contructor where the user can specify the video port, audio port, control port and the output record file.
     
-<div class="highlight"><pre><code class="python">       <span class="kn">from</span> <span class="nn">gstswitch</span> <span class="kn">import</span> <span class="o">*</span>      <span class="c">#importing all modules</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="language-python" data-lang="python">from gstswitch import *        #importing all modules</code></pre></div>
 
     
-<div class="highlight"><pre><code class="python">       <span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span>           <span class="c">#simple enough thing, gets the server running with default parameters.</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="language-python" data-lang="python">server = Server()          #simple enough thing, gets the server running with default parameters.</code></pre></div>
 
     The server can be started off forking a new process and can safely be killed. Connection to the controller can be made by invoking the Controller class.
     
-<div class="highlight"><pre><code class="python">       <span class="n">control</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">connectController</span><span class="p">()</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="language-python" data-lang="python">control = server.connectController()</code></pre></div>
 
     If a connection does not exist a new connection should be made to the Controller. Now that the server is running, there should be some input to the server! These are the videotestsrc elements of gstreamer. I have added options where the user can select what pattern, height, width etc can be specified. The width of the input stream should be 300 and height should be 200 always, else it might result in some strange unclear patterns coming up. If no pattern is specified a random one gets selected.
     
-<div class="highlight"><pre><code class="python">       <span class="n">server</span><span class="o">.</span><span class="n">newTestVideo</span><span class="p">()</span>       <span class="c">#adds a new test source to the gst-switch</span>
-        <span class="n">server</span><span class="o">.</span><span class="n">getAllTestVideo</span><span class="p">()</span>    <span class="c">#displays all test sources feeding in the gst-switch</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="language-python" data-lang="python">server.newTestVideo()      #adds a new test source to the gst-switch
+        server.getAllTestVideo()    #displays all test sources feeding in the gst-switch</code></pre></div>
 
     The Server and the test sources can be easily killed off by invoking like this. I was earlier facing a problem where the subprocess.Popen() command was making two processes. Now, while killing only one gets killed, whereas the other one was still remaining. I was using an option shell=True as an argument to the Popen command. Changing this option to shell=False allowed me to control the server class more easily as in this case only one process gets created!
     
-<div class="highlight"><pre><code class="python">       <span class="n">server</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>                <span class="c">#kills off the server process</span>
-        <span class="n">server</span><span class="o">.</span><span class="n">endAllTestVideo</span><span class="p">()</span>    <span class="c">#kills off all test videos that have been defined. server.end() takes care of this</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="language-python" data-lang="python">server.end()               #kills off the server process
+        server.endAllTestVideo()    #kills off all test videos that have been defined. server.end() takes care of this</code></pre></div>
 
     Currently the video sources are being fed by creating new processes. I will modify these using the Gstreamer 1.0 Python Bindings defined under gi.repository.Gst
 </p>
@@ -157,9 +147,7 @@
 <p>
     Now the server is running and the input sources have been specified, we need to view the output that is getting generated. For this the gst-switch-ui can be invoked. Simply the UI is run using:
     
-<div class="highlight"><pre><code class="python">       <span class="n">ui</span> <span class="o">=</span> <span class="n">UI</span><span class="p">()</span>
-    
-</code></pre></div>
+<div class="highlight"><pre><code class="language-python" data-lang="python">ui = UI()</code></pre></div>
 
     The UI process is ended simply using ui.end() method.
     Once the controller is ready, the compose port can be used to view the output of the gst-switch server directly eliminating the need of the UI.
@@ -236,7 +224,7 @@
 	<footer class="footer">
   <div class="container">
 	<p class="pull-right"> <a href="/blog/Experiments-with-dbus" title="Previous Post: Experiments with dbus">&laquo; Previous Blog Post</a> 	  |  <a href="#">Back to top</a>  |   	<a href="/blog/The-SoC-coding-period-starts-off" title="Next Post: The SoC Coding Period Starts Off">Next Blog Post &raquo; </a> 	 </p>        
-	<p>Page last generated on September 14, 2013</p>
+	<p>Page last generated on September 25, 2014</p>
 	<p>If need be, <a href="https://github.com/hyades/Feedback/issues/new" title="Leave feedback for Aayush"  target="_blank" >Give feedback here</a>.</p>	
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
 	
