@@ -1,39 +1,38 @@
 #!/usr/bin/python
 from time import strftime
-import os,sys
+import os
 
 path = "_posts"
 cwd = os.getcwd()
 newpath = cwd + '/' + path
 
-print "Enter the name of the post"
-n = raw_input()
+n = raw_input("Enter the name of the post")
 name = n.split()
-print """Enter tags if any["n" if No]"""
-tags = raw_input().split()
-if tags[0]=='n':
-	tagline =""
+tags = raw_input("""Enter tags if any["n" if No]""").split()
+if tags[0] == 'n':
+    tagline = ""
 else:
-	tagline = ''
-	for x in tags:
-		tagline+=" "+x
-
+    tagline = ''
+    for x in tags:
+        tagline += " " + x
+category = raw_input("Enter the Category of the Post")
 os.chdir(newpath)
 filename = strftime("%Y-%m-%d")
 z = ''
 for x in name:
-	z+=x+'-'
-filename+='-'+z[0:-1]
-filename+='.md'
-f = open(filename,"w")
+    z += x + '-'
+filename += '-' + z[0:-1]
+filename += '.md'
+f = open(filename, "w")
 
 f.write("---\n")
 f.write("layout: post\n")
-f.write("title: %s\n" %(n))
-f.write("tags:"+tagline+'\n')
-f.write("Year: "+strftime("%Y") + '\n')
-f.write("Month: "+strftime("%m") + '\n')
-f.write("Date: "+strftime("%d") + '\n')
+f.write("title: %s\n" % (n))
+f.write("tags:" + tagline + '\n')
+f.write("category:" + category + '\n')
+f.write("Year: " + strftime("%Y") + '\n')
+f.write("Month: " + strftime("%m") + '\n')
+f.write("Date: " + strftime("%d") + '\n')
 f.write("---\n")
 
 bigtext = """
@@ -78,14 +77,6 @@ bigtext = """
   })();
 </script>
 <!-- Written by hyades -->
-"""%()
-f.write(bigtext+"\n")
+""" % ()
+f.write(bigtext + "\n")
 f.close()
-
-
-
-
-
-
-
-
