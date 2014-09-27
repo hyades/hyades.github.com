@@ -12,15 +12,9 @@ tags: [Aayush, Ahuja]
 Hey, I am **Aayush Ahuja**. This is my blog where I am wishing to share new experiences that I learn every day. 
 
 I am currently working with [Groupon](http://groupon.com) in Chennai, India. I am a Computer Science Engineer from BITS-Pilani, Pilani Campus. 
-<figure>
-	<img src="{{ site.url }}/images/pic.jpg" alt="Aayush Ahuja">
-	<figcaption>Aayush Ahuja</figcaption>
-</figure>
+
 
 I was born and brought up in New Delhi, India. Was in Pilani was four years of engineering and now currently in Chennai.
-
-
-At some point in the not-terribly-distant future, I hope to found a self-sustaining collective of clever people, for fun, profit(?), and the promotion of human life in the universe. This might wind up in Qatar, Bangladesh, Scandinavia, the Massachusetts Bay Area, the SF Bay Area, Japan, Germany, or the dustbin of overly idealistic plans. (Yes, I have a special bin for overly idealistic plans. In my district they can't be recycled with residential mixed paper.) The most challenging aspect of this concept is to curtail unproductive competition with other people who will inevitably have the same idea. (Some sort of cooperative federation...) I'm presently looking for people who might be interested in being a part of such an organization.
 
 Anyways, for now I'm just working toward changing the face of Electrical Engineering forever. Not that I necessarily expect to succeed, but it's something to strive for, and it's a fun problem to work on.
 
