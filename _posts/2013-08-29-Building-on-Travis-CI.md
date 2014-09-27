@@ -2,6 +2,7 @@
 layout: post
 title: Building on Travis-CI
 tags: travis gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 08
 Date: 29
