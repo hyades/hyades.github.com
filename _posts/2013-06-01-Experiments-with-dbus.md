@@ -2,6 +2,7 @@
 layout: post
 title: Experiments with dbus
 tags: dbus gsoc python
+category: 'GSoC-2013'
 Year: 2013
 Month: 06
 Date: 01

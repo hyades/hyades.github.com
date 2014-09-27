@@ -2,6 +2,7 @@
 layout: post
 title: Installation and Changes in Structure
 tags: install gstreamer python
+category: 'GSoC-2013'
 Year: 2013
 Month: 06
 Date: 23

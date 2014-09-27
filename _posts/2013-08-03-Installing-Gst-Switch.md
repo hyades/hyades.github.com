@@ -2,6 +2,7 @@
 layout: post
 title: Installing Gst-Switch
 tags: install gsoc gst-switch
+category: 'GSoC-2013'
 Year: 2013
 Month: 08
 Date: 03

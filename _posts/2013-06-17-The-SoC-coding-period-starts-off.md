@@ -2,6 +2,7 @@
 layout: post
 title: The SoC Coding Period Starts Off
 tags: gsoc python start gdbus dbus
+category: 'GSoC-2013'
 Year: 2013
 Month: 06
 Date: 17

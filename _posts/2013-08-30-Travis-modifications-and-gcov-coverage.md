@@ -2,6 +2,7 @@
 layout: post
 title: Travis modifications and gcov coverage
 tags: gcov coverage travis gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 08
 Date: 30

@@ -2,6 +2,7 @@
 layout: post
 title: Improvements
 tags: lint pep8 performance testing gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 09
 Date: 09

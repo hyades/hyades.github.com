@@ -2,6 +2,7 @@
 layout: post
 title: Integration Tests - 2
 tags: testing gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 08
 Date: 17

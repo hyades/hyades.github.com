@@ -2,6 +2,7 @@
 layout: post
 title: Exception Handling and Unittests
 tags: exceptions unittest python gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 07
 Date: 20

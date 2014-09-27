@@ -1,6 +1,6 @@
 title:            Aayush Ahuja
 description:      "Wants to know everything"
-logo:             omikron.png
+logo:             pic.jpg
 disqus_shortname: aayushahuja
 # Assign a default image for your site's header and footer
 default_bg:       default_bg1.jpg
@@ -37,7 +37,7 @@ owner:
   flickr:         
   tumblr:         
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    https://plus.google.com/u/0/102602916593522619858
+  google_plus:    https://plus.google.com/107146873396010795552
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   UA-39365944-7

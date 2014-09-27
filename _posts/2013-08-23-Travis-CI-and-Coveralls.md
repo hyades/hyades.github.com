@@ -2,6 +2,7 @@
 layout: post
 title: Travis CI and Coveralls
 tags: travis coveralls readthedocs gsoc python
+category: 'GSoC-2013'
 Year: 2013
 Month: 08
 Date: 23

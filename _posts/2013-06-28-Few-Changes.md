@@ -2,6 +2,7 @@
 layout: post
 title: Few Changes
 tags: gsoc pep8 python
+category: 'GSoC-2013'
 Year: 2013
 Month: 06
 Date: 28

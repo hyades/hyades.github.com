@@ -2,6 +2,7 @@
 layout: post
 title: Testing building on Travis
 tags: travis testing gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 08
 Date: 27

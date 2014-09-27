@@ -2,6 +2,7 @@
 layout: post
 title: testing testing testing
 tags: tests gsoc dbus python
+category: 'GSoC-2013'
 Year: 2013
 Month: 07
 Date: 13

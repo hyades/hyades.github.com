@@ -2,6 +2,7 @@
 layout: post
 title: C Coverage, Travis Builds
 tags: travis gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 09
 Date: 04

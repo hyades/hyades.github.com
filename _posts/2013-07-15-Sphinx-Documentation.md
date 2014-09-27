@@ -2,6 +2,7 @@
 layout: post
 title: Sphinx Documentation
 tags: sphinx documentation gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 07
 Date: 15

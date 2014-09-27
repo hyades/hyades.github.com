@@ -2,6 +2,7 @@
 layout: post
 title: Working on previews and plans ahead
 tags: plans previews gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 07
 Date: 10

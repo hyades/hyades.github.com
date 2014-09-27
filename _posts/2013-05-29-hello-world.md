@@ -2,6 +2,7 @@
 layout: post
 title: hello-world
 tags: hello hi
+category: 'GSoC-2013'
 Year: 2013
 Month: 05
 Date: 29

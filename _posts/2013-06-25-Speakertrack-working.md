@@ -2,6 +2,7 @@
 layout: post
 title: Speakertrack working
 tags: speakertrack build gsoc gstreamer
+category: 'GSoC-2013'
 Year: 2013
 Month: 06
 Date: 25

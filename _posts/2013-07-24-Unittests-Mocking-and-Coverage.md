@@ -2,6 +2,7 @@
 layout: post
 title: Unittests Mocking and Coverage
 tags: unittests mock coverage
+category: 'GSoC-2013'
 Year: 2013
 Month: 07
 Date: 24

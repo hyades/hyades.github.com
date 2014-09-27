@@ -2,6 +2,7 @@
 layout: post
 title: Correcting lots of stuff
 tags: python gsoc
+category: 'GSoC-2013'
 Year: 2013
 Month: 07
 Date: 20

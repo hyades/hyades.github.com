@@ -2,6 +2,7 @@
 layout: post
 title: Beginning with some code
 tags: gsoc timvideos python
+category: 'GSoC-2013'
 Year: 2013
 Month: 06
 Date: 07

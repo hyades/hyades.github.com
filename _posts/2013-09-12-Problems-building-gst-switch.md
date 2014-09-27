@@ -2,6 +2,7 @@
 layout: post
 title: Problems building gst-switch
 tags: build gsoc problems
+category: 'GSoC-2013'
 Year: 2013
 Month: 09
 Date: 12
