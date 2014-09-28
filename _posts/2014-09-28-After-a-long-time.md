@@ -7,18 +7,20 @@ Year: 2014
 Month: 09
 Date: 28
 ---
+<h2>Recollecting</h2>
 
 Its been a year since I last blogged. This time I have gotten a new theme for the blog so that I can separate out the GSoC work from regular blog posts.
 
 Recounting the things happened over the last year - 
-* Finished up GSoC
-* Completed an internship with [Symantec](http://www.symantec.com/) for a six month period from Jul to Dec 2013 as a part of the Practice School - II program done by our college. I was working on a Build Automation System which could setup build environments across various platforms for a two-factor authentication service - [Symantec Validation and Identity Protection Service(VIP)](www.symantec.com/en/in/vip-authentication-service).
-* Studied a little for placements which were lined up for Jan 2014. Became regular member of [Codeforces](http://codeforces.com) and improved a lot thanks to the site!
-* In Jan 2014 got placed in [Groupon](http://groupon.com), a daily deals company.
-* Somehow completed the formality last semester at college. Most part of this semester was spent sleeping and playing DotA and cricket. Also, during this time taught Python in the college as part of extra-curricular CSD courses offered by our college BITS - Pilani.
-* College ended in May and my joining date at Groupon was in July. Ended up finally learning how to drive a car and scooter in this gap. Also took some cooking lessons from my mother owing to my foodie habits.
-* Joined Groupon in Chennai on 7th July 2014.
-
+<ul>
+	<li> Finished up GSoC</li>
+	<li> Completed an internship with [Symantec](http://www.symantec.com/) for a six month period from Jul to Dec 2013 as a part of the Practice School - II program done by our college. I was working on a Build Automation System which could setup build environments across various platforms for a two-factor authentication service - [Symantec Validation and Identity Protection Service(VIP)](www.symantec.com/en/in/vip-authentication-service).</li>
+	<li> Studied a little for placements which were lined up for Jan 2014. Became regular member of [Codeforces](http://codeforces.com) and improved a lot thanks to the site!</li>
+	<li> In Jan 2014 got placed in [Groupon](http://groupon.com), a daily deals company.</li>
+	<li> Somehow completed the formality last semester at college. Most part of this semester was spent sleeping and playing DotA and cricket. Also, during this time taught Python in the college as part of extra-curricular CSD courses offered by our college BITS - Pilani.</li>
+	<li> College ended in May and my joining date at Groupon was in July. Ended up finally learning how to drive a car and scooter in this gap. Also took some cooking lessons from my mother owing to my foodie habits.</li>
+	<li> Joined Groupon in Chennai on 7th July 2014.
+</ul>
 
 
 <div class="row">	
