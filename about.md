@@ -23,7 +23,7 @@ Things which make my adrenaline shoot off -
 <li>Solving a problem after a really long time which was so daunting in start</li>
 <li>Gaming!! (Dota2)</li>
 <li>Gym</li>
-<li>Cricket Matches(guess common with most Indians)</li>
+<li>Cricket Matches (guess common with most Indians)</li>
 </ul>
 
 I am also a foodie who loves eating Indian, Mughlai and Chinese food especially Chicken. I am also a decent cook, managing to make my own dinner everyday somehow. 
