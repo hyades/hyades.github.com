@@ -6,16 +6,16 @@ path = "_posts"
 cwd = os.getcwd()
 newpath = cwd + '/' + path
 
-n = raw_input("Enter the name of the post")
+n = raw_input("Enter the name of the post: ")
 name = n.split()
-tags = raw_input("""Enter tags if any["n" if No]""").split()
+tags = raw_input("""Enter tags if any["n" if No](put spaces in between): """).split()
 if tags[0] == 'n':
     tagline = ""
 else:
     tagline = ''
     for x in tags:
         tagline += " " + x
-category = raw_input("Enter the Category of the Post")
+category = raw_input("Enter the Category of the Post: ")
 os.chdir(newpath)
 filename = strftime("%Y-%m-%d")
 z = ''
