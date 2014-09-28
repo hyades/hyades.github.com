@@ -2,7 +2,7 @@
 layout: post
 title: After a long time
 tags: happenings
-category:General
+category: General
 Year: 2014
 Month: 09
 Date: 28
