@@ -26,7 +26,7 @@ owner:
   avatar:         pic.jpg
   email:          aayushahuja@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    A coder who likes to think a lot, a strategy game lover, flautist, decent cook
+  description:    A coder who likes to think a lot, a strategy game lover, flautist, super cook
   # Social networking links used in footer. Update and remove as you like.
   twitter:        aayushahuja
   facebook:       aayush.ahuja
@@ -40,7 +40,7 @@ owner:
   google_plus:    https://plus.google.com/107146873396010795552
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   UA-39365944-7
+google_analytics:   UA-41289176-1
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
