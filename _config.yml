@@ -58,6 +58,8 @@ links:
     url: /tags
   - title: Aayush Ahuja
     url: /about/index.html
+  - title: Resume
+    url: /assets/files/Resume-AayushAhuja-Latest.pdf
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Kolkata
