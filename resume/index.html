@@ -12,16 +12,12 @@
 
 		  ga('create', '{{ site.google_analytics }}', 'auto');
 		  ga('require', 'displayfeatures');
-		  ga('send', 'pageview');
+		  ga('send', 'pageview', '/resume');
 
 		</script>
 		<script type="text/javascript">
-			var url = "/assets/files/Resume-AayushAhuja-Latest.pdf";
-			var link = document.createElement("a");
-		    link.download = "Resume - Aayush Ahuja";
-		    link.href = url;
-		    link.click();
-		    history.back();
+			window.location = "/assets/files/Resume-AayushAhuja-Latest.pdf";
 		</script>
+		
 	</body>
 </html>
