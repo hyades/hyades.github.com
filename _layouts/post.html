@@ -1,89 +1,71 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!doctype html>
+<html lang="en">
 {% include head.html %}
-{% if site.dropcap %}<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>{% endif %}
-</head>
-<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
-{% if page.imagefeature %}
-        <main id="notepad-post-container" class="notepad-post-container intro-effect-sliced" role="main">
-            <header class="notepad-post-header">
-                <div class="bg-img"></div>
-                
-                <div class="notepad-post-menu-header">
-{% else %}
-        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
-            <header class="notepad-post-header-simple">
-                <div class="notepad-post-menu-header-simple">
-{% endif %}
-                    <a class="notepad-blog-logo" href="{{ site.url }}">
-                        <img src="{{ site.url }}/images/{{ site.logo }}" alt="Blog Logo" />
-                    </a>
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        {% include navigation.html %}
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                {{ page.date | date: "%B %-d, %Y" }}
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                {% capture words %}
+                  {{ page.content | number_of_words }}
+                {% endcapture %}
+                {% unless words contains "-" %}
+                  {{ words | plus: 250 | divided_by: 250 | append: " minute read" }}
+                {% endunless %}
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                {% for tag in page.tags %}
+                  <a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </header>
 
-                <div class="notepad-blog-menu">      
-    <div class="notepad-mobile-menu show-for-small">
-        <a href="#"><i class="fa fa-bars"></i></a>
-    </div>
-    <ul class="notepad-menu">
-        <li class="notepad-mobile-close-btn show-for-small text-right">
-            <a href="#"><i class="fa fa-times"></i></a>
-        </li>
-{% for link in site.links %}
-            <li>{% if link.external %}
-                    <a href="{{ link.url }}">{{ link.title }}</a>
-                {% else %}
-                    <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-                {% endif %} </li>
-{% endfor %}            
-           <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
-    </ul>
+          <div class="article-content">
+            {{ content }}
+          </div>
 
-</div>
-            </div>
-{% if page.imagefeature %}
-            <div class="notepad-post-title bg-check">
-                <h1>{{ page.title }}</h1>
-                <p>by <strong>{{ site.owner.name }}</strong> &#8212; {% assign tagsize = page.tags.size %}{% if tagsize != 0 %}on {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&comma;&nbsp;{% endunless %}{% endfor %}{% endif %} <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time></strong></p>
-            </div>
-            <div class="bg-img"></div>
-        </header>
-        <button class="trigger bg-check" data-info="Read more"><span>Trigger</span></button>
-        <img src="{{ site.url }}/images/{{ page.imagefeature }}" alt="cover-image" />
-{% else %}
-                <div class="notepad-post-title-simple row">
-                    <div class="small-12 columns">
-                        <div class="notepad-post-meta-simple">
-                            <h1>{{ page.title }}</h1>
-                            <p>by <strong>{{ site.owner.name }}</strong> &#8212; {% assign tagsize = page.tags.size %}{% if tagsize != 0 %}on {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&comma;&nbsp;{% endunless %}{% endfor %}{% endif %} <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time></strong></p>
-                        </div>
-                    </div>
-                </div>
-            </header>
-{% endif %}
-        {% if page.imagefeature %}<article class="notepad-post-content post">{% else %}<article class="notepad-post-content post tag-simple">{% endif %}
-            <div>{{ content }}
-            </div>
+          <div class="article-share">
+            {% assign page_title = page.title  | truncate '110' %}
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status={{ page_title }} - {{ site.url }}{{ page.url }} {% if site.social.twitter %}by @{{ site.social.twitter }}{% endif %}', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url={{ site.url }}{{ page.url }}', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          {% if site.discus_identifier %}
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//{{ site.discus_identifier }}.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          {% endif %}
         </article>
-        <div class="cf"></div>
-{% if site.share %}{% include share.html %}{% endif %}
-        <div class="cf"></div>
-        
-{% include signoff.html %} 
-        
-        <div class="cf"></div>
-        {% if site.disqus_shortname and page.comments == true %}
-        <section class="notepad-disqus row">
-    <div class="small-12 columns">
-        <h1 class="notepad-comments-header">Comments</h1>
-        <div id="disqus_thread"></div>
-        {% include disqus_comments.html %}
+        {% include footer.html %}
+      </div>
     </div>
-</section>
-{% endif %}
-        <div class="cf"></div>
-
-    {% include footer.html %} 
-</main>    
-{% include scripts.html %} 
+  </main>
+  {% include javascripts.html %}
 </body>
 </html>
