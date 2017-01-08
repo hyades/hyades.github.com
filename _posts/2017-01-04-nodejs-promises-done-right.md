@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "NodeJS Promises Done Right"
+tags: [node, promise, api]
 description: ""
 ---
 
