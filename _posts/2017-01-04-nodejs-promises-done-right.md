@@ -262,6 +262,23 @@ var createMatches = Promise.method(function (params) {
     Separation of concerns along with manipulating promises is the correct way. This way we utilize the maximum capabilities of the awesome promise libraries provided, making code easier to understand, and thus easier to maintain.
 </p>
 
+<br>
+<h2>More link to read - </h2>
+
+<p>
+    <ul>
+        <li>
+            <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise">ES6 Native Promises</a>
+        </li>
+        <li>
+            <a href="http://exploringjs.com/es6/ch_promises.html">Big list of what can be done with promises</a>
+        </li>
+        <li>
+            <a href="https://www.toptal.com/mongodb/business-intelligence-platform-using-mongodb-aggregation-pipeline">Writing aggregation queries in MongoDB</a>
+        </li>
+    </ul>
+</p>
+
 
 
 
