@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aayush Ahuja | Correcting lots of stuff</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Correcting lots of stuff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hyades.github.io/posts/correcting-lots-of-stuff">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Aayush Ahuja">
+  <meta property="og:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://hyades.github.io/posts/correcting-lots-of-stuff">
+  <meta name="twitter:title" content="Correcting lots of stuff">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://hyades.github.iofeed.xml" type="application/rss+xml" rel="alternate" title="Aayush Ahuja Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="Aayush Ahuja">Aayush Ahuja</a>
+  <ul class="header-links">
+    <li>
+      <a href="resume" title="Resume">
+        <span class="icon icon-android-contact"></span>
+      </a>
+    </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/hyades" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="http://in.linkedin.com/in/aayushahuja" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:aayushahuja@gmail.com" target="_blank" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Correcting lots of stuff</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                July 20, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  3 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tags/#python">python</a>
+                
+                  <a href="/tags/#gsoc">gsoc</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2>
+	What was Wrong
+</h2>
+<p>
+	While writing unittests I went off-track. Thankfully, mithro guided me at correct time. Two major wrong things I was doing were:
+	<ol>
+		<li>For testing purposes, to each and every function in my code I was adding input validation statements, so that I did not get any TypeError or ValueError while running it. Instead of doing this, I should have made exception handlers. So my last few commits were not useful at all and I had to remove them.</li>
+		<li>I was using setters and getters in my code. I had added them to give extra abstraction to the user. However, I learnt that in python these are seldom used. So, I had to remove these lines from the code.</li>
+	</ol>
+	These things were the reason I delayed writing this blog post.
+</p>
+<h2>
+	Commits:
+</h2>
+<p>
+	A rather long list of commits:
+	<ul>
+		<li>exceptions for run, terminate and kill: <a href="https://github.com/hyades/gst-switch/commit/af1bd7c8645b82fd2a725655fd6905709d6d8d45">af1bd7c8645b82fd2a725655fd6905709d6d8d45</a></li>
+		<li>exceptions for run, terminate and kill: <a href="https://github.com/hyades/gst-switch/commit/51dada1c0b16e8e3fd90eb7a967fb583b87d76f8">51dada1c0b16e8e3fd90eb7a967fb583b87d76f8</a></li>
+		<li>Exception handling for Server.run and py.tests: <a href="https://github.com/hyades/gst-switch/commit/8807d07c2d98d5d39b8a0c22eabfc77b619369e1">8807d07c2d98d5d39b8a0c22eabfc77b619369e1</a></li>
+		<li>exception handling for server process creation: <a href="https://github.com/hyades/gst-switch/commit/832e0cb1948c601faa20292b6883a4d4d12bb1dc">832e0cb1948c601faa20292b6883a4d4d12bb1dc</a></li>
+		<li>added exception for subprocess: <a href="https://github.com/hyades/gst-switch/commit/8ef1346d40822b47e3cba16fd42848843a265783">8ef1346d40822b47e3cba16fd42848843a265783</a></li>
+		<li>gst-option added and updated connection.py: <a href="https://github.com/hyades/gst-switch/commit/9f8434cb9f06a25d6f9e3fec22a04289d2ba458e">9f8434cb9f06a25d6f9e3fec22a04289d2ba458e</a></li>
+		<li>Removed wrong unittests: <a href="https://github.com/hyades/gst-switch/commit/269d307d5edd1b6d621457038b9148152bf14e12">269d307d5edd1b6d621457038b9148152bf14e12</a></li>
+		<li>Made helpers.py and testsource.py pythonic: <a href="https://github.com/hyades/gst-switch/commit/18608b8702826279711ed9d749f435b4340607ee">18608b8702826279711ed9d749f435b4340607ee</a></li>
+		<li>Made server.py pythonic: <a href="https://github.com/hyades/gst-switch/commit/abecf31fb2d429a84288026008e44feae3e8640c">abecf31fb2d429a84288026008e44feae3e8640c</a></li>
+		<li>Made connection.py pythonic and removed dbus.py: <a href="https://github.com/hyades/gst-switch/commit/2c7c7c03b527885c6bc0043dd73a0aeb7d29444d">2c7c7c03b527885c6bc0043dd73a0aeb7d29444d</a></li>
+		<li>Made connection.py pythonic and removed dbus.py: <a href="https://github.com/hyades/gst-switch/commit/82cd61beadbd499f9424409c218bcae5b4840217">82cd61beadbd499f9424409c218bcae5b4840217</a></li>
+		<li>fixed typo: <a href="https://github.com/hyades/gst-switch/commit/e11aaea2b080d63f55a95b682593d4e6c50c1606">e11aaea2b080d63f55a95b682593d4e6c50c1606</a></li>
+		<li>Fixed problems: <a href="https://github.com/hyades/gst-switch/commit/48e1742478627741b7c6def34ab2c2f972609b82">48e1742478627741b7c6def34ab2c2f972609b82</a></li>
+	</ul>
+</p>
+
+<h2>
+	Exception Handling
+</h2>
+<p>
+	From above experience I learnt that I had to put exception handlers in my code. I had very little knowledge of exception handlers and absolutely no experience.
+</p>
+<p>
+	Some good links that I found were very useful in the field of exception handling and testing:
+	<ul>
+		<li><a href="http://pythontesting.net/framework/pytest/pytest-introduction/">http://pythontesting.net/framework/pytest/pytest-introduction</a> : This page nicely explains how to use py.test.</li>
+		<li><a href="http://www.itmaybeahack.com/book/python-2.6/html/p02/p02c07_exceptions.html">http://www.itmaybeahack.com/book/python-2.6/html/p02/p02c07_exceptions.html</a>: A very long and very good page which explains exception handling to its core.</li>
+		<li><a href="http://stackoverflow.com/questions/6180185/custom-python-exceptions-with-error-codes-and-error-messages">http://stackoverflow.com/questions/6180185/custom-python-exceptions-with-error-codes-and-error-messages</a>: Nicely explains how to create custom exception classes</li>
+		<li><a href="http://blog.ianbicking.org/2007/09/12/re-raising-exceptions/">http://blog.ianbicking.org/2007/09/12/re-raising-exceptions/</a>: Nicely explains how to raise and re-raise exceptions in python</li>
+	</ul>
+</p>
+<p>
+	After spending lots of time on reading exception handling in python, I made a few changes to the code, where I defined some custom Exceptions like PathError: Raised when a wrong path is specified to the run the gst-switch-srv process. Another one is ServerProcessError: Raised when something wrong happens with the process running like a OSError indicating some internal fault.
+</p>
+<h2>Things to do..</h2>
+<p>
+	Add exception handling for all modules and write py.test testing modules for testing them
+</p>
+
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right"> <a href="/posts/writing-unittests" title="Previous Post: Writing unittests"><i class="icon-chevron-left"></i></a> 	    	<a href="/posts/exception-handling-and-unittests" title="Next Post: Exception Handling and Unittests"><i class="icon-chevron-right"></i></a> 	 </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- Written by hyades -->
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Correcting lots of stuff - http://hyades.github.io/posts/correcting-lots-of-stuff ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://hyades.github.io/posts/correcting-lots-of-stuff', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://hyades.github.io/posts/correcting-lots-of-stuff', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//aayushahuja.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <div>
+    <section><a href="/about">Aayush Ahuja</a> 2023</section>
+  </div>
+ 
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-41289176-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

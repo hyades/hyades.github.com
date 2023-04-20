@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aayush Ahuja | Writing unittests</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Writing unittests">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hyades.github.io/posts/writing-unittests">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Aayush Ahuja">
+  <meta property="og:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://hyades.github.io/posts/writing-unittests">
+  <meta name="twitter:title" content="Writing unittests">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://hyades.github.iofeed.xml" type="application/rss+xml" rel="alternate" title="Aayush Ahuja Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="Aayush Ahuja">Aayush Ahuja</a>
+  <ul class="header-links">
+    <li>
+      <a href="resume" title="Resume">
+        <span class="icon icon-android-contact"></span>
+      </a>
+    </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/hyades" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="http://in.linkedin.com/in/aayushahuja" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:aayushahuja@gmail.com" target="_blank" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Writing unittests</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                July 16, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tags/#unittest">unittest</a>
+                
+                  <a href="/tags/#test">test</a>
+                
+                  <a href="/tags/#gsoc">gsoc</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h3>
+	What I am doing
+</h3>
+<p>
+	I am beginning to get an idea of what unittests are. They try to test a particular small portion of your code and ensure that it will behave normally in all test cases.
+</p>
+<p> 
+	For example I was writing unittests for a function - set_video_port(video_port)
+	Mithro pointed out that if I give an argument like -1, my code will not work correctly. So this type of error where the port numbers are not in range should induce a <b>ValueError</b>. Similary, putting a string as an argument will should also raise an exception - <b>TypeError</b>.
+</p>
+<p>
+	I am making a class for each function, and the functions in the class are corresponding tests
+	The format is like:
+	<script src="https://gist.github.com/hyades/6009468.js"></script>
+</p>
+<p>
+	I run these tests by simply issuing a command like 
+	<script src="https://gist.github.com/hyades/6009520.js"></script>
+</p>
+<p>
+	The commits made are
+	<ul>
+		<li>Added unittest for BaseServer.get_record_file: <a href="https://github.com/hyades/gst-switch/commit/b5e4a4002c33d9f9a2c97184e6d9eacbeaad06a3">b5e4a4002c33d9f9a2c97184e6d9eacbeaad06a3</a></li>
+		<li>Added unittest for BaseServer.get_control_port: <a href="https://github.com/hyades/gst-switch/commit/f4ce165cb8f5d6b54c1ae3836025f1e0600ade6d">f4ce165cb8f5d6b54c1ae3836025f1e0600ade6d</a></li>
+		<li>Added unittest for BaseServer.get_audio_port: <a href="https://github.com/hyades/gst-switch/commit/c8f2ccdf9675dd4ce3b146e35feda6289cce307a">c8f2ccdf9675dd4ce3b146e35feda6289cce307a</a></li>
+		<li>Added unittest for BaseServer.get_video_port: <a href="https://github.com/hyades/gst-switch/commit/933598967c845f394d2744322b1063b583bb53a9">933598967c845f394d2744322b1063b583bb53a9</a></li>
+		<li>Added unittest for BaseServer.set_record_file: <a href="https://github.com/hyades/gst-switch/commit/a403b96a3baaab320578530b2ebfc502cf1973b3">a403b96a3baaab320578530b2ebfc502cf1973b3</a></li>
+		<li>Added unittest for BaseServer.set_control_port: <a href="https://github.com/hyades/gst-switch/commit/ab2743e221b45c980a75a9e9464f6ea61f6748a0">ab2743e221b45c980a75a9e9464f6ea61f6748a0</a></li>
+		<li>Added unittest for BaseServer.set_control_port: <a href="https://github.com/hyades/gst-switch/commit/b4584d1c9214a555af052b7542adfa707acc9a1b">b4584d1c9214a555af052b7542adfa707acc9a1b</a></li>
+		<li>Added unittest for BaseServer.set_audio_port: <a href="https://github.com/hyades/gst-switch/commit/761fd99c5519da82c79ee5e31f77cf07769a0b65">761fd99c5519da82c79ee5e31f77cf07769a0b65</a></li>
+		<li>Added unittest for BaseServer.set_video_port: <a href="https://github.com/hyades/gst-switch/commit/6963aa5bbbddbe8d25e776ca4727a509132485e5">6963aa5bbbddbe8d25e776ca4727a509132485e5</a></li>
+	</ul>
+
+</p>
+<h3>
+	What I am planning to do
+</h3>
+<p>
+	I will be continuing with writing unittests for each function of the code :)
+</p>
+<p><br /></p>
+<p>
+	An off-topic thing. Getting all commits I had made in the last days on the blog page was such a headache. I have made this small little script for getting these commits and generating html code out of it <a href="https://github.com/hyades/hyades.github.com/blob/master/commits.py">https://github.com/hyades/hyades.github.com/blob/master/commits.py</a>
+</p>
+
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right"> <a href="/posts/sphinx-documentation" title="Previous Post: Sphinx Documentation"><i class="icon-chevron-left"></i></a> 	    	<a href="/posts/correcting-lots-of-stuff" title="Next Post: Correcting lots of stuff"><i class="icon-chevron-right"></i></a> 	 </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- Written by hyades -->
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Writing unittests - http://hyades.github.io/posts/writing-unittests ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://hyades.github.io/posts/writing-unittests', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://hyades.github.io/posts/writing-unittests', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//aayushahuja.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <div>
+    <section><a href="/about">Aayush Ahuja</a> 2023</section>
+  </div>
+ 
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-41289176-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aayush Ahuja | Speakertrack working</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Speakertrack working">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hyades.github.io/posts/speakertrack-working">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Aayush Ahuja">
+  <meta property="og:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://hyades.github.io/posts/speakertrack-working">
+  <meta name="twitter:title" content="Speakertrack working">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://hyades.github.iofeed.xml" type="application/rss+xml" rel="alternate" title="Aayush Ahuja Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="Aayush Ahuja">Aayush Ahuja</a>
+  <ul class="header-links">
+    <li>
+      <a href="resume" title="Resume">
+        <span class="icon icon-android-contact"></span>
+      </a>
+    </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/hyades" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="http://in.linkedin.com/in/aayushahuja" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:aayushahuja@gmail.com" target="_blank" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Speakertrack working</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                June 25, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tags/#speakertrack">speakertrack</a>
+                
+                  <a href="/tags/#build">build</a>
+                
+                  <a href="/tags/#gsoc">gsoc</a>
+                
+                  <a href="/tags/#gstreamer">gstreamer</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2>Gstreamer Uninstalled Script</h2>
+<p>
+	I was earlier experiencing many problems installing the gstreamer package for running the speakertrack modules. This task was made easy by the gst-uninstalled script (<a href="http://cgit.freedesktop.org/gstreamer/gstreamer/plain/scripts/create-uninstalled-setup.sh">http://cgit.freedesktop.org/gstreamer/gstreamer/plain/scripts/create-uninstalled-setup.sh</a>). I downloaded the script and ran it. This script clones the gstreamer git modules (gstreamer, gst-plugins-base, gst-plugins-good, gst-plugins-bad, gst-plugins-ugly) into "~/gst/master". I replaced the gst-plugins-bad module by <a href="https://github.com/duzy/gst-plugins-bad.git">Duzy's</a> one from speakertrack_new branch. The gst-uninstalled script generates a script gst-master at "~/gst". This script is useful in setting the environment variables correctly. These environment variables are needed to install gstreamer in a custom location so that the plugins know where the gstreamer package was installed.
+	Now after doing this I followed the setting up instructions. I built like this:
+</p>
+<p><script src="https://gist.github.com/hyades/6107999.js"></script></p>
+<p>
+	Doing this builds the gstreamer WITHOUT any build errors. The executables - gst-launch-1.0, gst-inpect-1.0 etc are now located at ~/gst/master/gstreamer/tools/.libs/ or ~/gst/master/gstreamer/tools/ Now, I built the gst-switch in speakertrack branch doing ./autogen and then make and copied the executables from /tools/ - gst-switch-srv, gst-switch-ui and gst-switch-cap to the previous location. Now, running gst-switch-srv and gst-switch-cap worked perfectly with the modules capable of detecting my face :)
+</p>
+<p>
+	The environment variables can also be set using a script like this:
+	<noscript><pre>400: Invalid request</pre></noscript><script src="https://gist.github.com/6176137.js"> </script>
+</p>
+<h2>
+	The Code
+</h2>
+<p>
+	I have made some edits. 
+	<ol>
+		<li>The path of the executables now needs to be specified. This will be set to some default value later.</li>
+		<li>Earlier if the server was running and while testing I get a python exception. Now since server.end() call is made afterwards, the gst-switch-srv would have kept on running in the background. Running "ps -ef | grep gst-switch-srv" will confirm it. Now, there is a function which can be called like server.brute_end(). This should be added to except portion in the test script like this script:
+			<noscript><pre>400: Invalid request</pre></noscript><script src="https://gist.github.com/6176144.js"> </script>
+		</li>
+	</ol>
+</p>
+
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right"> <a href="/posts/installation-and-changes-to-structure" title="Previous Post: Installation and Changes in Structure"><i class="icon-chevron-left"></i></a> 	    	<a href="/posts/few-changes" title="Next Post: Few Changes"><i class="icon-chevron-right"></i></a> 	 </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- Written by hyades -->
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Speakertrack working - http://hyades.github.io/posts/speakertrack-working ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://hyades.github.io/posts/speakertrack-working', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://hyades.github.io/posts/speakertrack-working', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//aayushahuja.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <div>
+    <section><a href="/about">Aayush Ahuja</a> 2023</section>
+  </div>
+ 
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-41289176-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

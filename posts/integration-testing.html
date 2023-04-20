@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aayush Ahuja | Integration Testing</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Integration Testing">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hyades.github.io/posts/integration-testing">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Aayush Ahuja">
+  <meta property="og:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://hyades.github.io/posts/integration-testing">
+  <meta name="twitter:title" content="Integration Testing">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://hyades.github.iofeed.xml" type="application/rss+xml" rel="alternate" title="Aayush Ahuja Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="Aayush Ahuja">Aayush Ahuja</a>
+  <ul class="header-links">
+    <li>
+      <a href="resume" title="Resume">
+        <span class="icon icon-android-contact"></span>
+      </a>
+    </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/hyades" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="http://in.linkedin.com/in/aayushahuja" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:aayushahuja@gmail.com" target="_blank" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Integration Testing</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                August 16, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  3 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tags/#testing">testing</a>
+                
+                  <a href="/tags/#gsoc">gsoc</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2>Commits</h2>
+<p>
+	<ul>
+		<li>Bug fixes for audio sources, integration test for audio sources: <a href="https://github.com/hyades/gst-switch/commit/7d2795f400bde81cdbea2e94847408a847839e3e">7d2795f400bde81cdbea2e94847408a847839e3e</a></li>
+		<li>test high number of input sources: <a href="https://github.com/hyades/gst-switch/commit/6b05f5890ebe1cd339796c9b04e682aca3ca90a7">6b05f5890ebe1cd339796c9b04e682aca3ca90a7</a></li>
+		<li>Video comparison script: <a href="https://github.com/hyades/gst-switch/commit/77b7a08af88fa761f578be0d6609883c159d9c4d">77b7a08af88fa761f578be0d6609883c159d9c4d</a></li>
+		<li>test adding multiple input video streams: <a href="https://github.com/hyades/gst-switch/commit/f45c872a8c93daf1146718f0f48166ce8816e41d">f45c872a8c93daf1146718f0f48166ce8816e41d</a></li>
+		<li>add driver file for integration tests: <a href="https://github.com/hyades/gst-switch/commit/748bbad5de2aab5742288b5e5506454093218de7">748bbad5de2aab5742288b5e5506454093218de7</a></li>
+		<li>integration test for starting and stopping the server: <a href="https://github.com/hyades/gst-switch/commit/8fbc7b1dd874158043b2ce92f818428d53efdf15">8fbc7b1dd874158043b2ce92f818428d53efdf15</a></li>
+		<li>Improved unittests for AudioSrc: <a href="https://github.com/hyades/gst-switch/commit/a066418a68df91b4522ab33d75734da12455fcb7">a066418a68df91b4522ab33d75734da12455fcb7</a></li>
+		<li>Test Audio Sources: <a href="https://github.com/hyades/gst-switch/commit/b9cbd2efb9ae23cdb1ced4cf431b4998ec462490">b9cbd2efb9ae23cdb1ced4cf431b4998ec462490</a></li>
+		<li>Made TestSources video specific: <a href="https://github.com/hyades/gst-switch/commit/cb63c635c2c21c976bd164d427ddd35f0d2fd14b">cb63c635c2c21c976bd164d427ddd35f0d2fd14b</a></li>
+	</ul>
+
+</p>
+
+<h2>Completed Things</h2>
+<p>
+	<ul>
+		<li><b>Added Audio Sources</b>: No the API allows adding audio sources. These are added through the TestSources class. Audio has behaviour similar to video sources like they are added using function new_test_audio and have properties similar to them. All audio sources have two important properties: the frequency and wave. The wave can take integral values from 0 and 12.</li>
+		<li>
+			<b>Beginning with integration testing</b>: The integration tests I have done till now are:
+			<ul>
+				<li><b>Server:</b> Starting and Stopping the server multiple times.</li>
+				<li>
+					<b>Input Sources:</b> Adding input video and audio sources to the server using the API. I tried adding huge number of video sources. I also connected a preview to view the output. On my machine, on adding more than 50 sources, it seemed that the output was hanging up a bit due to slight stops in the video output. These hangs become much more severe as the number of sources are increased. Around 100 the video was almost frozen. Audio sources were also added.
+				</li>
+				<li><b>Controller: </b> I am currently implementing this part. Till now I was checking if the establish_connection method, which makes a DBus connection to the server is working. Refering to code at <a href="https://github.com/hyades/gst-switch/blob/python-api/python-api/tests/integrationtests/test_controller.py#L14">https://github.com/hyades/gst-switch/blob/python-api/python-api/tests/integrationtests/test_controller.py#L14</a> - I tried starting the server once, and then repeatedly trying to establish a new connection. I have set the NUM value to 3. This was the maximum value possible without any exceptions coming in the code. With NUM=4, the exception is like this: <code>ConnectionError: unix:abstract=gstswitch (Error receiving data: Connection reset by peer)</code> </li>
+			</ul>
+		</li>
+	</ul>
+</p>
+<h2>Other things going on</h2>
+<p>To proceed with integration tests, I need a method which can compare a video's key frames with pre-defined ones. This is done to ensure that methods like switch, change PIP works as they should. For extracting key frames, I am using <a href="http://www.ffmpeg.org/">ffmpeg</a>. Then I use scipy for calculating zero-norm between images.</p>
+<p>
+	References:
+</p>
+<p>
+	<ul>
+		<li><a href="http://stackoverflow.com/questions/12100072/how-to-extract-slides-from-a-video-using-python">http://stackoverflow.com/questions/12100072/how-to-extract-slides-from-a-video-using-python</a></li>
+		<li><a href="http://trac.ffmpeg.org/wiki/Create%20a%20thumbnail%20image%20every%20X%20seconds%20of%20the%20video">http://trac.ffmpeg.org/wiki/Create%20a%20thumbnail%20image%20every%20X%20seconds%20of%20the%20video</a></li>
+		<li><a href="http://stackoverflow.com/questions/189943/how-can-i-quantify-difference-between-two-images#answer-3935002">http://stackoverflow.com/questions/189943/how-can-i-quantify-difference-between-two-images#answer-3935002</a></li>
+	</ul>
+</p>
+<p>There are two methods for extracting frames using ffmpeg, the one in the first link. However the problem here is that even if I have two videos which were generated using the same code, the number of key frames of the two videos is not the same. I observed that some extra black frames were added. This makes it very difficult to compare the two sets of key frames. The second method is that I take frames after every few seconds. This works on the assumption that I am bringing about a change in the video in a time which is greater than this time. </p>
+
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right"> <a href="/posts/things-i-am-currently-doing" title="Previous Post: Things I am currently doing"><i class="icon-chevron-left"></i></a> 	    	<a href="/posts/integration-tests-2" title="Next Post: Integration Tests - 2"><i class="icon-chevron-right"></i></a> 	 </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- Written by hyades -->
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Integration Testing - http://hyades.github.io/posts/integration-testing ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://hyades.github.io/posts/integration-testing', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://hyades.github.io/posts/integration-testing', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//aayushahuja.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <div>
+    <section><a href="/about">Aayush Ahuja</a> 2023</section>
+  </div>
+ 
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-41289176-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

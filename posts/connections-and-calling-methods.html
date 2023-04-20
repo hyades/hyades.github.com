@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aayush Ahuja | Connections and calling methods</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Connections and calling methods">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hyades.github.io/posts/connections-and-calling-methods">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Aayush Ahuja">
+  <meta property="og:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://hyades.github.io/posts/connections-and-calling-methods">
+  <meta name="twitter:title" content="Connections and calling methods">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://hyades.github.iofeed.xml" type="application/rss+xml" rel="alternate" title="Aayush Ahuja Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="Aayush Ahuja">Aayush Ahuja</a>
+  <ul class="header-links">
+    <li>
+      <a href="resume" title="Resume">
+        <span class="icon icon-android-contact"></span>
+      </a>
+    </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/hyades" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="http://in.linkedin.com/in/aayushahuja" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:aayushahuja@gmail.com" target="_blank" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Connections and calling methods</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                July 7, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tags/#dbus">dbus</a>
+                
+                  <a href="/tags/#python">python</a>
+                
+                  <a href="/tags/#connection">connection</a>
+                
+                  <a href="/tags/#gsoc">gsoc</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>
+Blog post after a few days now. Moved on to a new city, and sadly I don't have a reliable internet connection here.Hopefully my new 3G SIM gets activated really fast! (im realizing life without fast internet is so hard :( )
+</p>
+<p>
+	Working mostly offline, for past few days I am trying to implement to Controller class I had earlier just made and left there. 
+</p>
+<p>
+	The remote methods allowed to interact with the gst-switch-srv through  dbus are:
+	<ul>
+		<li>get_compose_port: Returns compose port (default is 3001)</li>
+		<li>get_encode_port: Returns encode port</li>
+		<li>get_audio_port: Returns audio port</li>
+		<li>get_preview_ports: Returns a string of all preview ports</li>
+		<li>set_composite_mode: Sets the PIP mode (0 to 3). Returns true/false</li>
+		<li>set_encode_mode: Sets the encode mode (A or B). Returns true/false</li>
+		<li>new_record</li>
+		<li>adjust_pip: Inputs are dx, dy, dw, dh</li>
+		<li>switch: Inputs are channel and port</li>
+		<li>click_video: Inputs are x, y, fw, fh</li>
+		<li>mark_face: Input is dictionary (a, b, c, d) of faces</li>
+		<li>mark_tracking: Inputs is faces(dictionary)</li>
+	</ul>
+</p>
+<p>
+	The main controller class uses a dbus Connection class. This Connection class provides the low level interaction with the dbus. The Controller class is majorly a top level interface which hides all the dbus interactions from the user. 
+</p>
+<p>
+	The functons defined in the Controller class are almost stubs, but each of them have different parsers based on what the function does. Giving defination of each and every method will be too long, so I have tried to put some in-line documentation.
+</p>
+<p>
+	The Connection class handles making connection to the dbus and then calling remote functions. Each function has a different type of calling and objects returned are different and have to be parsed accordingly. I have implemented most of these functions, though still some are left. The interesting functions which will require more attention are adjust_pip, switch, click_video, mark_face, and mark_tracking. 
+</p>
+
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right"> <a href="/posts/few-changes" title="Previous Post: Few Changes"><i class="icon-chevron-left"></i></a> 	    	<a href="/posts/working-on-previews-and-plans-ahead" title="Next Post: Working on previews and plans ahead"><i class="icon-chevron-right"></i></a> 	 </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- Written by hyades -->
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Connections and calling methods - http://hyades.github.io/posts/connections-and-calling-methods ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://hyades.github.io/posts/connections-and-calling-methods', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://hyades.github.io/posts/connections-and-calling-methods', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//aayushahuja.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <div>
+    <section><a href="/about">Aayush Ahuja</a> 2023</section>
+  </div>
+ 
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-41289176-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

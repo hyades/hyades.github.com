@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aayush Ahuja | Exception Handling - connection.py</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Exception Handling - connection.py">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hyades.github.io/posts/exception-handling-connection-py">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Aayush Ahuja">
+  <meta property="og:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://hyades.github.io/posts/exception-handling-connection-py">
+  <meta name="twitter:title" content="Exception Handling - connection.py">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://hyades.github.iofeed.xml" type="application/rss+xml" rel="alternate" title="Aayush Ahuja Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="Aayush Ahuja">Aayush Ahuja</a>
+  <ul class="header-links">
+    <li>
+      <a href="resume" title="Resume">
+        <span class="icon icon-android-contact"></span>
+      </a>
+    </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/hyades" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="http://in.linkedin.com/in/aayushahuja" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:aayushahuja@gmail.com" target="_blank" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Exception Handling - connection.py</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                July 22, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tags/#exception">exception</a>
+                
+                  <a href="/tags/#python">python</a>
+                
+                  <a href="/tags/#gsoc">gsoc</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2>Commits</h2>
+<p>
+	<ul>
+		<li>Added unittests for bus: <a href="https://github.com/hyades/gst-switch/commit/7c6f1ea8ed5e5f68aaa1d55fd1641a0e7a997190">7c6f1ea8ed5e5f68aaa1d55fd1641a0e7a997190</a></li>
+		<li>Changed naming in test_server.py: <a href="https://github.com/hyades/gst-switch/commit/a3d31f10be8696d9f1ea0203bf5c53b0387a4e9a">a3d31f10be8696d9f1ea0203bf5c53b0387a4e9a</a></li>
+		<li>Added unittests connection.py - address: <a href="https://github.com/hyades/gst-switch/commit/8c8663100f09b968c8ce678fe87e2315916abfdd">8c8663100f09b968c8ce678fe87e2315916abfdd</a></li>
+		<li>Added properties and exception - connection.py: <a href="https://github.com/hyades/gst-switch/commit/76ce5337daebeefd62c9194f96abad8f7fc1054a">76ce5337daebeefd62c9194f96abad8f7fc1054a</a></li>
+		<li>GError Exception Handling connection.py: <a href="https://github.com/hyades/gst-switch/commit/f1506f87654dda984772b5c9ad493a5b8414d56a">f1506f87654dda984772b5c9ad493a5b8414d56a</a></li>
+	</ul>
+</p>
+<h2>Things I did</h2>
+<p>
+	<ul>
+		<li>
+			<b>Added exceptions in connection.py</b>
+			<br />
+			The functions in connection.py interact with the low level GDbus API. It is the API at gi.repository.Gio. Using this API, I am making new connection over dbus and invoking remote methods. Exception handling is done using 'GError'. This exception which occurred is sys.exc_info()[1]. lets say :
+			
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">error</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+			</code></pre></figure>
+
+			Then the error message is contained in error.message and the domain in error.domain.
+			
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">msg</span> <span class="o">=</span> <span class="n">error</span><span class="p">.</span><span class="n">message</span>
+<span class="n">domain</span> <span class="o">=</span> <span class="n">error</span><span class="p">.</span><span class="n">domain</span>
+			</code></pre></figure>
+
+		</li>
+		<li><b>Added properties in connection.py</b></li>
+		<li><b>Added unittests</b> based on py.test modules in connection.py. I covered a small chunk of it. Address and bus_name are done.</li>
+	</ul>
+</p>
+<h2>Problems I faced</h2>
+<p>
+	The Exception of DBus (GError) are located at the file /usr/lib/python2.7/dist-packages/gi/_glib/option.py and /usr/lib/python2.7/dist-packages/gi/_glib/__init__.py. However, including in my PYTHON_PATH was a problem. Somehow doing this worked
+	
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gi.repository.GLib</span> <span class="kn">import</span> <span class="n">GError</span>
+	</code></pre></figure>
+
+
+</p>
+<p>
+	Some good links I found are:
+	<br />
+	<a href="https://developer.gnome.org/glib/2.34/glib-Error-Reporting.html">https://developer.gnome.org/glib/2.34/glib-Error-Reporting.html</a>: Explains the error reporting procedure in C.
+</p>
+<h2>What Next..</h2>
+<p>Writing unittests for connection.py. At present it covers only 5-10% of connection.py</p>
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right"> <a href="/posts/exception-handling-and-unittests" title="Previous Post: Exception Handling and Unittests"><i class="icon-chevron-left"></i></a> 	    	<a href="/posts/unittests-mocking-and-coverage" title="Next Post: Unittests Mocking and Coverage"><i class="icon-chevron-right"></i></a> 	 </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- Written by hyades -->
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Exception Handling - connection.py - http://hyades.github.io/posts/exception-handling-connection-py ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://hyades.github.io/posts/exception-handling-connection-py', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://hyades.github.io/posts/exception-handling-connection-py', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//aayushahuja.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <div>
+    <section><a href="/about">Aayush Ahuja</a> 2023</section>
+  </div>
+ 
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-41289176-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

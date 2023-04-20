@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aayush Ahuja | Exception Handling and Unittests</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Exception Handling and Unittests">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hyades.github.io/posts/exception-handling-and-unittests">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Aayush Ahuja">
+  <meta property="og:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://hyades.github.io/posts/exception-handling-and-unittests">
+  <meta name="twitter:title" content="Exception Handling and Unittests">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://hyades.github.iofeed.xml" type="application/rss+xml" rel="alternate" title="Aayush Ahuja Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="Aayush Ahuja">Aayush Ahuja</a>
+  <ul class="header-links">
+    <li>
+      <a href="resume" title="Resume">
+        <span class="icon icon-android-contact"></span>
+      </a>
+    </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/hyades" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="http://in.linkedin.com/in/aayushahuja" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:aayushahuja@gmail.com" target="_blank" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Exception Handling and Unittests</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                July 20, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tags/#exceptions">exceptions</a>
+                
+                  <a href="/tags/#unittest">unittest</a>
+                
+                  <a href="/tags/#python">python</a>
+                
+                  <a href="/tags/#gsoc">gsoc</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2>
+	Commits:
+</h2>
+<p>
+	<ul>
+		<li>Added unittests for server.py: <a href="https://github.com/hyades/gst-switch/commit/e93df29e12b92c87cfbdf2878682920fb0513437">e93df29e12b92c87cfbdf2878682920fb0513437</a></li>
+		<li>Added properties for server.py: <a href="https://github.com/hyades/gst-switch/commit/b1fb7f1bd5226f666c47555b360a97c208951499">b1fb7f1bd5226f666c47555b360a97c208951499</a></li>
+		<li>Documentation: server.py: <a href="https://github.com/hyades/gst-switch/commit/be12843f29839b6f9875b71c59c386e044256170">be12843f29839b6f9875b71c59c386e044256170</a></li>
+	</ul>
+</p>
+<h3>
+	What I Did Today..
+</h3>
+<p>
+	<ul>
+		<li>I modified <a href="https://github.com/hyades/gst-switch/blob/python-api/python-api/gstswitch/server.py">server.py</a>. I finally learnt what the decorator operator in Python does. I added properties for path, video_port, audio_port, control_port and record_file. This allowed me to add exception handlers. Also detection of errors and raising is possible.</li>
+		<li>I wrote unittests <a href="https://github.com/hyades/gst-switch/blob/python-api/python-api/gstswitch/test_server.py">test_server.py</a></li>. These cover almost all errors that may come up in server.py
+	</ul>
+</p>
+<h3>Problems I Faced..</h3>
+<ul>
+	<li>
+		Using properties: Very nicely explained at:
+		<ul>
+			<li><a href="http://stackoverflow.com/questions/6618002/python-property-versus-getters-and-setters#answer-6618176">http://stackoverflow.com/questions/6618002/python-property-versus-getters-and-setters#answer-6618176</a></li>
+			<li><a href="http://stackoverflow.com/questions/6304040/real-world-example-about-how-to-use-property-feature-in-python">http://stackoverflow.com/questions/6304040/real-world-example-about-how-to-use-property-feature-in-python</a></li>
+		</ul>
+	</li>
+</ul>
+<h3>Next What..</h3>
+<p>
+	Do the same for all other files (Write properties wherever required and unittests)
+</p>
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right"> <a href="/posts/correcting-lots-of-stuff" title="Previous Post: Correcting lots of stuff"><i class="icon-chevron-left"></i></a> 	    	<a href="/posts/exception-handling-connection-py" title="Next Post: Exception Handling - connection.py"><i class="icon-chevron-right"></i></a> 	 </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- Written by hyades -->
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Exception Handling and Unittests - http://hyades.github.io/posts/exception-handling-and-unittests ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://hyades.github.io/posts/exception-handling-and-unittests', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://hyades.github.io/posts/exception-handling-and-unittests', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//aayushahuja.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <div>
+    <section><a href="/about">Aayush Ahuja</a> 2023</section>
+  </div>
+ 
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-41289176-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

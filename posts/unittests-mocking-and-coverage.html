@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aayush Ahuja | Unittests Mocking and Coverage</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Unittests Mocking and Coverage">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hyades.github.io/posts/unittests-mocking-and-coverage">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Aayush Ahuja">
+  <meta property="og:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://hyades.github.io/posts/unittests-mocking-and-coverage">
+  <meta name="twitter:title" content="Unittests Mocking and Coverage">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://hyades.github.iofeed.xml" type="application/rss+xml" rel="alternate" title="Aayush Ahuja Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="Aayush Ahuja">Aayush Ahuja</a>
+  <ul class="header-links">
+    <li>
+      <a href="resume" title="Resume">
+        <span class="icon icon-android-contact"></span>
+      </a>
+    </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/hyades" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="http://in.linkedin.com/in/aayushahuja" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:aayushahuja@gmail.com" target="_blank" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Unittests Mocking and Coverage</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                July 24, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tags/#unittests">unittests</a>
+                
+                  <a href="/tags/#mock">mock</a>
+                
+                  <a href="/tags/#coverage">coverage</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2>Commits</h2>
+<p>
+	<ul>
+		<li>Added properties - controller.py: <a href="https://github.com/hyades/gst-switch/commit/0c75a0590a0e683bfbaaba55488fb780e33579b5">0c75a0590a0e683bfbaaba55488fb780e33579b5</a></li>
+		<li>Unittests for connection.py - 100%coverage: <a href="https://github.com/hyades/gst-switch/commit/2a5086326b8a72ed406b6a61ccf33b09d02345a5">2a5086326b8a72ed406b6a61ccf33b09d02345a5</a></li>
+		<li>Changes in connection.py. Added unittests for connection.py: <a href="https://github.com/hyades/gst-switch/commit/9ad1ed7e21dcec56b54e4a53e32d075db9c2dcf3">9ad1ed7e21dcec56b54e4a53e32d075db9c2dcf3</a></li>
+		<li>Added unittests server.py - 100% coverage: <a href="https://github.com/hyades/gst-switch/commit/9c74a37a24e7704973427cd939111b740a492fc8">9c74a37a24e7704973427cd939111b740a492fc8</a></li>
+		<li>test for OSError in terminate: <a href="https://github.com/hyades/gst-switch/commit/fab6c53deafb1bc5b5005a9fdccacd763972e51f">fab6c53deafb1bc5b5005a9fdccacd763972e51f</a></li>
+		<li>remove unnecessarry: <a href="https://github.com/hyades/gst-switch/commit/e8c38b7a7e6a82e3d1d235214b0255642aa3256a">e8c38b7a7e6a82e3d1d235214b0255642aa3256a</a></li>
+		<li>modify gitignore: <a href="https://github.com/hyades/gst-switch/commit/7a4db71936352e6e51a9f27f38ca22f70abb608b">7a4db71936352e6e51a9f27f38ca22f70abb608b</a></li>
+		<li>modify gitignore: <a href="https://github.com/hyades/gst-switch/commit/b7d83a907598b77df7ee1927907c814e615ede63">b7d83a907598b77df7ee1927907c814e615ede63</a></li>
+		<li>Removed os.devnull exception: <a href="https://github.com/hyades/gst-switch/commit/bafe6905dfceed7870087bd95152ae0f2e89f7de">bafe6905dfceed7870087bd95152ae0f2e89f7de</a></li>
+		<li>Removed os.devnull exception: <a href="https://github.com/hyades/gst-switch/commit/eb0895dbb0625b9b58d01bcd815607b0abc1aacf">eb0895dbb0625b9b58d01bcd815607b0abc1aacf</a></li>
+		<li>Removed os.devnull exception: <a href="https://github.com/hyades/gst-switch/commit/03895c871a61f5c0ed4a930d7a69802a5d927a3c">03895c871a61f5c0ed4a930d7a69802a5d927a3c</a></li>
+		<li>Removed os.devnull exception: <a href="https://github.com/hyades/gst-switch/commit/d74829c50a8aa1f3e61f1d6211ee20ac2f619fe5">d74829c50a8aa1f3e61f1d6211ee20ac2f619fe5</a></li>
+	</ul>
+
+</p>
+<h2>Things done</h2>
+<p>
+	Last two days were almost devoted to unittests. I learnt how to use pytest-cov. The command issued by me is
+	
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">py.test <span class="nt">--cov-report</span> html <span class="nt">--cov</span> <span class="o">[</span>file/files to be checked] <span class="o">[</span>file having unittests]
+py.test <span class="nt">--cov-report</span> html <span class="nt">--cov</span> server.py test_server.py
+	</code></pre></figure>
+
+</p>
+<p>
+	I also learnt how to make mock classes and functions. I also learnt about monkeypatch techniques. Some links about these are:
+</p>
+<p>
+	<ul>
+		<li><a href="http://holgerkrekel.net/2009/03/03/monkeypatching-in-unit-tests-done-right/
+">http://holgerkrekel.net/2009/03/03/monkeypatching-in-unit-tests-done-right/
+</a></li>
+		<li><a href="http://pytest.org/latest/monkeypatch.html#_pytest.monkeypatch.monkeypatch.setattr
+">http://pytest.org/latest/monkeypatch.html#_pytest.monkeypatch.monkeypatch.setattr
+</a></li>
+		<li><a href="http://stackoverflow.com/questions/6018040/py-test-use-monkeypatch-in-custom-funcargs">http://stackoverflow.com/questions/6018040/py-test-use-monkeypatch-in-custom-funcargs</a></li>
+	</ul>
+</p>
+<p>
+	I have achieved 100% coverage for server.py and connection
+</p>
+
+<h2>Next..</h2>
+<p>
+	<ul>
+		<li>Write Makefile for pylint and pep8</li>
+		<li>100% coverage for rest files</li>
+		<li>Integration tests</li>
+	</ul>
+</p>
+
+<div class="row">	
+	<div class="span9 column">
+			<p class="pull-right"> <a href="/posts/exception-handling-connection-py" title="Previous Post: Exception Handling - connection.py"><i class="icon-chevron-left"></i></a> 	    	<a href="/posts/makefile-unittests-and-lint" title="Next Post: Makefile, Unittests and Lint"><i class="icon-chevron-right"></i></a> 	 </p>  
+	</div>
+
+</div>
+
+<div class="row">	
+    <div class="span9 columns">    
+		<h2>Comments Section</h2>
+	    <p>Feel free to comment on the post but keep it clean and on topic.</p>	
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+			
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- Written by hyades -->
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Unittests Mocking and Coverage - http://hyades.github.io/posts/unittests-mocking-and-coverage ', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://hyades.github.io/posts/unittests-mocking-and-coverage', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://hyades.github.io/posts/unittests-mocking-and-coverage', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//aayushahuja.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <div>
+    <section><a href="/about">Aayush Ahuja</a> 2023</section>
+  </div>
+ 
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-41289176-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

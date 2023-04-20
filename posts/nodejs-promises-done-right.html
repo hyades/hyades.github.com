@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aayush Ahuja | NodeJS Promises Done Right</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="NodeJS Promises Done Right">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hyades.github.io/posts/nodejs-promises-done-right">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Aayush Ahuja">
+  <meta property="og:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://hyades.github.io/posts/nodejs-promises-done-right">
+  <meta name="twitter:title" content="NodeJS Promises Done Right">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="http://hyades.github.io/assets/og-image.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://hyades.github.iofeed.xml" type="application/rss+xml" rel="alternate" title="Aayush Ahuja Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="/" class="header-logo" title="Aayush Ahuja">Aayush Ahuja</a>
+  <ul class="header-links">
+    <li>
+      <a href="resume" title="Resume">
+        <span class="icon icon-android-contact"></span>
+      </a>
+    </li>
+    
+    
+    
+      <li>
+        <a href="https://github.com/hyades" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="http://in.linkedin.com/in/aayushahuja" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:aayushahuja@gmail.com" target="_blank" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <h2>Promises</h2>
+<p>
+    <blockquote cite="https://promisesaplus.com/">
+        A promise represents the eventual result of an asynchronous operation. The primary way of interacting with a promise is through its then method, which registers callbacks to receive either a promise’s eventual value or the reason why the promise cannot be fulfilled
+    </blockquote>
+</p>
+
+<p>
+    A quick Google search will tell you that the two most popular implementations of <i>Promises</i> in NodeJS are the <a href="https://github.com/kriskowal/q">Q</a> and <a href="https://github.com/petkaantonov/bluebird">Bluebird</a> libraries.
+</p>
+
+<p><br /></p>
+<p>
+    In this blog I am mainly talking about using NodeJS as an API server to server requests from a MongoDB database using the <a href="http://mongoosejs.com/">Mongoose driver</a>.
+</p>
+<p><br /></p>
+<h5>A Sample API Application</h5>
+
+<p>
+    Consider the use case that we are creating APIs for an app which helps its users to book and schedule Sunday football matches among themselves.
+</p>
+<p>
+    We want a function <code>getRegisteredUserNames</code> which returns the names of all players who have registered this week. We look first at some of the the ways to achieve this and what could be wrong in them.
+</p>
+
+<p><br /></p>
+
+<h2>The Dreaded Deferred</h2>
+
+<p>We first take a look at an implementation using <a href="https://github.com/kriskowal/q#using-deferreds">Q's defer</a></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">Q</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">q</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">getRegisteredUserNames</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="nx">endDate</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">defer</span> <span class="o">=</span> <span class="nx">Q</span><span class="p">.</span><span class="nx">defer</span><span class="p">();</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">{</span><span class="na">day</span><span class="p">:</span> <span class="p">{</span><span class="na">$gte</span><span class="p">:</span> <span class="nx">startDate</span><span class="p">,</span> <span class="na">$lte</span><span class="p">:</span> <span class="nx">endDate</span><span class="p">}};</span>
+        <span class="kd">var</span> <span class="nx">project</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="mi">1</span><span class="p">};</span>
+        <span class="kd">function</span> <span class="nx">onDocsFunc</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">defer</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">defer</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nx">RegisteryCollection</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">project</span><span class="p">).</span><span class="nx">lean</span><span class="p">().</span><span class="nx">exec</span><span class="p">(</span><span class="nx">onDocsFunc</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">defer</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">ex</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">defer</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>
+    The above function <code>getRegisteredUserNames</code> returns a promise, and would work as it should. We go and execute it, and in the <code>then</code> callback, we receive the data points. Notice the <code>try-catch</code> block here. This is added since if the code breaks here, the function calling this method has no way to detect what happened. Calling this function, the <code>data</code> looks like this -
+</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">[</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Mat</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Prince</span><span class="dl">'</span><span class="p">}</span>
+<span class="p">]</span></code></pre></figure>
+
+<p>
+    But what we wanted was a list of names rather than objects. One easy workaround here would be to modify the <code>defer.resolve(data)</code>, and resolving the <code>modifiedData</code>.
+
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">modifiedData</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">name</span>
+<span class="p">});</span>
+<span class="nx">defer</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">modifiedData</span><span class="p">);</span></code></pre></figure>
+
+</p>
+<p>
+    Now we ask the question - Does this code handle all exceptions? What happens if it does not? Obviously Node will throw an exception. But who's catching that exception? What happens to the promise? 
+</p>
+<p>
+    Yes, we need another <code>try-catch</code> over here, else the promise is never resolved nor rejected.
+</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">try</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">modifiedData</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">name</span>
+    <span class="p">});</span>
+    <span class="nx">defer</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">modifiedData</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">defer</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">ex</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>
+    Ugly? Imagine doing this everywhere in your code, using <code>try-catch</code> blocks everywhere in all callbacks as you write multiple application logics. I'm sure half of your time and lines of code is spent writing these redundant blocks. Also it makes the code harder to debug and maintain. What can be done? 
+</p>
+<p><br /></p>
+
+<h2>Separation of Concerns</h2>
+
+<p>
+    The problem above is that we are trying to mix application logic into a promise creation utility. <b><i>Create promise at one place and reuse it elsewhere</i></b> is the general rule to follow. Also, using the <code>defer</code> objects is a kind of an anti-pattern here and can be fully avoided by making use of the <code>Promise</code> constructor provided by the promise library of your choice.
+</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">getRegisteredUserNames</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="nx">endDate</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Q</span><span class="p">.</span><span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">{</span><span class="na">day</span><span class="p">:</span> <span class="p">{</span><span class="na">$gte</span><span class="p">:</span> <span class="nx">startDate</span><span class="p">,</span> <span class="na">$lte</span><span class="p">:</span> <span class="nx">endDate</span><span class="p">}};</span>
+        <span class="kd">var</span> <span class="nx">project</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="mi">1</span><span class="p">};</span>
+        <span class="kd">function</span> <span class="nx">onDocsFunc</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="nx">RegisteryCollection</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">project</span><span class="p">).</span><span class="nx">lean</span><span class="p">().</span><span class="nx">exec</span><span class="p">(</span><span class="nx">onDocsFunc</span><span class="p">);</span>
+    <span class="p">})</span>
+<span class="p">};</span>
+
+<span class="nx">getRegisteredUserNames</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="nx">endDate</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">name</span>
+   <span class="p">});</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">logger</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>
+    Notice that the <a href="https://github.com/kriskowal/q#using-qpromise">Q.Promise</a> (<a href="http://bluebirdjs.com/docs/api/new-promise.html">Promise</a> in Bluebird) implementation is a wrapper around our code. Any exceptions thrown by the code are made into rejections with the appropriate error. Here, we separated the application logic away into the callee function, where we perform the manipulations. 
+</p>
+<p><br /></p>
+
+<h2>Second Argument of Promises</h2>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">outPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+    <span class="nx">resolveHandler</span><span class="p">,</span> 
+    <span class="nx">rejectHandler</span>
+<span class="p">);</span></code></pre></figure>
+
+<p>
+    The second argument of promises takes a callback which is executed when the promise <code>rejects</code>. In most circumstances avoid using this. The <code>.catch()</code> / <code>.fail()</code> method is provided specifically for this purpose and makes life much simpler. Note that this is not part of the <a href="https://github.com/promises-aplus/promises-tests">Promise A+</a> guidelines, but is anyways provided by both the promise implementations.
+</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">outPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+    <span class="nx">resolveHandler</span>
+<span class="p">).</span><span class="k">catch</span><span class="p">(</span>
+    <span class="nx">rejectHandler</span>
+<span class="p">);</span></code></pre></figure>
+
+<h2>Writing APIs</h2>
+
+<p>
+    We now look at how to integrate everything together into a NodeJS API using ExpressJS.
+</p>
+<p>
+    We come back to our original example of creating a football match scheduling service. We now wish to write an API which given a <code>start_date</code> and <code>end_date</code> will generate random teams, then schedule the matches, and finally send emails to all the players informing them of the team they belong to.
+</p>
+<p><br /></p>
+<p>
+    We break down the problem into the following parts - 
+    <ul>
+        <li>Fetch the list players who registered.</li>
+        <li>Fetch emails for each user</li>
+        <li>Randomly generate teams</li>
+        <li>Send emails to each player mentioning the team the user belongs</li>
+    </ul>
+    We assume that there are two collections in MongoDB - User and Registry.
+</p>
+<p>
+    Writing the API endpoint in the <code>routes/index.js</code> file
+</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/createMatches</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">startDate</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">start_date</span><span class="p">,</span>
+        <span class="na">endDate</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">end_date</span><span class="p">,</span>
+    <span class="p">};</span>
+    <span class="nx">createMatches</span><span class="p">(</span><span class="nx">params</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+        <span class="nx">logger</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">})</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>
+    We now write the controller <code>createMatches</code>. Remember that since this method will just implement application logic, we should not be creating promises here, rather just manipulating them around. However, there are still chances of typos here and there which might go uncaught, and our promise would just be dangling since there is no appropriate handler. To take care of this, the Bluebird library provides a handy wrapper around the functions - <a href="http://bluebirdjs.com/docs/api/promise.method.html">Promise.method</a>. We just need to wrap the any function in this, and it should handle any such issues with the code. 
+</p>
+<p>
+    Note that in case you are using ES6, you might want to fall back on using the full function definition instead of the array notation while using <code>Promise.method</code>.
+</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">createMatches</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="nx">params</span><span class="p">.</span><span class="nx">startDate</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">endDate</span> <span class="o">=</span> <span class="nx">params</span><span class="p">.</span><span class="nx">endDate</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">Registry</span><span class="p">.</span><span class="nx">getUserNames</span><span class="p">({</span><span class="na">startDate</span><span class="p">:</span> <span class="nx">startDate</span><span class="p">,</span> <span class="na">endDate</span><span class="p">:</span> <span class="nx">endDate</span><span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// ['john', 'adam', 'john']</span>
+            <span class="p">});</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="k">new</span> <span class="nb">Set</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span> <span class="c1">// remove duplicates - ['john', 'adam']</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">userNameData</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">userEmailPromises</span> <span class="o">=</span> <span class="nx">userNameData</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">userName</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">User</span><span class="p">.</span><span class="nx">getEmail</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+            <span class="p">});</span>
+            <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">userEmailPromises</span><span class="p">);</span> <span class="c1">// ['john@gmail.com', 'adam@gmail.com']</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">userEmailData</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">shuffledUserEmailData</span> <span class="o">=</span> <span class="nx">shuffle</span><span class="p">(</span><span class="nx">userEmailData</span><span class="p">);</span> <span class="c1">// random shuffling</span>
+            <span class="k">return</span> <span class="nx">assignTeam</span><span class="p">(</span><span class="nx">shuffledUserEmailData</span><span class="p">);</span>
+            <span class="c1">// [{email: 'john@gmail.com', team: 1}, {email: 'john@gmail.com', team: 2}]</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">teamEmailData</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">sendEmailPromises</span> <span class="o">=</span> <span class="nx">teamEmailData</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">sendEmail</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">team</span><span class="p">);</span>
+            <span class="p">});</span>
+            <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">allSettled</span><span class="p">(</span><span class="nx">sendEmailPromises</span><span class="p">);</span>
+        <span class="p">})</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>
+    The implementations of the methods under <code>User</code>, <code>Registry</code> and <code>sendEmail</code> should only do what they are supposed to do. Thus they should merely be wrappers around the existing <code>Mongoose/Mongodb/SMTP</code> functions, and might use the <code>new Promise</code> if the underlying API only provides a callback (Bluebird allows to <a href="http://bluebirdjs.com/docs/api/promise.promisify.html">promisify</a> callbacks) 
+</p>
+<p><br /></p>
+<p>
+    The advantages of following the above style is that even though we are doing a lot of things, our logic is flat. Using multiple <code>then</code> statements, we know the exact execution order. Any errors in any of the step is propagated forward and is caught at the <code>index.js</code> file in the <code>.catch()</code> block. Thus a single place to catch all errors.
+</p>
+<p><br /></p>
+<h2>Conclusion</h2>
+<p>
+    Separation of concerns along with manipulating promises is the correct way. This way we utilize the maximum capabilities of the awesome promise libraries provided, making code easier to understand, and thus easier to maintain.
+</p>
+
+<p><br /></p>
+<h2>More link to read - </h2>
+
+<p>
+    <ul>
+        <li>
+            <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise">ES6 Native Promises</a>
+        </li>
+        <li>
+            <a href="http://exploringjs.com/es6/ch_promises.html">Big list of what can be done with promises</a>
+        </li>
+        <li>
+            <a href="https://www.toptal.com/mongodb/business-intelligence-platform-using-mongodb-aggregation-pipeline">Writing aggregation queries in MongoDB</a>
+        </li>
+    </ul>
+</p>
+
+<p><br /></p>
+
+<div class="row">   
+    <div class="span9 columns">    
+        <h2>Comments Section</h2>
+        <p>Feel free to comment on the post but keep it clean and on topic.</p> 
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'aayushahuja'; // required: replace example with your forum shortname
+            
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</div>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Google + -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- Written by hyades -->
+
+        <footer class="footer reveal">
+  <div>
+    <section><a href="/about">Aayush Ahuja</a> 2023</section>
+  </div>
+ 
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-41289176-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>
