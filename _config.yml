@@ -23,19 +23,9 @@ social:
 
 # Important settings (change at own risk)
 
-assets:
-  compress:
-    css: true
-    js: true
-  features:
-    automatic_img_size: false
-  sources:
-    - _assets/bower
-    - _assets/fonts
-    - _assets/images
-    - _assets/javascripts
-    - _assets/stylesheets
-    - _vendor/
+sass:
+  sass_dir: assets/stylesheets
+  sourcemap: never
 collections:
   my_tags:
     output: true
@@ -48,10 +38,7 @@ defaults:
     values:
       layout: articles_by_tag
 exclude:
-  - .bowerrc
-  - .travis.yml
   - bin/*
-  - bower.json
   - circle.yml
   - CLAUDE.md
   - files/resume/node_modules
@@ -61,8 +48,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor/
-gems:
-  - jekyll-assets
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist

@@ -1,5 +1,3 @@
-//= require_self
-
 // Initialize fluidbox
 
 $(function () {
