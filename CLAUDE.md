@@ -1,0 +1,47 @@
+# hyades.github.com
+
+Aayush Ahuja's personal site/blog, served via GitHub Pages at `hyades/hyades.github.com`. This is
+the **`dev`** branch — the actual Jekyll source. Do all editing here, both for site content and
+the resume.
+
+## Branch structure — important
+- **`dev`** (this branch) — Jekyll site (Chalk theme): `_config.yml`, `_posts/`, `_layouts/`,
+  `_includes/`, `_assets/`, Ruby/Bower toolchain. All content and tooling changes belong here.
+- **`master`** — pure generated build output, no source files. Never hand-edit it; anything
+  added there directly (not produced by a `dev` build) gets wiped by the next deploy.
+- **Deploy** (`bin/deploy`, run from `dev`): builds with `bundle exec jekyll build`, deletes
+  everything in the repo root except `_site` and `.git`, moves `_site/*` into place, and
+  force-pushes the result to `master`. So: commit on `dev` → run `bin/deploy` → live site
+  updates.
+
+## Site development
+```
+bin/setup              # installs Ruby/Bower deps
+bundle exec jekyll serve   # local dev server
+bin/deploy              # build + force-push to master (publishes)
+```
+Posts live in `_posts/` (Markdown, Jekyll front matter), pages like `about.html`/`index.html` at
+the root, layouts in `_layouts/`, partials in `_includes/`, styles/scripts/images in `_assets/`.
+
+## Resume workflow
+Source of truth is `files/resume/build_resume.js` — a Node script (uses the `docx` package) that
+generates the resume from content hardcoded directly in the script (no separate data file).
+
+To update the resume:
+```
+cd files/resume
+npm install                # only needed once / after dependency changes
+node build_resume.js       # writes Aayush_Ahuja_Resume.docx
+```
+Edit the `bullet(...)`, `roleHeading(...)`, `summary(...)` calls in `build_resume.js` for content
+changes, then regenerate. Commit both `build_resume.js` and the regenerated
+`Aayush_Ahuja_Resume.docx` — `files/resume/node_modules/`, `package.json`, and
+`package-lock.json` are excluded from the Jekyll build (see `_config.yml`'s `exclude:` list) and
+`.gitignore`, so only the script and the generated docx flow through to `master`/the live site.
+
+**The live/linked resume is still the PDF**, not the docx: `resume/index.html` redirects to
+`/files/Aayush_Ahuja_Resume.pdf`. After regenerating the docx, export it to PDF and replace
+`files/Aayush_Ahuja_Resume.pdf` for visitors to actually see the update. `files/` also has several
+stale duplicate exports from past iterations (`Resume-AayushAhuja-Latest*.pdf/.doc`,
+`Aayush_Ahuja_Resume.doc`, etc.) — safe to ignore or clean up, `build_resume.js` /
+`Aayush_Ahuja_Resume.pdf` are the ones that matter.

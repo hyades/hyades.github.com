@@ -53,6 +53,10 @@ exclude:
   - bin/*
   - bower.json
   - circle.yml
+  - CLAUDE.md
+  - files/resume/node_modules
+  - files/resume/package-lock.json
+  - files/resume/package.json
   - Gemfile
   - Gemfile.lock
   - README.md
