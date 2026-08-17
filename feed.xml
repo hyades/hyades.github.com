@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Aayush Ahuja</title>
+    <description></description>
+    <link>http://hyades.github.io</link>
+    <atom:link href="http://hyades.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ site.url }}{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <title>NodeJS Promises Done Right</title>
+        <description></description>
+        <pubDate>Wed, 04 Jan 2017 00:00:00 +0000</pubDate>
+        <link>http://hyades.github.io/posts/nodejs-promises-done-right</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/nodejs-promises-done-right</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Deploying a Dockerized Application to Production</title>
+        <description></description>
+        <pubDate>Fri, 12 Jun 2015 00:00:00 +0100</pubDate>
+        <link>http://hyades.github.io/posts/deploying-a-dockerized-application-to-production</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/deploying-a-dockerized-application-to-production</guid>
+      </item>
+    
+      <item>
+        <title>linux.conf.au 2015 Part-2</title>
+        <description></description>
+        <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://hyades.github.io/posts/linux-conf-au-2015-part-2</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/linux-conf-au-2015-part-2</guid>
+      </item>
+    
+      <item>
+        <title>Dockerizing a Play Application</title>
+        <description></description>
+        <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://hyades.github.io/posts/dockerizing-a-play-application</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/dockerizing-a-play-application</guid>
+      </item>
+    
+      <item>
+        <title>linux.conf.au 2015 Part-1</title>
+        <description></description>
+        <pubDate>Wed, 28 Jan 2015 00:00:00 +0000</pubDate>
+        <link>http://hyades.github.io/posts/linux-conf-au-2015-part-1</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/linux-conf-au-2015-part-1</guid>
+      </item>
+    
+      <item>
+        <title>linux.conf.au-2015-Part-1</title>
+        <description></description>
+        <pubDate>Wed, 28 Jan 2015 00:00:00 +0000</pubDate>
+        <link>http://hyades.github.io/posts/linux-conf-au-2015</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/linux-conf-au-2015</guid>
+      </item>
+    
+      <item>
+        <title>Groupon Experiences - First Month July 2014</title>
+        <description></description>
+        <pubDate>Mon, 29 Sep 2014 00:00:00 +0100</pubDate>
+        <link>http://hyades.github.io/posts/groupon-experiences</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/groupon-experiences</guid>
+      </item>
+    
+      <item>
+        <title>After a long time</title>
+        <description></description>
+        <pubDate>Sun, 28 Sep 2014 00:00:00 +0100</pubDate>
+        <link>http://hyades.github.io/posts/after-a-long-time</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/after-a-long-time</guid>
+      </item>
+    
+      <item>
+        <title>Problems building gst-switch</title>
+        <description></description>
+        <pubDate>Thu, 12 Sep 2013 00:00:00 +0100</pubDate>
+        <link>http://hyades.github.io/posts/problems-building-gst-switch</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/problems-building-gst-switch</guid>
+      </item>
+    
+      <item>
+        <title>Improvements</title>
+        <description></description>
+        <pubDate>Mon, 09 Sep 2013 00:00:00 +0100</pubDate>
+        <link>http://hyades.github.io/posts/improvements</link>
+        <guid isPermaLink="true">http://hyades.github.io/posts/improvements</guid>
+      </item>
+    
   </channel>
 </rss>
